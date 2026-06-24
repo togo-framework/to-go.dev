@@ -162,7 +162,7 @@
     "navColor": "#1FC7DC",
     "install": null,
     "hasReadme": true,
-    "downloads": 117
+    "downloads": 124
   },
   {
     "name": "create-togo-app",
@@ -606,7 +606,7 @@
     "language": "TypeScript",
     "stars": 0,
     "branch": "main",
-    "updatedAt": "2026-06-24T19:14:28Z",
+    "updatedAt": "2026-06-24T19:23:06Z",
     "kind": "core",
     "category": "core",
     "navColor": "#1FC7DC",
