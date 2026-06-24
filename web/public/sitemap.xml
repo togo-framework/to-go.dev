@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://to-go.dev/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://to-go.dev/repos</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/docs</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/submit</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/auth</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/auth-dev</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/auth-firebase</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/auth-oauth</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/auth-session-redis</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/auth-workos</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/cache</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/cache-redis</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/dashboard</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/db-mongodb</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/db-mysql</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/db-postgres</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/db-supabase</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/faker</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/i18n</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/log</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/mail</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/mail-resend</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/notifications</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/notifications-onesignal</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/orm</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/plugin-auth-supabase</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/queue</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/realtime</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/realtime-ws</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/search</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/search-elasticsearch</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/storage</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/storage-supabase</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/supabase</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/testing</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/validation</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/worker</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/.github</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/auth</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/auth-dev</loc><changefreq>weekly</changefreq></url>
