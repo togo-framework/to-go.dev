@@ -3,11 +3,16 @@ import {
   ShieldCheck, Database, Server, Mail, LayoutDashboard, FlaskConical, Boxes,
   TerminalSquare, KeyRound, Zap, Bot, Bell, ListChecks, Radio, Search as SearchIcon,
   Globe, HardDrive, ScrollText, Languages, Cog, BadgeCheck, Fingerprint,
+  CreditCard, Sparkles, FileText, ScanText, Workflow as WorkflowIcon,
+  Settings as SettingsIcon, MapPin, Building2, Users, Network, Activity, Brain, Receipt,
   type LucideIcon,
 } from "lucide-react";
 import {
   siFirebase, siPostgresql, siMysql, siMongodb, siSupabase, siRedis,
   siElasticsearch, siResend, siClaude,
+  siStripe, siLemonsqueezy, siAnthropic, siGooglegemini, siOllama, siCloudflare,
+  siGoogledrive, siSentry, siDatadog, siAlgolia, siMeilisearch, siPusher,
+  siNatsdotio, siElevenlabs, siDeepgram, siRss, siGoogle, siSearxng,
 } from "simple-icons";
 import reposData from "../data/repos.json";
 
@@ -67,6 +72,11 @@ export interface PluginVisual {
 
 const F = brand(siFirebase), P = brand(siPostgresql), MY = brand(siMysql), MO = brand(siMongodb),
   SB = brand(siSupabase), RD = brand(siRedis), ES = brand(siElasticsearch), RS = brand(siResend), CL = brand(siClaude);
+const STR = brand(siStripe), LS = brand(siLemonsqueezy), AN = brand(siAnthropic), GG = brand(siGooglegemini),
+  OL = brand(siOllama), CF = brand(siCloudflare), GD = brand(siGoogledrive), SEN = brand(siSentry),
+  DD = brand(siDatadog), AL = brand(siAlgolia), ML = brand(siMeilisearch), PU = brand(siPusher),
+  NA = brand(siNatsdotio), EL = brand(siElevenlabs), DG = brand(siDeepgram), RSS = brand(siRss),
+  GO = brand(siGoogle), SX = brand(siSearxng);
 
 export const PLUGIN_META: Record<string, PluginVisual> = {
   auth: { title: "Auth", color: "#1FC7DC", icon: ShieldCheck, description: "JWT + RBAC + multi-guard sessions — the base auth kernel." },
@@ -105,6 +115,75 @@ export const PLUGIN_META: Record<string, PluginVisual> = {
   testing: { title: "Testing", color: "#84CC16", icon: FlaskConical, description: "Test helpers + fixtures." },
   validation: { title: "Validation", color: "#16A34A", icon: BadgeCheck, description: "Request + model validation." },
   worker: { title: "Worker", color: "#A855F7", icon: Cog, description: "Long-running background workers." },
+
+  // ── Payments ──
+  payment: { title: "Payments", color: "#635BFF", icon: CreditCard, description: "Provider-agnostic charges, checkout, refunds & webhooks." },
+  "payment-stripe": { title: "Stripe", color: STR.hex, brandIcon: STR, description: "Stripe payment gateway — charges, Checkout, subscriptions, webhooks." },
+  "payment-paymob": { title: "Paymob", color: "#F5494E", icon: CreditCard, description: "Paymob gateway (Egypt / MENA)." },
+  "payment-fawry": { title: "Fawry", color: "#FDB913", icon: CreditCard, description: "Fawry payments (Egypt)." },
+  "payment-tap": { title: "Tap", color: "#00B14F", icon: CreditCard, description: "Tap Payments (MENA)." },
+  "payment-moyasar": { title: "Moyasar", color: "#1EC7C2", icon: CreditCard, description: "Moyasar payments (KSA)." },
+  "payment-paytabs": { title: "PayTabs", color: "#E03A3C", icon: CreditCard, description: "PayTabs gateway." },
+  "payment-payfort": { title: "PayFort", color: "#FF6600", icon: CreditCard, description: "Amazon PayFort gateway." },
+  "payment-lemonsqueezy": { title: "Lemon Squeezy", color: LS.hex, brandIcon: LS, description: "Lemon Squeezy merchant-of-record payments." },
+  subscriptions: { title: "Subscriptions", color: "#8B5CF6", icon: Receipt, description: "Plans, trials, subscribe/cancel/upgrade — over the payment plugin." },
+  billing: { title: "Billing", color: "#22C55E", icon: Receipt, description: "API keys + token-usage metering, quotas & consumption reports." },
+
+  // ── AI kit ──
+  ai: { title: "AI", color: "#1FC7DC", icon: Sparkles, description: "Unified LLM interface — chat, embeddings, tools, streaming." },
+  "ai-openai": { title: "OpenAI", color: "#10A37F", icon: Brain, description: "OpenAI chat + embeddings driver." },
+  "ai-anthropic": { title: "Anthropic", color: AN.hex, brandIcon: AN, description: "Anthropic Claude (Messages API) driver." },
+  "ai-gemini": { title: "Gemini", color: GG.hex, brandIcon: GG, description: "Google Gemini driver." },
+  "ai-grok": { title: "Grok", color: "#111111", icon: Sparkles, description: "xAI Grok (OpenAI-compatible) driver." },
+  "ai-deepseek": { title: "DeepSeek", color: "#4D6BFE", icon: Brain, description: "DeepSeek (OpenAI-compatible) driver." },
+  "ai-qwen": { title: "Qwen", color: "#615CED", icon: Brain, description: "Qwen / DashScope (OpenAI-compatible) driver." },
+  "ai-ollama": { title: "Ollama", color: OL.hex, brandIcon: OL, description: "Local / remote Ollama models." },
+  "ai-tts": { title: "Text-to-Speech", color: EL.hex, brandIcon: EL, description: "TTS — ElevenLabs + OpenAI drivers." },
+  "ai-stt": { title: "Speech-to-Text", color: DG.hex, brandIcon: DG, description: "STT — Whisper + Deepgram drivers." },
+  "ai-rag": { title: "RAG", color: "#0EA5E9", icon: Brain, description: "Retrieval-augmented generation — ingest, embed, retrieve, generate." },
+  "rag-postgres": { title: "RAG · Postgres", color: P.hex, brandIcon: P, description: "pgvector + pg_search hybrid retrieval store for ai-rag." },
+  "ai-agentops": { title: "AgentOps", color: "#22C55E", icon: Activity, description: "Agent runs, token/cost/latency tracing → billing." },
+  "ai-adk": { title: "Google ADK", color: "#4285F4", icon: Bot, description: "Bridge to Google's Agent Development Kit." },
+  "ai-agno": { title: "Agno", color: "#6366F1", icon: Bot, description: "Bridge to the Agno agent framework." },
+  "ai-firecrawl": { title: "Firecrawl", color: "#F97316", icon: Globe, description: "Firecrawl scrape/crawl — self-hosted + hosted API." },
+  "ai-crawlee": { title: "Crawlee", color: "#3B82F6", icon: Network, description: "Web crawler (colly) → page text for RAG." },
+  "ai-playwright": { title: "Playwright (AI)", color: "#2EAD33", icon: FlaskConical, description: "Headless-Chromium render of JS pages → text." },
+  "ai-rss": { title: "RSS", color: RSS.hex, brandIcon: RSS, description: "Fetch + parse RSS/Atom/JSON feeds." },
+  "ai-searxng": { title: "SearXNG", color: SX.hex, brandIcon: SX, description: "SearXNG metasearch for agent web-search." },
+
+  // ── Storage providers ──
+  "storage-s3": { title: "Amazon S3", color: "#569A31", icon: HardDrive, description: "AWS S3 storage driver." },
+  "storage-r2": { title: "Cloudflare R2", color: CF.hex, brandIcon: CF, description: "Cloudflare R2 (S3-compatible) storage." },
+  "storage-gdrive": { title: "Google Drive", color: GD.hex, brandIcon: GD, description: "Google Drive storage driver." },
+
+  // ── Logging providers ──
+  "log-sentry": { title: "Sentry", color: SEN.hex, brandIcon: SEN, description: "Sentry error/event sink." },
+  "log-datadog": { title: "Datadog", color: DD.hex, brandIcon: DD, description: "Datadog logs intake." },
+  "log-logstash": { title: "Logstash", color: ES.hex, brandIcon: ES, description: "Logstash TCP/JSON sink." },
+
+  // ── Search providers ──
+  "search-algolia": { title: "Algolia", color: AL.hex, brandIcon: AL, description: "Algolia search driver." },
+  "search-meilisearch": { title: "Meilisearch", color: ML.hex, brandIcon: ML, description: "Meilisearch driver." },
+  "search-typesense": { title: "Typesense", color: "#FF5C28", icon: SearchIcon, description: "Typesense search driver." },
+
+  // ── Mail / notifications / realtime ──
+  "mail-sendgrid": { title: "SendGrid", color: "#1A82E2", icon: Mail, description: "SendGrid email driver." },
+  "notifications-pusher": { title: "Pusher", color: PU.hex, brandIcon: PU, description: "Pusher Channels push driver." },
+  "notifications-fcm": { title: "FCM", color: F.hex, brandIcon: F, description: "Firebase Cloud Messaging push driver." },
+  "realtime-grpc": { title: "gRPC", color: "#2D8CE6", icon: Network, description: "gRPC streaming transport for realtime." },
+  "realtime-nats": { title: "NATS", color: NA.hex, brandIcon: NA, description: "NATS broker transport for realtime." },
+
+  // ── Contacts / workflow / platform ──
+  contacts: { title: "Contacts", color: "#0EA5E9", icon: Users, description: "Import & sync contacts from providers." },
+  "contacts-google": { title: "Google Contacts", color: GO.hex, brandIcon: GO, description: "Google People API contacts driver." },
+  workflow: { title: "Workflow", color: "#F59E0B", icon: WorkflowIcon, description: "Dynamic step pipelines over the queue — any plugin as a step." },
+  settings: { title: "Settings", color: "#64748B", icon: SettingsIcon, description: "Shared typed config store between plugins." },
+  location: { title: "Location", color: "#EF4444", icon: MapPin, description: "Countries, languages, timezones, cities datasets." },
+  translation: { title: "Translation", color: "#0EA5E9", icon: Languages, description: "DB-backed dynamic i18n — edit translations without redeploy." },
+  saas: { title: "SaaS / Multi-tenancy", color: "#6366F1", icon: Building2, description: "Domain/tenant-id resolution + shared-scope or per-tenant DB." },
+  pdf: { title: "PDF", color: "#DC2626", icon: FileText, description: "HTML → PDF via headless Chromium." },
+  ocr: { title: "OCR", color: "#7C3AED", icon: ScanText, description: "Image → text via AI vision or tesseract." },
+  "testing-playwright": { title: "Playwright E2E", color: "#2EAD33", icon: FlaskConical, description: "Playwright end-to-end test harness." },
 };
 
 const DEFAULT_VISUAL: PluginVisual = { title: "", color: "#2D8CE6", icon: Boxes };
