@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { MarketplaceCard, StatsRow, FilterBar, Pager, SectionHeading, PillButton } from "@togo-framework/ui";
+import { MarketplaceCard, StatsRow, FilterBar, Pager, SectionHeading, PillButton, AuroraBackground } from "@togo-framework/ui";
 import { Blocks, Sparkles, Plus } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
@@ -60,6 +60,7 @@ export function Plugins() {
         }}
       />
 
+      <div className="fixed inset-0 -z-10"><AuroraBackground intensity={0.55} /></div>
       <section className="mx-auto max-w-6xl px-6 pt-14 pb-20">
         <SectionHeading
           align="left"
