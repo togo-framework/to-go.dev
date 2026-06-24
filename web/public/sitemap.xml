@@ -70,6 +70,7 @@
   <url><loc>https://to-go.dev/docs/plugin-template</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/queue</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/realtime</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/docs/realtime-ws</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/search</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/search-elasticsearch</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/seo</loc><changefreq>weekly</changefreq></url>

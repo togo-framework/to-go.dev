@@ -70,12 +70,12 @@ const DBS = [
 function InstallBar() {
   const [ok, setOk] = useState(false);
   return (
-    <div className="flex items-center gap-3 h-[52px] ps-5 pe-2 rounded-xl border border-border bg-card font-mono text-sm">
-      <span className="text-[var(--togo-cyan,#1FC7DC)] select-none">$</span>
-      <code className="text-foreground/90 whitespace-nowrap">{INSTALL}</code>
+    <div className="flex items-center gap-2 h-[52px] ps-4 pe-2 rounded-xl border border-border bg-card font-mono text-sm w-full sm:w-auto max-w-full min-w-0">
+      <span className="text-[var(--togo-cyan,#1FC7DC)] select-none shrink-0">$</span>
+      <code className="text-foreground/90 whitespace-nowrap overflow-x-auto min-w-0 flex-1">{INSTALL}</code>
       <button aria-label="Copy install command"
         onClick={() => { navigator.clipboard?.writeText(INSTALL); setOk(true); setTimeout(() => setOk(false), 1600); }}
-        className="ms-1 grid place-items-center w-9 h-9 rounded-lg bg-muted text-muted-foreground hover:text-foreground transition-colors">
+        className="grid place-items-center w-9 h-9 rounded-lg bg-muted text-muted-foreground hover:text-foreground transition-colors shrink-0">
         {ok ? <Check size={16} className="text-[var(--togo-cyan,#1FC7DC)]" /> : <Copy size={16} />}
       </button>
     </div>
@@ -105,13 +105,13 @@ export function Landing() {
           <p className="mx-auto mt-6 max-w-[600px] text-lg sm:text-xl text-muted-foreground">
             The full-stack framework that ships your <span className="text-foreground font-semibold">Go backend</span> and <span className="text-foreground font-semibold">React frontend</span> as a single deployable app — a Laravel-artisan-grade CLI for the Go + sqlc + Atlas + React stack.
           </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3.5">
+          <div className="mt-9 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 max-w-md sm:max-w-none mx-auto">
             <InstallBar />
-            <Button asChild size="lg" className="h-[52px] text-base"
+            <Button asChild size="lg" className="h-[52px] text-base w-full sm:w-auto"
               style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", color: "#fff", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
               <a href="https://github.com/togo-framework">Get started <ArrowRight size={18} /></a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-[52px]"><Link to="/docs">Read the docs</Link></Button>
+            <Button asChild variant="outline" size="lg" className="h-[52px] w-full sm:w-auto"><Link to="/docs">Read the docs</Link></Button>
           </div>
         </div>
       </section>

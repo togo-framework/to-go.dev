@@ -476,7 +476,7 @@
     "category": "infra",
     "navColor": "#1659C8",
     "install": "togo install togo-framework/realtime-ws",
-    "hasReadme": false,
+    "hasReadme": true,
     "downloads": 0
   },
   {
@@ -591,7 +591,7 @@
     "language": "TypeScript",
     "stars": 0,
     "branch": "main",
-    "updatedAt": "2026-06-24T11:55:36Z",
+    "updatedAt": "2026-06-24T12:17:22Z",
     "kind": "core",
     "category": "core",
     "navColor": "#1FC7DC",

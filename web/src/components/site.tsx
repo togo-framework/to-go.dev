@@ -43,13 +43,16 @@ export function SiteFooter() {
         </div>
         <div className="mt-9 pt-8 border-t border-border text-center">
           <div className="font-mono text-[11px] tracking-[0.16em] uppercase text-muted-foreground/60 mb-5">Premium sponsors</div>
-          <div className="flex items-center justify-center gap-10 flex-wrap">
-            <a href="https://id8media.com" className="opacity-75 hover:opacity-100 transition-opacity">
-              <img src="/sponsors/id8media.svg" alt="ID8 Media" className="h-9"
-                onError={(e) => { (e.currentTarget.outerHTML = '<strong style="color:#cbd5da;font-family:Sora">ID8 Media</strong>'); }} />
+          <div className="flex items-center justify-center gap-5 sm:gap-6 flex-wrap">
+            <a href="https://id8media.com" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center h-14 px-6 rounded-xl bg-white shadow-sm ring-1 ring-black/5 opacity-90 hover:opacity-100 transition-opacity">
+              <img src="/sponsors/id8media.svg" alt="ID8 Media" className="h-7 w-auto"
+                onError={(e) => { e.currentTarget.outerHTML = '<strong style="color:#0b0f13;font-family:Sora">ID8 Media</strong>'; }} />
             </a>
-            <a href="https://one-studio.co" className="opacity-75 hover:opacity-100 transition-opacity">
-              <img src="/sponsors/one-studio.jpeg" alt="One Studio" className="h-9" />
+            <a href="https://one-studio.co" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center h-14 px-6 rounded-xl bg-white shadow-sm ring-1 ring-black/5 opacity-90 hover:opacity-100 transition-opacity">
+              <img src="/sponsors/one-studio.jpeg" alt="One Studio" className="h-8 w-auto object-contain"
+                onError={(e) => { e.currentTarget.outerHTML = '<strong style="color:#0b0f13;font-family:Sora">One Studio</strong>'; }} />
             </a>
           </div>
           <div className="mt-8 font-mono text-[12px] tracking-wide text-muted-foreground/50">FULL-STACK UNIFICATION · © 2026 ToGO · MIT</div>
