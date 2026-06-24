@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
-  Logo, Wordmark, Button, Badge, CodeBlock,
+  Button, Badge, CodeBlock,
   SectionHeading, FeatureCard, CodeShowcase, Eyebrow,
 } from "@togo-framework/ui";
 import type { CodeShowcaseTab } from "@togo-framework/ui";
@@ -93,15 +93,14 @@ export function Landing() {
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-50"
           style={{ backgroundImage: "linear-gradient(rgba(120,140,160,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(120,140,160,.12) 1px,transparent 1px)", backgroundSize: "56px 56px", maskImage: "radial-gradient(680px 420px at 50% 4%,#000,transparent 78%)", WebkitMaskImage: "radial-gradient(680px 420px at 50% 4%,#000,transparent 78%)" }} />
         <div className="mx-auto max-w-6xl px-6 pt-20 pb-12 text-center">
-          <div className="flex justify-center mb-3" style={{ filter: "drop-shadow(0 18px 50px rgba(45,140,230,.45))" }}>
-            <Logo variant="mark" size={120} />
+          <div className="flex justify-center mb-6" style={{ filter: "drop-shadow(0 20px 55px rgba(45,140,230,.45))" }}>
+            <img src="/togo-mark.svg" alt="ToGO" className="h-32 sm:h-44 w-auto" />
           </div>
           <div className="flex justify-center mb-7">
             <Badge variant="outline" className="font-mono text-[11px] tracking-[0.18em] uppercase border-[color:rgba(31,199,220,.28)] text-[var(--togo-cyan,#5CDDEC)] bg-[color:rgba(31,199,220,.06)]">
               Open-source · Full-stack · One binary
             </Badge>
           </div>
-          <div className="flex justify-center"><Wordmark size={104} className="leading-none tracking-tight" /></div>
           <p className="mx-auto mt-6 max-w-[600px] text-lg sm:text-xl text-muted-foreground">
             The full-stack framework that ships your <span className="text-foreground font-semibold">Go backend</span> and <span className="text-foreground font-semibold">React frontend</span> as a single deployable app — a Laravel-artisan-grade CLI for the Go + sqlc + Atlas + React stack.
           </p>
@@ -243,7 +242,7 @@ export function Landing() {
 
       {/* closing CTA */}
       <section className="mx-auto max-w-4xl px-6 pt-16 pb-20 text-center">
-        <div className="flex justify-center mb-5"><Logo variant="mark" size={64} /></div>
+        <div className="flex justify-center mb-5"><img src="/togo-mark.svg" alt="ToGO" className="h-16 w-auto" /></div>
         <h2 style={DISPLAY} className="text-3xl sm:text-4xl font-bold tracking-tight">Ship your next app the artisan way.</h2>
         <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Open-source, MIT-licensed, and built to dogfood itself — this very site is a togo app.</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">

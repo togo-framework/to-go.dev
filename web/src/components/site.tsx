@@ -1,15 +1,14 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Logo, Wordmark, Button } from "@togo-framework/ui";
+import { Button } from "@togo-framework/ui";
 import { Github } from "lucide-react";
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
-          <Logo variant="mark" size={28} />
-          <Wordmark size={20} />
+        <Link to="/" className="flex items-center">
+          <img src="/togo-mark.svg" alt="ToGO" className="h-8 w-auto" />
         </Link>
         <nav className="flex items-center gap-7 text-sm">
           <Link to="/docs" className="text-muted-foreground hover:text-foreground transition-colors">Docs</Link>
@@ -31,7 +30,7 @@ export function SiteFooter() {
     <footer className="border-t border-border mt-20">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-wrap items-center justify-between gap-6">
-          <Link to="/" className="flex items-center gap-2.5"><Logo variant="mark" size={26} /><Wordmark size={18} /></Link>
+          <Link to="/" className="flex items-center"><img src="/togo-mark.svg" alt="ToGO" className="h-7 w-auto" /></Link>
           <div className="flex gap-6 text-sm text-muted-foreground flex-wrap">
             <Link to="/docs" className="hover:text-foreground">Docs</Link>
             <Link to="/plugins" className="hover:text-foreground">Plugins</Link>
