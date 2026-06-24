@@ -156,13 +156,13 @@
     "language": "Go",
     "stars": 0,
     "branch": "main",
-    "updatedAt": "2026-06-24T18:21:15Z",
+    "updatedAt": "2026-06-24T18:56:47Z",
     "kind": "core",
     "category": "core",
     "navColor": "#1FC7DC",
     "install": null,
     "hasReadme": true,
-    "downloads": 110
+    "downloads": 116
   },
   {
     "name": "create-togo-app",
@@ -606,7 +606,7 @@
     "language": "TypeScript",
     "stars": 0,
     "branch": "main",
-    "updatedAt": "2026-06-24T18:35:45Z",
+    "updatedAt": "2026-06-24T19:01:02Z",
     "kind": "core",
     "category": "core",
     "navColor": "#1FC7DC",
