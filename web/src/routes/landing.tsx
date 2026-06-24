@@ -3,7 +3,9 @@ import { Link } from "@tanstack/react-router";
 import {
   Button, Badge, CodeBlock, AuroraBackground,
   SectionHeading, FeatureCard, CodeShowcase, Eyebrow,
+  TypingTerminal, MascotMark,
 } from "@togo-framework/ui";
+import type { TerminalStep } from "@togo-framework/ui";
 import type { CodeShowcaseTab } from "@togo-framework/ui";
 import {
   Boxes, TerminalSquare, Blocks, Database, Globe, Sparkles, Copy, Check, ArrowRight,
@@ -82,6 +84,53 @@ function InstallBar() {
   );
 }
 
+// The hero terminal plays the real CLI flow: install → scaffold → generate a resource → serve.
+const HERO_STEPS: TerminalStep[] = [
+  { cmd: "curl -fsSL https://to-go.dev/install.sh | sh", out: [
+    "  installing togo …",
+    "  ✓ togo installed → /usr/local/bin/togo",
+  ] },
+  { cmd: "togo new fort", out: [
+    "  ? Frontend   ›  TanStack",
+    "  ? Database   ›  PostgreSQL",
+    "  ? Features   ›  Auth · Queue · Storage",
+    "  ✓ scaffolded fort/ — Go API + React UI · one repo · zero glue",
+  ] },
+  { cmd: "cd fort && togo make:resource Post title:string body:text", out: [
+    "  ✓ model · queries · migration · GraphQL · REST · UI page",
+    "  ✓ registries regenerated from togo.resources.yaml",
+  ] },
+  { cmd: "togo generate && togo migrate && togo serve", out: [
+    "  → sqlc · gqlgen · atlas · OpenAPI  ✓",
+    "  → database migrated  ✓",
+    "  → listening on http://localhost:8080",
+  ] },
+];
+
+// Clean inline preview of the running scaffolded app revealed once the CLI finishes.
+function AppPreview() {
+  return (
+    <div className="rounded-xl overflow-hidden border border-white/10 bg-[#0b0f13]">
+      <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 bg-white/[0.03]">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" /><span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" /><span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+        <span className="ms-2 flex-1 truncate rounded bg-black/30 px-2 py-0.5 text-[11px] text-muted-foreground">localhost:8080/posts</span>
+      </div>
+      <div className="p-4">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2"><img src="/togo-mark.svg?v=2" alt="" className="h-5 w-auto" /><span className="font-[Sora] text-sm font-semibold text-foreground">fort · Posts</span></div>
+          <span className="rounded-md px-2 py-1 text-[11px] font-semibold text-white" style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 60%,#1659C8)" }}>New Post</span>
+        </div>
+        <div className="overflow-hidden rounded-lg border border-white/10 text-[12px]">
+          <div className="grid grid-cols-[1fr,2fr,auto] gap-2 px-3 py-2 bg-white/[0.04] font-mono text-[10px] uppercase tracking-wider text-muted-foreground"><span>Title</span><span>Body</span><span>API</span></div>
+          {[["Hello ToGO", "First post from the generator", "REST · GraphQL"], ["One binary", "Backend + frontend shipped together", "REST · GraphQL"], ["Zero glue", "Manifest is the source of truth", "REST · GraphQL"]].map((r, i) => (
+            <div key={i} className="grid grid-cols-[1fr,2fr,auto] gap-2 px-3 py-2 border-t border-white/5 text-foreground/90"><span className="truncate font-medium">{r[0]}</span><span className="truncate text-muted-foreground">{r[1]}</span><span className="text-[10px] text-[var(--togo-cyan,#5CDDEC)] font-mono">{r[2]}</span></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Landing() {
   return (
     <Page>
@@ -94,8 +143,7 @@ export function Landing() {
           style={{ backgroundImage: "linear-gradient(rgba(120,140,160,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(120,140,160,.12) 1px,transparent 1px)", backgroundSize: "56px 56px", maskImage: "radial-gradient(680px 420px at 50% 4%,#000,transparent 78%)", WebkitMaskImage: "radial-gradient(680px 420px at 50% 4%,#000,transparent 78%)" }} />
         <div className="mx-auto max-w-6xl px-6 pt-20 pb-12 text-center">
           <div className="flex justify-center mb-6" style={{ filter: "drop-shadow(0 20px 55px rgba(45,140,230,.45))" }}>
-            <img src="/togo-mark.svg?v=2" alt="ToGO" className="h-32 sm:h-44 w-auto animate-[heroFloat_6s_ease-in-out_infinite]" />
-            <style>{`@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@media(prefers-reduced-motion:reduce){.animate-\\[heroFloat_6s_ease-in-out_infinite\\]{animation:none}}`}</style>
+            <MascotMark src="/togo-mark.svg?v=2" className="h-32 sm:h-44 w-auto" />
           </div>
           <div className="flex justify-center mb-7">
             <Badge variant="outline" className="font-mono text-[11px] tracking-[0.18em] uppercase border-[color:rgba(31,199,220,.28)] text-[var(--togo-cyan,#5CDDEC)] bg-[color:rgba(31,199,220,.06)]">
@@ -116,22 +164,9 @@ export function Landing() {
         </div>
       </section>
 
-      {/* terminal */}
+      {/* live CLI playthrough — types the real commands, streams output, reveals the running app */}
       <section className="mx-auto max-w-3xl px-6 pb-4">
-        <div className="rounded-2xl border border-border overflow-hidden bg-[#080b0f] shadow-2xl">
-          <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
-            <span className="w-3 h-3 rounded-full bg-[#ff5f57]" /><span className="w-3 h-3 rounded-full bg-[#febc2e]" /><span className="w-3 h-3 rounded-full bg-[#28c840]" />
-            <span className="ms-2 font-mono text-xs text-muted-foreground">~/myapp — togo</span>
-          </div>
-          <pre className="p-6 font-mono text-[13.5px] leading-[2] overflow-auto text-muted-foreground">
-<span><span className="text-[var(--togo-cyan,#1FC7DC)]">$</span> <span className="text-foreground">npm install -g @togo-framework/cli</span>{"\n"}</span>
-<span><span className="text-[var(--togo-cyan,#1FC7DC)]">$</span> <span className="text-foreground">togo new myapp</span>   <span className="opacity-60"># pick a frontend (TanStack / Next.js) + a database</span>{"\n"}</span>
-<span><span className="text-[var(--togo-cyan,#1FC7DC)]">✓</span> <span className="opacity-60">Go API + React UI scaffolded · single binary · one repo · zero glue</span>{"\n"}</span>
-<span><span className="text-[var(--togo-cyan,#1FC7DC)]">$</span> <span className="text-foreground">togo make:resource Post title:string body:text</span>{"\n"}</span>
-<span><span className="text-[var(--togo-cyan,#1FC7DC)]">$</span> <span className="text-foreground">togo generate && togo migrate && togo serve</span>{"\n"}</span>
-<span><span className="text-[#6fb3f5]">→</span> <span className="opacity-60">serving on</span> <span className="text-[var(--togo-cyan,#1FC7DC)]">http://localhost:8080</span></span>
-          </pre>
-        </div>
+        <TypingTerminal steps={HERO_STEPS} title="~/ — togo" endSlot={<AppPreview />} />
       </section>
 
       {/* value band */}
