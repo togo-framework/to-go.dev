@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Button } from "@togo-framework/ui";
-import { Github } from "lucide-react";
+import { Github, Menu, X } from "lucide-react";
 
 const NAV = [
   { to: "/docs", label: "Docs", match: ["/docs"] },
@@ -15,15 +15,17 @@ const NAV = [
 export function SiteHeader() {
   const path = useRouterState({ select: (s) => s.location.pathname });
   const active = (m: string[]) => m.some((p) => path === p || path.startsWith(p + "/"));
+  const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 px-4 pt-3 sm:pt-4 pointer-events-none">
       <div className="mx-auto max-w-6xl">
         <div className="pointer-events-auto flex items-center justify-between gap-2 h-14 ps-4 pe-2.5 rounded-2xl border border-border bg-card shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]">
-          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+          <Link to="/" className="flex items-center gap-2.5 shrink-0" onClick={() => setOpen(false)}>
             <img src="/togo-mark.svg?v=2" alt="togo" className="h-7 w-auto" />
             <span className="font-[Sora] text-base font-bold tracking-tight">togo</span>
           </Link>
-          <nav className="flex items-center gap-0.5 text-sm">
+          {/* desktop nav */}
+          <nav className="hidden sm:flex items-center gap-0.5 text-sm">
             {NAV.map((n) => (
               <Link key={n.to} to={n.to}
                 className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${active(n.match) ? "text-foreground bg-muted" : "text-muted-foreground hover:text-foreground hover:bg-muted/60"}`}>
@@ -34,7 +36,28 @@ export function SiteHeader() {
               <a href="https://github.com/togo-framework"><Github size={16} />GitHub</a>
             </Button>
           </nav>
+          {/* mobile hamburger */}
+          <button type="button" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((v) => !v)}
+            className="sm:hidden grid place-items-center w-10 h-10 rounded-lg text-foreground hover:bg-muted transition-colors">
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
+
+        {/* mobile menu */}
+        {open && (
+          <div className="pointer-events-auto sm:hidden mt-2 rounded-2xl border border-border bg-card shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)] p-2">
+            {NAV.map((n) => (
+              <Link key={n.to} to={n.to} onClick={() => setOpen(false)}
+                className={`block px-4 py-3 rounded-xl font-medium transition-colors ${active(n.match) ? "text-foreground bg-muted" : "text-muted-foreground hover:text-foreground hover:bg-muted/60"}`}>
+                {n.label}
+              </Link>
+            ))}
+            <a href="https://github.com/togo-framework" onClick={() => setOpen(false)}
+              className="flex items-center gap-2 px-4 py-3 rounded-xl font-medium text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors">
+              <Github size={16} /> GitHub
+            </a>
+          </div>
+        )}
       </div>
     </header>
   );

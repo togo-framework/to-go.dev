@@ -12,6 +12,7 @@ import { AiSkill } from "./routes/ai-skill";
 import { AiSubmit } from "./routes/ai-submit";
 import { Marketplace } from "./routes/marketplace";
 import { MarketplaceSubmit } from "./routes/marketplace-submit";
+import { Ai } from "./routes/ai";
 
 const rootRoute = createRootRoute({ component: () => (<Providers><Outlet /></Providers>) });
 
@@ -27,7 +28,7 @@ const marketplaceSubmitRoute = createRoute({ getParentRoute: () => rootRoute, pa
 const marketplaceCategoryRoute = createRoute({ getParentRoute: () => rootRoute, path: "/marketplace/$category", component: Marketplace });
 
 // AI marketplace pages (kept; index redirects to /marketplace)
-const aiRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai", beforeLoad: () => { throw redirect({ to: "/marketplace" }); }, component: () => null });
+const aiRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai", component: Ai });
 const aiSubmitRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai/submit", component: AiSubmit });
 const aiAgentRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai/agents/$slug", component: AiAgent });
 const aiSkillRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai/skills/$slug", component: AiSkill });
