@@ -7,6 +7,7 @@ import { PluginSubmit } from "./routes/plugin-submit";
 import { DocsHome } from "./routes/docs-home";
 import { Doc } from "./routes/doc";
 import { Mcp } from "./routes/mcp";
+import { Claude } from "./routes/claude";
 
 const rootRoute = createRootRoute({ component: () => (<Providers><Outlet /></Providers>) });
 
@@ -15,6 +16,7 @@ const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: "/", com
 const docsHomeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs", component: DocsHome });
 const docRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs/$slug", component: Doc });
 const mcpRoute = createRoute({ getParentRoute: () => rootRoute, path: "/mcp", component: Mcp });
+const claudeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/claude", component: Claude });
 
 const pluginsRoute = createRoute({ getParentRoute: () => rootRoute, path: "/plugins", component: Plugins });
 const pluginSubmitRoute = createRoute({ getParentRoute: () => rootRoute, path: "/plugins/submit", component: PluginSubmit });
@@ -32,6 +34,7 @@ const routeTree = rootRoute.addChildren([
   indexRoute,
   docsHomeRoute, docRoute,
   mcpRoute,
+  claudeRoute,
   pluginsRoute, pluginSubmitRoute, pluginDetailRoute,
   reposRedirect,
 ]);

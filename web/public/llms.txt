@@ -9,6 +9,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [Docs](https://to-go.dev/docs): documentation home — every repo's README
 - [Plugins](https://to-go.dev/plugins): the plugin marketplace
 - [MCP](https://to-go.dev/mcp): the public MCP server — connect agents to togo
+- [Claude Code](https://to-go.dev/claude): the togo Claude Code plugin — `togo install claude`, /togo:* commands, agents, auto-wired MCP
 - [Submit a plugin](https://to-go.dev/plugins/submit): propose a plugin (opens a GitHub issue)
 
 ## Plugins

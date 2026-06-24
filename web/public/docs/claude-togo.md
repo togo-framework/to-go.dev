@@ -14,6 +14,14 @@ Install it once and Claude Code gains a global entry point to **start new togo p
 
 ## Install
 
+If you have the `togo` CLI (v0.2.20+), one command does it all:
+
+```shell
+togo install claude
+```
+
+Or from inside a Claude Code session:
+
 ```shell
 /plugin marketplace add togo-framework/claude-togo
 /plugin install togo@togo
