@@ -11,6 +11,7 @@ export type Repo = {
   description: string;
   language: string;
   stars: number;
+  downloads: number;
   branch: string;
   updatedAt: string;
   kind: "core" | "plugin";
@@ -59,7 +60,8 @@ export function toCatalogEntry(r: Repo): PluginCatalogEntry {
     nav_icon: r.category,
     nav_color: r.navColor,
     last_active_at: r.updatedAt || null,
-    activity_count: r.stars || 0,
+    activity_count: r.downloads || 0,
+    metric_label: "downloads",
     activity_series: null,
     route: null,
   } as PluginCatalogEntry;

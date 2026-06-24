@@ -35,6 +35,20 @@ function categorize(name) {
   return "other";
 }
 
+// Strip a README's HTML brand header (logo/title) + sponsors footer + comments.
+// The page chrome already shows the title/logo, the `.github/assets` image paths
+// don't resolve here, and the kit MarkdownRenderer renders markdown — not embedded
+// HTML — so these blocks would otherwise leak as raw text. Leaves the real content.
+function cleanReadme(md) {
+  let s = String(md).replace(/\r\n/g, "\n");
+  s = s.replace(/<!--[\s\S]*?-->/g, ""); // HTML comments (e.g. <!-- togo-brand -->)
+  s = s.replace(/^\s*(?:<(p|h1|h2|div)\b[^>]*align="center"[^>]*>[\s\S]*?<\/\1>\s*|<img\b[^>]*>\s*)+/i, "");
+  s = s.replace(/^\s*-{3,}\s*\n/, ""); // a leading horizontal rule left behind
+  s = s.replace(/\n#{1,6}\s*(?:💎\s*)?Premium sponsors[\s\S]*$/i, "\n"); // trailing sponsors
+  s = s.replace(/<p\b[^>]*align="center"[^>]*>[\s\S]*?<\/p>/gi, ""); // any leftover centered brand/badge blocks
+  return s.replace(/\n{3,}/g, "\n\n").trim() + "\n";
+}
+
 console.log("• listing togo-framework repos…");
 const raw = sh(`gh repo list togo-framework --limit 200 --no-archived --json name,description,primaryLanguage,stargazerCount,defaultBranchRef,isPrivate,updatedAt`);
 let repos = JSON.parse(raw)
@@ -68,10 +82,15 @@ for (const r of repos) {
   try {
     md = sh(`gh api repos/togo-framework/${r.name}/readme -H "Accept: application/vnd.github.raw" 2>/dev/null`);
   } catch { md = ""; }
+  md = cleanReadme(md);
   r.hasReadme = md.trim().length > 0;
   if (r.hasReadme) writeFileSync(join(ROOT, "public/docs", `${r.slug}.md`), md);
+  // GitHub release download total (public API) — 0 for repos with no binary releases.
+  try {
+    r.downloads = Number(sh(`gh api repos/togo-framework/${r.name}/releases --jq '[.[].assets[].download_count] | add // 0' 2>/dev/null`).trim()) || 0;
+  } catch { r.downloads = 0; }
   out.push(r);
-  console.log(`  ${r.hasReadme ? "✓" : "·"} ${r.kind === "plugin" ? "+" : "•"} ${r.name} (${r.category})`);
+  console.log(`  ${r.hasReadme ? "✓" : "·"} ${r.kind === "plugin" ? "+" : "•"} ${r.name} (${r.category}) ↓${r.downloads}`);
 }
 
 writeFileSync(join(ROOT, "src/data/repos.json"), JSON.stringify(out, null, 2));
