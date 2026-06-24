@@ -19,6 +19,8 @@ const docs = repos.filter((r) => r.hasReadme);
 const ai = JSON.parse(readFileSync(join(ROOT, "src/data/ai.json"), "utf8"));
 const routes = [
   "/",
+  "/marketplace",
+  "/marketplace/submit",
   "/docs",
   "/plugins",
   "/plugins/submit",
