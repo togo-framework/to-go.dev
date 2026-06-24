@@ -8,9 +8,41 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [Home](https://to-go.dev/): overview, install, the generator workflow, API-first, databases, AI-native
 - [Docs](https://to-go.dev/docs): documentation home — every repo's README
 - [Plugins](https://to-go.dev/plugins): the plugin marketplace
-- [MCP](https://to-go.dev/mcp): the public MCP server — connect agents to togo
-- [Claude Code](https://to-go.dev/claude): the togo Claude Code plugin — `togo install claude`, /togo:* commands, agents, auto-wired MCP
+- [AI Stack](https://to-go.dev/ai): agents, skills & tools for AI-driven togo development — `togo install claude`
 - [Submit a plugin](https://to-go.dev/plugins/submit): propose a plugin (opens a GitHub issue)
+
+## AI Stack
+- [togo](https://to-go.dev/ai/agents/togo) (agent): Master orchestrator for a togo app — routes work to the right specialist, owns architecture and the generate→migrate→serve sequence, verifies integration across Go API and React UI before reporting done.
+- [togo-architect](https://to-go.dev/ai/agents/togo-architect) (agent): Architecture guide for togo apps — microkernel/plugin design, generator-first workflow, codegen pipeline order, and API-first (GraphQL + REST) decisions. Use for design questions and when deciding resource vs plugin.
+- [togo-backend](https://to-go.dev/ai/agents/togo-backend) (agent): Backend specialist for this togo app — Go, chi, Huma (REST/OpenAPI), gqlgen (GraphQL), sqlc, Atlas, pgx/Postgres. Use for API endpoints, resolvers, queries, migrations.
+- [togo-data](https://to-go.dev/ai/agents/togo-data) (agent): Data specialist for togo — sqlc typed queries, Atlas schema/migrations, query performance, seeders/factories, and analytics over Postgres/togo-postgres (pgvector, FTS). Use for data modeling and DB performance.
+- [togo-db](https://to-go.dev/ai/agents/togo-db) (agent): Database specialist for a togo app — Atlas schema/migrations (HCL), sqlc typed queries, seeders, and the DB driver registry (Postgres/SQLite/MySQL/Mongo). Use for schema, queries, and data.
+- [togo-devops](https://to-go.dev/ai/agents/togo-devops) (agent): DevOps for a togo app — togo deploy (rsync/ssh), infra, Docker, CI/CD, and environment config. Use for shipping the single binary + frontend to a server and wiring pipelines.
+- [togo-frontend](https://to-go.dev/ai/agents/togo-frontend) (agent): Frontend specialist for a togo app — React, TanStack Router/Query or Next.js App Router, Vite, the generated typed API client + hooks, and pages. Use for UI, data fetching, and routes.
+- [togo-plugin-architect](https://to-go.dev/ai/agents/togo-plugin-architect) (agent): Plugin architect for togo — the microkernel contract (Register/Boot, priority, hooks), capability boundaries, and the base→providers model (e.g. auth → auth-dev/auth-firebase). Use for designing plugins and their interfaces.
+- [togo-plugin-author](https://to-go.dev/ai/agents/togo-plugin-author) (agent): Author togo capability plugins — the microkernel Plugin contract (Priority/Register/Boot), CLI/route/schema registration, packaging, and publishing to the marketplace. Use when building or extending a togo plugin.
+- [togo-prompt-engineer](https://to-go.dev/ai/agents/togo-prompt-engineer) (agent): Prompt/agent engineer for togo — the .claude/ tree (agents, skills, rules, hooks), the MCP wiring, and the claude-togo plugin. Use for authoring or improving AI tooling around a togo app.
+- [togo-qa](https://to-go.dev/ai/agents/togo-qa) (agent): QA for a togo app — Go testing (table-driven, httptest), the generated REST/GraphQL contract, and React UI tests (Vitest/Playwright). Use for test coverage, E2E flows, and regression checks.
+- [togo-release-manager](https://to-go.dev/ai/agents/togo-release-manager) (agent): Release manager for togo packages — semver, CHANGELOG, goreleaser tags, npm wrapper publishing, and pkg.go.dev. Use for cutting releases and promotion governance.
+- [togo-security](https://to-go.dev/ai/agents/togo-security) (agent): Security for a togo app — auth/RBAC (JWT, OTP/2FA, sessions), secrets handling, dependency/VAPT audit, and safe plugin installation. Use for threat review, auth flows, and hardening.
+- [togo-technical-writer](https://to-go.dev/ai/agents/togo-technical-writer) (agent): Technical writer for togo — READMEs, docs pages, llms.txt, command/agent reference, and the plugin marketplace copy. Use for clear, accurate, example-first documentation.
+- [togo-ui-designer](https://to-go.dev/ai/agents/togo-ui-designer) (agent): UI/design for togo apps — the @togo-framework/ui kit, semantic theme tokens, dark/light + RTL, and component composition. Use for building/adjusting UI with the kit instead of raw CSS.
+- [/togo:deploy](https://to-go.dev/ai/skills/deploy) (skill): Provision infra and deploy the togo app (Terraform).
+- [/togo:doctor](https://to-go.dev/ai/skills/doctor) (skill): Check the togo toolchain (Go, Node/npm, sqlc, Atlas) and auto-install what's missing.
+- [/togo:generate](https://to-go.dev/ai/skills/generate) (skill): Run the togo codegen pipeline (sqlc → gqlgen → Atlas → OpenAPI).
+- [/togo:logs](https://to-go.dev/ai/skills/logs) (skill): Tail and explain the running togo app's logs (API + web).
+- [/togo:mcp](https://to-go.dev/ai/skills/mcp) (skill): Inspect / wire the togo MCP server (generators + project introspection as tools).
+- [/togo:migrate](https://to-go.dev/ai/skills/migrate) (skill): Apply / manage database migrations (Atlas) for the current togo app.
+- [/togo:new](https://to-go.dev/ai/skills/new) (skill): Scaffold a new togo app (Go API + React UI, one binary). Installs the togo CLI if missing.
+- [/togo:new-plugin](https://to-go.dev/ai/skills/new-plugin) (skill): Scaffold a new togo plugin (microkernel capability) from the plugin template.
+- [/togo:plugin](https://to-go.dev/ai/skills/plugin) (skill): Install or scaffold a togo capability plugin (auth, dashboard, cache, queue, …).
+- [/togo:resource](https://to-go.dev/ai/skills/resource) (skill): Generate a togo resource (model + sqlc + Atlas + GraphQL + REST + UI page) and run codegen.
+- [/togo:serve](https://to-go.dev/ai/skills/serve) (skill): Run the togo app (Go API + React UI) locally.
+- [/togo:status](https://to-go.dev/ai/skills/status) (skill): Show togo project health — toolchain, MCP connectivity, build/generate status, and running services.
+- [/togo:team](https://to-go.dev/ai/skills/team) (skill): List the togo agent team and what each specialist owns.
+- [/togo:test](https://to-go.dev/ai/skills/test) (skill): Run the togo app's tests — Go tests and the frontend tests — and report results.
+- [Claude Code plugin](https://to-go.dev/ai/tools/claude) (tool)
+- [togo MCP server](https://to-go.dev/ai/tools/mcp) (tool)
 
 ## Plugins
 - [auth](https://to-go.dev/plugins/auth) (auth): togo base auth: JWT + RBAC + multi-guard, Supabase/GoTrue first-class, OAuth/Firebase/WorkOS as plugins — install: `togo install togo-framework/auth`

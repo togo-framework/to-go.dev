@@ -16,13 +16,20 @@ const BASE = `http://localhost:${PORT}`;
 const repos = JSON.parse(readFileSync(join(ROOT, "src/data/repos.json"), "utf8"));
 const plugins = repos.filter((r) => r.kind === "plugin");
 const docs = repos.filter((r) => r.hasReadme);
+const ai = JSON.parse(readFileSync(join(ROOT, "src/data/ai.json"), "utf8"));
 const routes = [
   "/",
   "/docs",
   "/plugins",
-  "/mcp",
-  "/claude",
   "/plugins/submit",
+  "/ai",
+  "/ai/submit",
+  "/ai/tools/claude",
+  "/ai/tools/mcp",
+  "/mcp",      // legacy → redirects to /ai/tools/mcp (prerender captures the target)
+  "/claude",   // legacy → redirects to /ai/tools/claude
+  ...ai.agents.map((a) => `/ai/agents/${a.slug}`),
+  ...ai.skills.map((s) => `/ai/skills/${s.slug}`),
   ...plugins.map((p) => `/plugins/${p.slug}`),
   ...docs.map((r) => `/docs/${r.slug}`),
 ];

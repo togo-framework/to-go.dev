@@ -34,7 +34,7 @@ export function Claude() {
       <Seo
         title="Drive togo with Claude Code"
         description="Install the togo Claude Code plugin — agents, slash commands, rules and hooks with the togo MCP auto-connected. Scaffold and drive togo apps with AI, end to end."
-        path="/claude"
+        path="/ai/tools/claude"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
@@ -61,7 +61,7 @@ export function Claude() {
             <p className="text-sm text-muted-foreground mt-3">One command (togo v0.2.20+). The togo MCP connects automatically.</p>
             <div className="flex flex-wrap gap-2 mt-4">
               <Button asChild variant="outline" size="sm"><a href="https://github.com/togo-framework/claude-togo" target="_blank" rel="noopener noreferrer"><Github size={14} /> Plugin source</a></Button>
-              <Button asChild variant="outline" size="sm"><Link to="/mcp"><ExternalLink size={14} /> The MCP</Link></Button>
+              <Button asChild variant="outline" size="sm"><Link to="/ai/tools/mcp"><ExternalLink size={14} /> The MCP</Link></Button>
             </div>
           </Card>
           <Card className="p-6">

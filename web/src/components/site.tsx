@@ -13,8 +13,7 @@ export function SiteHeader() {
         <nav className="flex items-center gap-7 text-sm">
           <Link to="/docs" className="text-muted-foreground hover:text-foreground transition-colors">Docs</Link>
           <Link to="/plugins" className="text-muted-foreground hover:text-foreground transition-colors">Plugins</Link>
-          <Link to="/claude" className="text-muted-foreground hover:text-foreground transition-colors">Claude</Link>
-          <Link to="/mcp" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">MCP</Link>
+          <Link to="/ai" className="text-muted-foreground hover:text-foreground transition-colors">AI</Link>
           <a href="https://ui.to-go.dev" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">UI</a>
           <a href="https://www.npmjs.com/package/@togo-framework/cli" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">npm</a>
           <Button asChild variant="outline" size="sm">
@@ -35,8 +34,7 @@ export function SiteFooter() {
           <div className="flex gap-6 text-sm text-muted-foreground flex-wrap">
             <Link to="/docs" className="hover:text-foreground">Docs</Link>
             <Link to="/plugins" className="hover:text-foreground">Plugins</Link>
-            <Link to="/claude" className="hover:text-foreground">Claude Code</Link>
-            <Link to="/mcp" className="hover:text-foreground">MCP</Link>
+            <Link to="/ai" className="hover:text-foreground">AI Stack</Link>
             <a href="https://github.com/togo-framework" className="hover:text-foreground">GitHub</a>
             <a href="https://www.npmjs.com/package/@togo-framework/cli" className="hover:text-foreground">npm</a>
             <a href="https://pkg.go.dev/search?q=togo-framework&m=package" className="hover:text-foreground">Packages</a>

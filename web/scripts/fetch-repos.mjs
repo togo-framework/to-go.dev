@@ -2,12 +2,23 @@
 // classify each as core vs installable plugin (+ a category), and emit repos.json
 // (route data), per-repo raw .md (agents), llms.txt, sitemap.xml, robots.txt.
 import { execSync } from "node:child_process";
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://to-go.dev";
+
+// AI Stack (agents/skills/tools) — emitted by fetch-ai.mjs (runs first). Used for the
+// /ai marketplace routes in the sitemap + llms.txt.
+const AI = existsSync(join(ROOT, "src/data/ai.json")) ? JSON.parse(readFileSync(join(ROOT, "src/data/ai.json"), "utf8")) : { agents: [], skills: [], tools: [] };
+const AI_ROUTES = [
+  `${SITE}/ai`,
+  `${SITE}/ai/submit`,
+  ...AI.tools.map((t) => `${SITE}/ai/tools/${t.slug}`),
+  ...AI.agents.map((a) => `${SITE}/ai/agents/${a.slug}`),
+  ...AI.skills.map((s) => `${SITE}/ai/skills/${s.slug}`),
+];
 const sh = (c) => execSync(c, { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
 
 // Repos that are the framework itself (not something you `togo install`).
@@ -110,9 +121,13 @@ const llms = [
   `- [Home](${SITE}/): overview, install, the generator workflow, API-first, databases, AI-native`,
   `- [Docs](${SITE}/docs): documentation home — every repo's README`,
   `- [Plugins](${SITE}/plugins): the plugin marketplace`,
-  `- [MCP](${SITE}/mcp): the public MCP server — connect agents to togo`,
-  `- [Claude Code](${SITE}/claude): the togo Claude Code plugin — \`togo install claude\`, /togo:* commands, agents, auto-wired MCP`,
+  `- [AI Stack](${SITE}/ai): agents, skills & tools for AI-driven togo development — \`togo install claude\``,
   `- [Submit a plugin](${SITE}/plugins/submit): propose a plugin (opens a GitHub issue)`,
+  ``,
+  `## AI Stack`,
+  ...AI.agents.map((a) => `- [${a.name}](${SITE}/ai/agents/${a.slug}) (agent): ${a.description}`),
+  ...AI.skills.map((s) => `- [/togo:${s.slug}](${SITE}/ai/skills/${s.slug}) (skill): ${s.description}`),
+  ...AI.tools.map((t) => `- [${t.name}](${SITE}/ai/tools/${t.slug}) (tool)`),
   ``,
   `## Plugins`,
   ...plugins.map((r) => `- [${r.name}](${SITE}/plugins/${r.slug}) (${r.category}): ${r.description || ""} — install: \`${r.install}\``),
@@ -132,9 +147,8 @@ const urls = [
   `${SITE}/`,
   `${SITE}/docs`,
   `${SITE}/plugins`,
-  `${SITE}/mcp`,
-  `${SITE}/claude`,
   `${SITE}/plugins/submit`,
+  ...AI_ROUTES,
   ...plugins.map((r) => `${SITE}/plugins/${r.slug}`),
   ...docs.map((r) => `${SITE}/docs/${r.slug}`),
 ];

@@ -3,9 +3,40 @@
   <url><loc>https://to-go.dev/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://to-go.dev/mcp</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://to-go.dev/claude</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/submit</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/submit</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/tools/claude</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/tools/mcp</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-architect</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-backend</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-data</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-db</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-devops</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-frontend</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-plugin-architect</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-plugin-author</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-prompt-engineer</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-qa</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-release-manager</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-security</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-technical-writer</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/agents/togo-ui-designer</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/deploy</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/doctor</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/generate</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/logs</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/mcp</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/migrate</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/new</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/new-plugin</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/plugin</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/resource</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/serve</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/status</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/team</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/ai/skills/test</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/auth</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/auth-dev</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/auth-firebase</loc><changefreq>weekly</changefreq></url>

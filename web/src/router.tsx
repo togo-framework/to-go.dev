@@ -8,6 +8,10 @@ import { DocsHome } from "./routes/docs-home";
 import { Doc } from "./routes/doc";
 import { Mcp } from "./routes/mcp";
 import { Claude } from "./routes/claude";
+import { Ai } from "./routes/ai";
+import { AiAgent } from "./routes/ai-agent";
+import { AiSkill } from "./routes/ai-skill";
+import { AiSubmit } from "./routes/ai-submit";
 
 const rootRoute = createRootRoute({ component: () => (<Providers><Outlet /></Providers>) });
 
@@ -15,8 +19,18 @@ const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: "/", com
 
 const docsHomeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs", component: DocsHome });
 const docRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs/$slug", component: Doc });
-const mcpRoute = createRoute({ getParentRoute: () => rootRoute, path: "/mcp", component: Mcp });
-const claudeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/claude", component: Claude });
+
+// AI marketplace — agents, skills, tools
+const aiRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai", component: Ai });
+const aiSubmitRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai/submit", component: AiSubmit });
+const aiAgentRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai/agents/$slug", component: AiAgent });
+const aiSkillRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai/skills/$slug", component: AiSkill });
+const aiToolClaudeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai/tools/claude", component: Claude });
+const aiToolMcpRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai/tools/mcp", component: Mcp });
+
+// legacy → AI marketplace tool pages
+const claudeRedirect = createRoute({ getParentRoute: () => rootRoute, path: "/claude", beforeLoad: () => { throw redirect({ to: "/ai/tools/claude" }); }, component: () => null });
+const mcpRedirect = createRoute({ getParentRoute: () => rootRoute, path: "/mcp", beforeLoad: () => { throw redirect({ to: "/ai/tools/mcp" }); }, component: () => null });
 
 const pluginsRoute = createRoute({ getParentRoute: () => rootRoute, path: "/plugins", component: Plugins });
 const pluginSubmitRoute = createRoute({ getParentRoute: () => rootRoute, path: "/plugins/submit", component: PluginSubmit });
@@ -33,8 +47,8 @@ const reposRedirect = createRoute({
 const routeTree = rootRoute.addChildren([
   indexRoute,
   docsHomeRoute, docRoute,
-  mcpRoute,
-  claudeRoute,
+  aiRoute, aiSubmitRoute, aiAgentRoute, aiSkillRoute, aiToolClaudeRoute, aiToolMcpRoute,
+  claudeRedirect, mcpRedirect,
   pluginsRoute, pluginSubmitRoute, pluginDetailRoute,
   reposRedirect,
 ]);

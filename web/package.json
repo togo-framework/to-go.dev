@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "vite",
     "data": "node scripts/fetch-repos.mjs",
-    "build": "node scripts/fetch-repos.mjs && vite build && node scripts/prerender.mjs",
-    "build:ci": "node scripts/fetch-repos.mjs && vite build && node scripts/prerender.mjs",
+    "build": "node scripts/fetch-ai.mjs && node scripts/fetch-repos.mjs && vite build && node scripts/prerender.mjs",
+    "build:ci": "node scripts/fetch-ai.mjs && node scripts/fetch-repos.mjs && vite build && node scripts/prerender.mjs",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
     "start": "vite preview"

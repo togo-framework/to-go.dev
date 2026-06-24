@@ -26,7 +26,7 @@ export function Mcp() {
       <Seo
         title="MCP server"
         description="Connect any AI agent to the togo framework via the public MCP server — docs, plugins, and plugin submission as tools."
-        path="/mcp"
+        path="/ai/tools/mcp"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebAPI",
