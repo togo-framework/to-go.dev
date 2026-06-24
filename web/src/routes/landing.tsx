@@ -110,22 +110,16 @@ const HERO_STEPS: TerminalStep[] = [
 // Clean inline preview of the running scaffolded app revealed once the CLI finishes.
 function AppPreview() {
   return (
-    <div className="rounded-xl overflow-hidden border border-white/10 bg-[#0b0f13]">
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-white/10 bg-white/[0.03]">
-        <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" /><span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" /><span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-        <span className="ms-2 flex-1 truncate rounded bg-black/30 px-2 py-0.5 text-[11px] text-muted-foreground">localhost:8080/posts</span>
+    <div className="bg-[#0b0f13] p-4">
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2"><img src="/togo-mark.svg?v=2" alt="" className="h-5 w-auto" /><span className="font-[Sora] text-sm font-semibold text-foreground">fort · Posts</span></div>
+        <span className="rounded-md px-2 py-1 text-[11px] font-semibold text-white" style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 60%,#1659C8)" }}>New Post</span>
       </div>
-      <div className="p-4">
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2"><img src="/togo-mark.svg?v=2" alt="" className="h-5 w-auto" /><span className="font-[Sora] text-sm font-semibold text-foreground">fort · Posts</span></div>
-          <span className="rounded-md px-2 py-1 text-[11px] font-semibold text-white" style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 60%,#1659C8)" }}>New Post</span>
-        </div>
-        <div className="overflow-hidden rounded-lg border border-white/10 text-[12px]">
-          <div className="grid grid-cols-[1fr,2fr,auto] gap-2 px-3 py-2 bg-white/[0.04] font-mono text-[10px] uppercase tracking-wider text-muted-foreground"><span>Title</span><span>Body</span><span>API</span></div>
-          {[["Hello ToGO", "First post from the generator", "REST · GraphQL"], ["One binary", "Backend + frontend shipped together", "REST · GraphQL"], ["Zero glue", "Manifest is the source of truth", "REST · GraphQL"]].map((r, i) => (
-            <div key={i} className="grid grid-cols-[1fr,2fr,auto] gap-2 px-3 py-2 border-t border-white/5 text-foreground/90"><span className="truncate font-medium">{r[0]}</span><span className="truncate text-muted-foreground">{r[1]}</span><span className="text-[10px] text-[var(--togo-cyan,#5CDDEC)] font-mono">{r[2]}</span></div>
-          ))}
-        </div>
+      <div className="overflow-hidden rounded-lg border border-white/10 text-[12px]">
+        <div className="grid grid-cols-[1fr,2fr,auto] gap-2 px-3 py-2 bg-white/[0.04] font-mono text-[10px] uppercase tracking-wider text-muted-foreground"><span>Title</span><span>Body</span><span>API</span></div>
+        {[["Hello ToGO", "First post from the generator", "REST · GraphQL"], ["One binary", "Backend + frontend shipped together", "REST · GraphQL"], ["Zero glue", "Manifest is the source of truth", "REST · GraphQL"]].map((r, i) => (
+          <div key={i} className="grid grid-cols-[1fr,2fr,auto] gap-2 px-3 py-2 border-t border-white/5 text-foreground/90"><span className="truncate font-medium">{r[0]}</span><span className="truncate text-muted-foreground">{r[1]}</span><span className="text-[10px] text-[var(--togo-cyan,#5CDDEC)] font-mono">{r[2]}</span></div>
+        ))}
       </div>
     </div>
   );
