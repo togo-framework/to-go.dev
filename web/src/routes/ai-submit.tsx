@@ -44,7 +44,7 @@ export function AiSubmit() {
         description="Propose a new agent, skill, or tool for the togo AI Stack. Opens a pre-filled GitHub issue on togo-framework/claude-togo."
         path="/ai/submit"
       />
-      <section className="mx-auto max-w-2xl px-6 pt-12 pb-20">
+      <section className="mx-auto max-w-6xl px-6 pt-12 pb-20">
         <Link to="/ai" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 w-fit">
           <ArrowLeft size={15} /> AI Stack
         </Link>

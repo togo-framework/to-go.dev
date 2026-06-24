@@ -30,7 +30,7 @@ export function MarketplaceSubmit() {
     <Page>
       <Seo title="Submit to the marketplace" description="Contribute a plugin, agent, or skill to the togo marketplace." path="/marketplace/submit" />
       <div className="fixed inset-0 -z-10"><AuroraBackground intensity={0.5} /></div>
-      <section className="mx-auto max-w-4xl px-6 pt-12 pb-24">
+      <section className="mx-auto max-w-6xl px-6 pt-12 pb-24">
         <Link to="/marketplace" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-5">
           <ArrowLeft size={15} /> Marketplace
         </Link>

@@ -240,7 +240,7 @@ export function Landing() {
       </section>
 
       {/* live playthrough — CLI or Claude Code session → fades into the running app */}
-      <section className="mx-auto max-w-3xl px-6 pb-4">
+      <section className="mx-auto max-w-6xl px-6 pb-4">
         <HeroDemo />
       </section>
 
@@ -254,7 +254,7 @@ export function Landing() {
       </section>
 
       {/* generator workflow */}
-      <section className="mx-auto max-w-4xl px-6 pt-16 pb-8">
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-8">
         <SectionHeading className="mb-9"
           eyebrow="Generators first" eyebrowIcon={Workflow}
           title="One command. Every layer."
@@ -367,7 +367,7 @@ export function Landing() {
       </section>
 
       {/* closing CTA */}
-      <section className="mx-auto max-w-4xl px-6 pt-16 pb-20 text-center">
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-20 text-center">
         <div className="flex justify-center mb-5"><img src="/togo-mark.svg?v=2" alt="ToGO" className="h-16 w-auto" /></div>
         <h2 style={DISPLAY} className="text-3xl sm:text-4xl font-bold tracking-tight">Ship your next app the artisan way.</h2>
         <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Open-source, MIT-licensed, and built to dogfood itself — this very site is a togo app.</p>

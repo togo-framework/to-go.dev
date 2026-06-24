@@ -230,9 +230,9 @@
       "slug": "test",
       "name": "/togo:test",
       "command": "/togo:test",
-      "description": "Run the togo app's tests — Go tests and the frontend tests — and report results.",
+      "description": "",
       "argumentHint": "",
-      "body": "Run the project's tests and report pass/fail with evidence:\n1. `go build ./...` then `go test ./...` (table-driven + httptest handlers).\n2. Frontend tests if present (`cd web && npm test`).\n3. If a resource was just generated, smoke its REST + GraphQL endpoints against `togo serve`.\nShow failures verbatim; never report \"should pass\" without running."
+      "body": ""
     }
   ],
   "tools": [

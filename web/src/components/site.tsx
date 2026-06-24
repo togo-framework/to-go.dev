@@ -5,31 +5,36 @@ import { Github } from "lucide-react";
 
 const NAV = [
   { to: "/docs", label: "Docs", match: ["/docs"] },
-  { to: "/marketplace", label: "Marketplace", match: ["/marketplace", "/plugins", "/ai"] },
+  { to: "/marketplace", label: "Marketplace", match: ["/marketplace", "/plugins"] },
+  { to: "/ai", label: "AI", match: ["/ai"] },
 ];
 
+// SiteHeader — Raycast-style floating pill nav: inset from the top, rounded, a solid
+// elevated bar (no glass), logo + wordmark, route-aware nav, GitHub. Aligned to the
+// same max-w-6xl container every page uses.
 export function SiteHeader() {
   const path = useRouterState({ select: (s) => s.location.pathname });
   const active = (m: string[]) => m.some((p) => path === p || path.startsWith(p + "/"));
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
-      <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
-          <img src="/togo-mark.svg?v=2" alt="ToGO" className="h-8 w-auto" />
-          <span className="font-[Sora] text-lg font-bold tracking-tight">togo</span>
-        </Link>
-        <nav className="flex items-center gap-1 text-sm">
-          {NAV.map((n) => (
-            <Link key={n.to} to={n.to}
-              className={`px-3 py-2 rounded-lg font-medium transition-colors ${active(n.match) ? "text-foreground bg-card" : "text-muted-foreground hover:text-foreground hover:bg-card/60"}`}>
-              {n.label}
-            </Link>
-          ))}
-          <a href="https://ui.to-go.dev" className="px-3 py-2 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-card/60 transition-colors hidden sm:block">UI</a>
-          <Button asChild variant="outline" size="sm" className="ms-2">
-            <a href="https://github.com/togo-framework"><Github size={16} />GitHub</a>
-          </Button>
-        </nav>
+    <header className="sticky top-0 z-50 px-4 pt-3 sm:pt-4 pointer-events-none">
+      <div className="mx-auto max-w-6xl">
+        <div className="pointer-events-auto flex items-center justify-between gap-2 h-14 ps-4 pe-2.5 rounded-2xl border border-border bg-card shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]">
+          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+            <img src="/togo-mark.svg?v=2" alt="togo" className="h-7 w-auto" />
+            <span className="font-[Sora] text-base font-bold tracking-tight">togo</span>
+          </Link>
+          <nav className="flex items-center gap-0.5 text-sm">
+            {NAV.map((n) => (
+              <Link key={n.to} to={n.to}
+                className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${active(n.match) ? "text-foreground bg-muted" : "text-muted-foreground hover:text-foreground hover:bg-muted/60"}`}>
+                {n.label}
+              </Link>
+            ))}
+            <Button asChild variant="outline" size="sm" className="ms-1.5">
+              <a href="https://github.com/togo-framework"><Github size={16} />GitHub</a>
+            </Button>
+          </nav>
+        </div>
       </div>
     </header>
   );

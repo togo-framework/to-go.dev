@@ -40,7 +40,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [/togo:serve](https://to-go.dev/ai/skills/serve) (skill): Run the togo app (Go API + React UI) locally.
 - [/togo:status](https://to-go.dev/ai/skills/status) (skill): Show togo project health — toolchain, MCP connectivity, build/generate status, and running services.
 - [/togo:team](https://to-go.dev/ai/skills/team) (skill): List the togo agent team and what each specialist owns.
-- [/togo:test](https://to-go.dev/ai/skills/test) (skill): Run the togo app's tests — Go tests and the frontend tests — and report results.
+- [/togo:test](https://to-go.dev/ai/skills/test) (skill): 
 - [Claude Code plugin](https://to-go.dev/ai/tools/claude) (tool)
 - [togo MCP server](https://to-go.dev/ai/tools/mcp) (tool)
 

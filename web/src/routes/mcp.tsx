@@ -35,7 +35,7 @@ export function Mcp() {
           description: "Public Model Context Protocol server for the togo framework.",
         }}
       />
-      <div className="mx-auto max-w-4xl px-6 pt-16 pb-20">
+      <div className="mx-auto max-w-6xl px-6 pt-16 pb-20">
         <SectionHeading
           align="center"
           eyebrow="Model Context Protocol"

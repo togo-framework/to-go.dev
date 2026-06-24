@@ -50,7 +50,7 @@ export function PluginSubmit() {
         description="Propose a new plugin for the ToGO marketplace. Opens a pre-filled GitHub issue on the togo-framework/togo repository."
         path="/plugins/submit"
       />
-      <section className="mx-auto max-w-2xl px-6 pt-12 pb-20">
+      <section className="mx-auto max-w-6xl px-6 pt-12 pb-20">
         <Link to="/plugins" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 w-fit">
           <ArrowLeft size={15} /> Marketplace
         </Link>

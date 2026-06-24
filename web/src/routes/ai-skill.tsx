@@ -13,7 +13,7 @@ export function AiSkill() {
     return (
       <Page>
         <Seo title="Skill not found" path={`/ai/skills/${slug}`} />
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center">
+        <div className="mx-auto max-w-6xl px-6 py-24 text-center">
           <h1 className="font-[Sora] text-2xl font-bold">Skill not found</h1>
           <Link to="/marketplace" className="text-[#1FC7DC] mt-3 inline-block">← Back to the marketplace</Link>
         </div>
@@ -36,7 +36,7 @@ export function AiSkill() {
       />
 
       <div className="fixed inset-0 -z-10"><AuroraBackground intensity={0.45} /></div>
-      <div className="mx-auto max-w-5xl px-6 pt-8 pb-20">
+      <div className="mx-auto max-w-6xl px-6 pt-8 pb-20">
         <Link to="/marketplace" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-5">
           <ArrowLeft size={15} /> Marketplace
         </Link>
