@@ -3,6 +3,7 @@
   <url><loc>https://to-go.dev/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/mcp</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/submit</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/auth</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/auth-dev</loc><changefreq>weekly</changefreq></url>
