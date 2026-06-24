@@ -3,8 +3,6 @@ import { Providers } from "./providers";
 import { Landing } from "./routes/landing";
 import { PluginDetail } from "./routes/plugin-detail";
 import { PluginSubmit } from "./routes/plugin-submit";
-import { DocsHome } from "./routes/docs-home";
-import { Doc } from "./routes/doc";
 import { Mcp } from "./routes/mcp";
 import { Claude } from "./routes/claude";
 import { AiAgent } from "./routes/ai-agent";
@@ -18,8 +16,9 @@ const rootRoute = createRootRoute({ component: () => (<Providers><Outlet /></Pro
 
 const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: "/", component: Landing });
 
-const docsHomeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs", component: DocsHome });
-const docRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs/$slug", component: Doc });
+// /docs removed — docs now live inside each plugin's detail page (the README). Redirect to the marketplace.
+const docsHomeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs", beforeLoad: () => { throw redirect({ to: "/marketplace" }); }, component: () => null });
+const docRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs/$slug", beforeLoad: () => { throw redirect({ to: "/marketplace" }); }, component: () => null });
 
 // Unified marketplace — plugins · agents · skills · MCP · UI
 const marketplaceRoute = createRoute({ getParentRoute: () => rootRoute, path: "/marketplace", component: Marketplace });

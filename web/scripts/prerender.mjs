@@ -26,7 +26,6 @@ const routes = [
   "/marketplace/mcp",
   "/marketplace/ui",
   "/marketplace/submit",
-  "/docs",
   "/plugins",
   "/plugins/submit",
   "/ai",
@@ -38,7 +37,6 @@ const routes = [
   ...ai.agents.map((a) => `/ai/agents/${a.slug}`),
   ...ai.skills.map((s) => `/ai/skills/${s.slug}`),
   ...plugins.map((p) => `/plugins/${p.slug}`),
-  ...docs.map((r) => `/docs/${r.slug}`),
 ];
 
 // pages whose main content is a README fetched client-side (wait for it before snapshot)
@@ -117,7 +115,7 @@ try {
   preview.kill("SIGTERM");
 }
 
-for (const must of ["plugins/index.html", "docs/index.html", "plugins/submit/index.html"]) {
+for (const must of ["plugins/index.html", "plugins/submit/index.html"]) {
   if (!existsSync(join(DIST, must))) {
     console.error(`✗ prerender did not produce ${must}`);
     process.exit(1);

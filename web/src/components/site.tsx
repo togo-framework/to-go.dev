@@ -4,8 +4,7 @@ import { Button } from "@togo-framework/ui";
 import { Github, Menu, X } from "lucide-react";
 
 const NAV = [
-  { to: "/docs", label: "Docs", match: ["/docs"] },
-  { to: "/marketplace", label: "Marketplace", match: ["/marketplace", "/plugins"] },
+  { to: "/marketplace", label: "Marketplace", match: ["/marketplace", "/plugins", "/docs"] },
   { to: "/ai", label: "AI", match: ["/ai"] },
 ];
 
@@ -70,7 +69,6 @@ export function SiteFooter() {
         <div className="flex flex-wrap items-center justify-between gap-6">
           <Link to="/" className="flex items-center gap-2.5"><img src="/togo-mark.svg?v=2" alt="ToGO" className="h-7 w-auto" /><span className="font-[Sora] text-base font-bold tracking-tight">togo</span></Link>
           <div className="flex gap-6 text-sm text-muted-foreground flex-wrap">
-            <Link to="/docs" className="hover:text-foreground">Docs</Link>
             <Link to="/marketplace" className="hover:text-foreground">Marketplace</Link>
             <a href="https://github.com/togo-framework" className="hover:text-foreground">GitHub</a>
             <a href="https://www.npmjs.com/package/@togo-framework/cli" className="hover:text-foreground">npm</a>

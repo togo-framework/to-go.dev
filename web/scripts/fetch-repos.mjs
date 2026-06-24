@@ -126,7 +126,6 @@ const llms = [
   ``,
   `## Pages`,
   `- [Home](${SITE}/): overview, install, the generator workflow, API-first, databases, AI-native`,
-  `- [Docs](${SITE}/docs): documentation home — every repo's README`,
   `- [Plugins](${SITE}/plugins): the plugin marketplace`,
   `- [AI Stack](${SITE}/ai): agents, skills & tools for AI-driven togo development — \`togo install claude\``,
   `- [Submit a plugin](${SITE}/plugins/submit): propose a plugin (opens a GitHub issue)`,
@@ -139,8 +138,6 @@ const llms = [
   `## Plugins`,
   ...plugins.map((r) => `- [${r.name}](${SITE}/plugins/${r.slug}) (${r.category}): ${r.description || ""} — install: \`${r.install}\``),
   ``,
-  `## All repositories (docs)`,
-  ...docs.map((r) => `- [${r.name}](${SITE}/docs/${r.slug})${r.description ? `: ${r.description}` : ""} — markdown: ${SITE}/docs/${r.slug}.md`),
   ``,
   `## Source`,
   `- GitHub org: https://github.com/togo-framework`,
@@ -152,12 +149,10 @@ writeFileSync(join(ROOT, "public/llms.txt"), llms);
 // sitemap.xml — home, docs home, plugins marketplace + submit, every plugin + every doc
 const urls = [
   `${SITE}/`,
-  `${SITE}/docs`,
   `${SITE}/plugins`,
   `${SITE}/plugins/submit`,
   ...AI_ROUTES,
   ...plugins.map((r) => `${SITE}/plugins/${r.slug}`),
-  ...docs.map((r) => `${SITE}/docs/${r.slug}`),
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
   .map((u) => `  <url><loc>${u}</loc><changefreq>weekly</changefreq></url>`)
