@@ -79,6 +79,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [plugin-template](https://to-go.dev/docs/plugin-template): Starter template for togo plugins — markdown: https://to-go.dev/docs/plugin-template.md
 - [queue](https://to-go.dev/docs/queue): togo queue provider plugin — markdown: https://to-go.dev/docs/queue.md
 - [realtime](https://to-go.dev/docs/realtime): togo realtime provider plugin — markdown: https://to-go.dev/docs/realtime.md
+- [realtime-ws](https://to-go.dev/docs/realtime-ws): WebSocket realtime transport for togo — markdown: https://to-go.dev/docs/realtime-ws.md
 - [search](https://to-go.dev/docs/search): togo search: ParadeDB default + ES/OpenSearch plugins — markdown: https://to-go.dev/docs/search.md
 - [search-elasticsearch](https://to-go.dev/docs/search-elasticsearch): Elasticsearch/OpenSearch driver for togo search — markdown: https://to-go.dev/docs/search-elasticsearch.md
 - [seo](https://to-go.dev/docs/seo): togo SEO/AEO plugin — sitemap, robots, llms.txt, meta/OG/JSON-LD + IndexNow / Google Analytics / Search Console / Bing providers. — markdown: https://to-go.dev/docs/seo.md
