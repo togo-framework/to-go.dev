@@ -13,6 +13,13 @@ const SITE = "https://to-go.dev";
 // /ai marketplace routes in the sitemap + llms.txt.
 const AI = existsSync(join(ROOT, "src/data/ai.json")) ? JSON.parse(readFileSync(join(ROOT, "src/data/ai.json"), "utf8")) : { agents: [], skills: [], tools: [] };
 const AI_ROUTES = [
+  `${SITE}/marketplace`,
+  `${SITE}/marketplace/plugins`,
+  `${SITE}/marketplace/agents`,
+  `${SITE}/marketplace/skills`,
+  `${SITE}/marketplace/mcp`,
+  `${SITE}/marketplace/ui`,
+  `${SITE}/marketplace/submit`,
   `${SITE}/ai`,
   `${SITE}/ai/submit`,
   ...AI.tools.map((t) => `${SITE}/ai/tools/${t.slug}`),

@@ -5,7 +5,7 @@
 Install it once and Claude Code gains a global entry point to **start new togo projects** and do **full AI-driven development**:
 
 - **Commands** (`/togo:*`) that wrap the togo CLI — scaffold, generate, migrate, serve, deploy.
-- **Specialist agents** that know the stack — backend, frontend, db, plugin-author, architect.
+- **A 15-agent specialist team** — a `togo` orchestrator that routes work, plus backend, frontend, db, data, devops, qa, security, release-manager, technical-writer, ui-designer, prompt-engineer, plugin-author & plugin-architect — each auto-delegated by task.
 - **Conventions** (generator-first, ownership classes, codegen order, API-first) the agents follow.
 - **Hooks** that keep you on the rails (toolchain check on session start; a `togo generate` nudge after schema edits).
 - The public **togo MCP** (`mcp.to-go.dev`) **auto-connected** for generators + project introspection.
@@ -49,7 +49,7 @@ That's it — the togo MCP connects automatically. Then:
 
 ## Agents
 
-`togo-backend` · `togo-frontend` · `togo-db` · `togo-plugin-author` · `togo-architect` — each knows the togo conventions and the codegen pipeline, and is auto-delegated based on task context.
+`togo` (orchestrator) · `togo-backend` · `togo-frontend` · `togo-db` · `togo-data` · `togo-architect` · `togo-plugin-architect` · `togo-plugin-author` · `togo-devops` · `togo-release-manager` · `togo-qa` · `togo-security` · `togo-technical-writer` · `togo-ui-designer` · `togo-prompt-engineer` — 15 specialists, each grounded in the togo stack (Go/chi/Huma/gqlgen/sqlc/Atlas/microkernel/CLI/MCP) and auto-delegated by task context.
 
 ## The AI-driven flow
 

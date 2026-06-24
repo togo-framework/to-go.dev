@@ -23,6 +23,8 @@ const docRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs/$sl
 // Unified marketplace — plugins · agents · skills · MCP · UI
 const marketplaceRoute = createRoute({ getParentRoute: () => rootRoute, path: "/marketplace", component: Marketplace });
 const marketplaceSubmitRoute = createRoute({ getParentRoute: () => rootRoute, path: "/marketplace/submit", component: MarketplaceSubmit });
+// Path-based category so each is crawlable + prerendered: /marketplace/{plugins,agents,skills,mcp,ui}
+const marketplaceCategoryRoute = createRoute({ getParentRoute: () => rootRoute, path: "/marketplace/$category", component: Marketplace });
 
 // AI marketplace pages (kept; index redirects to /marketplace)
 const aiRoute = createRoute({ getParentRoute: () => rootRoute, path: "/ai", beforeLoad: () => { throw redirect({ to: "/marketplace" }); }, component: () => null });
@@ -51,7 +53,7 @@ const reposRedirect = createRoute({
 const routeTree = rootRoute.addChildren([
   indexRoute,
   docsHomeRoute, docRoute,
-  marketplaceRoute, marketplaceSubmitRoute,
+  marketplaceRoute, marketplaceSubmitRoute, marketplaceCategoryRoute,
   aiRoute, aiSubmitRoute, aiAgentRoute, aiSkillRoute, aiToolClaudeRoute, aiToolMcpRoute,
   claudeRedirect, mcpRedirect,
   pluginsRoute, pluginSubmitRoute, pluginDetailRoute,

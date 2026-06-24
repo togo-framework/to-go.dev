@@ -1,20 +1,32 @@
 import type { ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Button } from "@togo-framework/ui";
 import { Github } from "lucide-react";
 
+const NAV = [
+  { to: "/docs", label: "Docs", match: ["/docs"] },
+  { to: "/marketplace", label: "Marketplace", match: ["/marketplace", "/plugins", "/ai"] },
+];
+
 export function SiteHeader() {
+  const path = useRouterState({ select: (s) => s.location.pathname });
+  const active = (m: string[]) => m.some((p) => path === p || path.startsWith(p + "/"));
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center gap-2.5">
           <img src="/togo-mark.svg?v=2" alt="ToGO" className="h-8 w-auto" />
+          <span className="font-[Sora] text-lg font-bold tracking-tight">togo</span>
         </Link>
-        <nav className="flex items-center gap-7 text-sm">
-          <Link to="/docs" className="text-muted-foreground hover:text-foreground transition-colors">Docs</Link>
-          <Link to="/marketplace" className="text-muted-foreground hover:text-foreground transition-colors">Marketplace</Link>
-          <a href="https://ui.to-go.dev" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">UI</a>
-          <Button asChild variant="outline" size="sm">
+        <nav className="flex items-center gap-1 text-sm">
+          {NAV.map((n) => (
+            <Link key={n.to} to={n.to}
+              className={`px-3 py-2 rounded-lg font-medium transition-colors ${active(n.match) ? "text-foreground bg-card" : "text-muted-foreground hover:text-foreground hover:bg-card/60"}`}>
+              {n.label}
+            </Link>
+          ))}
+          <a href="https://ui.to-go.dev" className="px-3 py-2 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-card/60 transition-colors hidden sm:block">UI</a>
+          <Button asChild variant="outline" size="sm" className="ms-2">
             <a href="https://github.com/togo-framework"><Github size={16} />GitHub</a>
           </Button>
         </nav>
@@ -28,7 +40,7 @@ export function SiteFooter() {
     <footer className="border-t border-border mt-20">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-wrap items-center justify-between gap-6">
-          <Link to="/" className="flex items-center"><img src="/togo-mark.svg?v=2" alt="ToGO" className="h-7 w-auto" /></Link>
+          <Link to="/" className="flex items-center gap-2.5"><img src="/togo-mark.svg?v=2" alt="ToGO" className="h-7 w-auto" /><span className="font-[Sora] text-base font-bold tracking-tight">togo</span></Link>
           <div className="flex gap-6 text-sm text-muted-foreground flex-wrap">
             <Link to="/docs" className="hover:text-foreground">Docs</Link>
             <Link to="/marketplace" className="hover:text-foreground">Marketplace</Link>

@@ -20,6 +20,11 @@ const ai = JSON.parse(readFileSync(join(ROOT, "src/data/ai.json"), "utf8"));
 const routes = [
   "/",
   "/marketplace",
+  "/marketplace/plugins",
+  "/marketplace/agents",
+  "/marketplace/skills",
+  "/marketplace/mcp",
+  "/marketplace/ui",
   "/marketplace/submit",
   "/docs",
   "/plugins",

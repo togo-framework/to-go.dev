@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link, useParams } from "@tanstack/react-router";
 import { MarketplaceCard, StatsRow, SectionHeading, PillButton, AuroraBackground } from "@togo-framework/ui";
 import {
   Blocks, Bot, TerminalSquare, Plug, Component, Search, Plus,
@@ -18,6 +19,16 @@ const CATS: { key: CatKey; label: string; icon: typeof Blocks }[] = [
   { key: "ui", label: "UI", icon: Component },
 ];
 
+// Per-category SEO so each crawlable /marketplace/<category> path gets its own title + meta.
+const CAT_SEO: Record<CatKey, { title: string; desc: string }> = {
+  plugins: { title: "Marketplace", desc: "The togo marketplace — plugins, AI agents, skills, MCP tools, and UI components. One place for everything the togo ecosystem ships. Install with togo install." },
+  agents: { title: "togo Agents — AI agents for togo development", desc: "Specialist Claude Code agents for the togo stack — backend, frontend, db, security, devops and more. Install with togo install agent:<name>." },
+  skills: { title: "togo Skills — /togo:* slash commands", desc: "togo skills: /togo:* slash commands that wrap togo workflows in Claude Code. Install with togo install skill:<name>." },
+  mcp: { title: "togo MCP & Tools", desc: "The togo MCP server and tools — connect Claude Code to live togo docs, generators, and the marketplace." },
+  ui: { title: "togo UI components — @togo-framework/ui", desc: "The togo UI kit — buttons, cards, data tables, auth, docs, and marketing components on ui.to-go.dev." },
+};
+const isCat = (v?: string): v is CatKey => !!v && CATS.some((c) => c.key === v);
+
 // Curated kit components surfaced as marketplace items → their Storybook story.
 const UI_ITEMS = [
   { slug: "button", name: "Button", desc: "The core action button — variants, sizes, asChild.", story: "components-button--default" },
@@ -35,7 +46,8 @@ const UI_ITEMS = [
 ];
 
 export function Marketplace() {
-  const [cat, setCat] = useState<CatKey>("plugins");
+  const params = useParams({ strict: false }) as { category?: string };
+  const cat: CatKey = isCat(params.category) ? params.category : "plugins";
   const [q, setQ] = useState("");
   const query = q.trim().toLowerCase();
   const { groups, loose } = useMemo(() => pluginGroups(), []);
@@ -71,9 +83,8 @@ export function Marketplace() {
 
   return (
     <Page>
-      <Seo title="Marketplace"
-        description="The togo marketplace — plugins, AI agents, skills, MCP tools, and UI components. One place for everything the togo ecosystem ships. Install with togo install."
-        path="/marketplace" />
+      <Seo title={CAT_SEO[cat].title} description={CAT_SEO[cat].desc}
+        path={cat === "plugins" ? "/marketplace" : `/marketplace/${cat}`} />
       <div className="fixed inset-0 -z-10"><AuroraBackground intensity={0.55} /></div>
 
       <section className="mx-auto max-w-6xl px-6 pt-14 pb-20">
@@ -95,13 +106,13 @@ export function Marketplace() {
           {CATS.map(({ key, label, icon: Icon }) => {
             const on = cat === key;
             return (
-              <button key={key} onClick={() => { setCat(key); }}
+              <Link key={key} to="/marketplace/$category" params={{ category: key }}
                 className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors border ${
                   on ? "bg-[#1FC7DC] text-[#06181c] border-transparent" : "border-border bg-card/40 text-muted-foreground hover:text-foreground hover:bg-card"
                 }`}>
                 <Icon size={15} /> {label}
                 <span className={`ms-0.5 text-[11px] ${on ? "text-[#06181c]/70" : "text-muted-foreground/70"}`}>{count[key]}</span>
-              </button>
+              </Link>
             );
           })}
         </div>

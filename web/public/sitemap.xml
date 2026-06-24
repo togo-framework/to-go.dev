@@ -4,6 +4,13 @@
   <url><loc>https://to-go.dev/docs</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/submit</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/marketplace</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/marketplace/plugins</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/marketplace/agents</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/marketplace/skills</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/marketplace/mcp</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/marketplace/ui</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/marketplace/submit</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/ai</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/ai/submit</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/ai/tools/claude</loc><changefreq>weekly</changefreq></url>

@@ -1,5 +1,5 @@
 import { Link, useParams } from "@tanstack/react-router";
-import { MarkdownRenderer, CodeBlock, GlassCard, AuroraBackground, Badge } from "@togo-framework/ui";
+import { MarkdownRenderer, CodeBlock, AuroraBackground, Badge } from "@togo-framework/ui";
 import { ArrowLeft, Cpu, Wrench } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
@@ -42,8 +42,8 @@ export function AiAgent() {
           <ArrowLeft size={15} /> Marketplace
         </Link>
 
-        {/* hero — matches plugin detail */}
-        <GlassCard className="p-6 sm:p-7">
+        {/* hero — matches plugin detail (solid, no glass) */}
+        <div className="rounded-2xl border border-border bg-card p-6 sm:p-7">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <div className="w-16 h-16 rounded-2xl grid place-items-center shrink-0 shadow-lg"
               style={{ background: `linear-gradient(140deg, ${v.color}, ${v.color}cc)` }}>
@@ -67,7 +67,7 @@ export function AiAgent() {
             </div>
           )}
           <div className="mt-5"><CodeBlock lang="bash">{install}</CodeBlock></div>
-        </GlassCard>
+        </div>
 
         <div className="mt-8 tg-readme max-w-none"><MarkdownRenderer content={a.body} /></div>
 

@@ -351,6 +351,21 @@ export function Landing() {
         </div>
       </section>
 
+      {/* marketplace band */}
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-8">
+        <div className="rounded-3xl border border-border bg-card p-8 sm:p-10 flex flex-col sm:flex-row sm:items-center gap-6">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 text-[#1FC7DC] text-xs font-mono uppercase tracking-[0.18em] mb-3"><Boxes size={14} /> Marketplace</div>
+            <h2 style={DISPLAY} className="text-2xl sm:text-3xl font-bold tracking-tight">Everything the togo ecosystem ships — in one place.</h2>
+            <p className="text-muted-foreground mt-2.5 max-w-xl">Plugins, AI agents, skills, MCP tools, and UI components — browse and install any of them with one command.</p>
+          </div>
+          <Link to="/marketplace" className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-6 h-[52px] text-base font-semibold text-white"
+            style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
+            Explore the marketplace <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
       {/* closing CTA */}
       <section className="mx-auto max-w-4xl px-6 pt-16 pb-20 text-center">
         <div className="flex justify-center mb-5"><img src="/togo-mark.svg?v=2" alt="ToGO" className="h-16 w-auto" /></div>
