@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
-  Button, Badge, CodeBlock,
+  Button, Badge, CodeBlock, AuroraBackground,
   SectionHeading, FeatureCard, CodeShowcase, Eyebrow,
 } from "@togo-framework/ui";
 import type { CodeShowcaseTab } from "@togo-framework/ui";
@@ -86,15 +86,16 @@ export function Landing() {
   return (
     <Page>
       <Seo />
+      {/* animated aurora backdrop (clean — no glass frost), site-wide */}
+      <div className="fixed inset-0 -z-10"><AuroraBackground intensity={0.4} /></div>
       {/* hero */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 -z-10"
-          style={{ background: "radial-gradient(620px 380px at 50% 4%, rgba(45,140,230,.22), transparent 70%), radial-gradient(440px 300px at 50% 0%, rgba(31,199,220,.18), transparent 70%)" }} />
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-50"
           style={{ backgroundImage: "linear-gradient(rgba(120,140,160,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(120,140,160,.12) 1px,transparent 1px)", backgroundSize: "56px 56px", maskImage: "radial-gradient(680px 420px at 50% 4%,#000,transparent 78%)", WebkitMaskImage: "radial-gradient(680px 420px at 50% 4%,#000,transparent 78%)" }} />
         <div className="mx-auto max-w-6xl px-6 pt-20 pb-12 text-center">
           <div className="flex justify-center mb-6" style={{ filter: "drop-shadow(0 20px 55px rgba(45,140,230,.45))" }}>
-            <img src="/togo-mark.svg?v=2" alt="ToGO" className="h-32 sm:h-44 w-auto" />
+            <img src="/togo-mark.svg?v=2" alt="ToGO" className="h-32 sm:h-44 w-auto animate-[heroFloat_6s_ease-in-out_infinite]" />
+            <style>{`@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@media(prefers-reduced-motion:reduce){.animate-\\[heroFloat_6s_ease-in-out_infinite\\]{animation:none}}`}</style>
           </div>
           <div className="flex justify-center mb-7">
             <Badge variant="outline" className="font-mono text-[11px] tracking-[0.18em] uppercase border-[color:rgba(31,199,220,.28)] text-[var(--togo-cyan,#5CDDEC)] bg-[color:rgba(31,199,220,.06)]">
