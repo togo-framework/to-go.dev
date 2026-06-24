@@ -5,7 +5,7 @@ import {
   Globe, HardDrive, ScrollText, Languages, Cog, BadgeCheck, Fingerprint,
   CreditCard, Sparkles, FileText, ScanText, Workflow as WorkflowIcon,
   Settings as SettingsIcon, MapPin, Building2, Users, Network, Activity, Brain, Receipt,
-  Rocket, Cloud, MessageCircle,
+  Rocket, Cloud, MessageCircle, Waypoints,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -16,6 +16,7 @@ import {
   siNatsdotio, siElevenlabs, siDeepgram, siRss, siGoogle, siSearxng,
   siTelegram, siDiscord, siDocker, siKubernetes, siTerraform, siGooglecloud,
   siDigitalocean, siVultr, siHetzner, siOvh, siCaddy, siKong, siNginxproxymanager,
+  siNgrok, siTailscale,
 } from "simple-icons";
 import reposData from "../data/repos.json";
 
@@ -83,6 +84,7 @@ const STR = brand(siStripe), LS = brand(siLemonsqueezy), AN = brand(siAnthropic)
 const TG = brand(siTelegram), DC = brand(siDiscord), DK = brand(siDocker), K8 = brand(siKubernetes),
   TF = brand(siTerraform), GCP = brand(siGooglecloud), DO = brand(siDigitalocean), VU = brand(siVultr),
   HZ = brand(siHetzner), OVH = brand(siOvh), CA = brand(siCaddy), KO = brand(siKong), NPM = brand(siNginxproxymanager);
+const NG = brand(siNgrok), TS = brand(siTailscale);
 
 export const PLUGIN_META: Record<string, PluginVisual> = {
   auth: { title: "Auth", color: "#1FC7DC", icon: ShieldCheck, description: "JWT + RBAC + multi-guard sessions — the base auth kernel." },
@@ -219,6 +221,13 @@ export const PLUGIN_META: Record<string, PluginVisual> = {
   "dns-npm": { title: "Nginx Proxy Manager", color: NPM.hex, brandIcon: NPM, description: "Nginx Proxy Manager reverse-proxy driver." },
   "dns-caddy": { title: "Caddy", color: CA.hex, brandIcon: CA, description: "Caddy reverse-proxy driver." },
   "dns-kong": { title: "Kong", color: KO.hex, brandIcon: KO, description: "Kong API-gateway routes driver." },
+
+  // ── Tunnels ──
+  tunnel: { title: "Tunnels", color: "#0EA5E9", icon: Waypoints, description: "Expose a local app to a public URL — dev sharing & webhook testing." },
+  "tunnel-cloudflare": { title: "Cloudflare Tunnel", color: CF.hex, brandIcon: CF, description: "Cloudflare Tunnel driver (quick + named tunnels)." },
+  "tunnel-ngrok": { title: "ngrok", color: NG.hex, brandIcon: NG, description: "ngrok tunnel driver (ngrok-go SDK)." },
+  "tunnel-tailscale": { title: "Tailscale Funnel", color: TS.hex, brandIcon: TS, description: "Tailscale Funnel tunnel driver." },
+  "tunnel-frp": { title: "frp", color: "#0075FF", icon: Network, description: "frp self-hosted reverse-proxy tunnel driver." },
 };
 
 const DEFAULT_VISUAL: PluginVisual = { title: "", color: "#2D8CE6", icon: Boxes };
