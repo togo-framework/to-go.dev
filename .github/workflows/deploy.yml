@@ -53,3 +53,6 @@ jobs:
             rm -f /tmp/togo-dist.tgz /tmp/togo-nginx.conf
           '
           rm -f ~/.ssh/deploy
+
+      - name: Ping IndexNow (Bing/Yandex/…)
+        run: node web/scripts/indexnow.mjs
