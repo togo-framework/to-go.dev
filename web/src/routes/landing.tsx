@@ -3,13 +3,13 @@ import { Link } from "@tanstack/react-router";
 import {
   Button, Badge, CodeBlock, AuroraBackground,
   SectionHeading, FeatureCard, CodeShowcase, Eyebrow,
-  TypingTerminal, MascotMark,
+  TypingTerminal, MascotMark, ClaudeSession, BrowserFrame,
 } from "@togo-framework/ui";
-import type { TerminalStep } from "@togo-framework/ui";
+import type { TerminalStep, ClaudeStep } from "@togo-framework/ui";
 import type { CodeShowcaseTab } from "@togo-framework/ui";
 import {
   Boxes, TerminalSquare, Blocks, Database, Globe, Sparkles, Copy, Check, ArrowRight,
-  Package, GitBranch, Rocket, Bot, Layers, Workflow,
+  Package, GitBranch, Rocket, Bot, Layers, Workflow, RotateCcw,
 } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
@@ -131,6 +131,87 @@ function AppPreview() {
   );
 }
 
+// AI mode plays a Claude Code session that drives togo end to end.
+const CLAUDE_STEPS: ClaudeStep[] = [
+  { kind: "user", text: "Build me a blog API with togo" },
+  { kind: "assistant", text: "On it — scaffolding a togo app, then generating the Post resource across every layer." },
+  { kind: "tool", tool: "Bash", arg: "togo new blog", result: "✓ scaffolded blog/ — Go API + React UI · one repo" },
+  { kind: "tool", tool: "Write", arg: "internal/models/post.go" },
+  { kind: "tool", tool: "Bash", arg: "togo make:resource Post title:string body:text", result: "✓ model · queries · migration · GraphQL · REST · UI page" },
+  { kind: "tool", tool: "Bash", arg: "togo generate && togo migrate && togo serve", result: "→ listening on http://localhost:8080" },
+  { kind: "assistant", text: "Done — your blog API is live. REST + GraphQL generated, migrated, and serving on :8080." },
+];
+
+const PLUGIN_ADD = "/plugin marketplace add togo-framework/claude-togo";
+const PLUGIN_INSTALL = "/plugin install togo@togo";
+
+function CopyCmd({ cmd, sigil = "$" }: { cmd: string; sigil?: string }) {
+  const [ok, setOk] = useState(false);
+  return (
+    <button onClick={() => { navigator.clipboard?.writeText(cmd); setOk(true); setTimeout(() => setOk(false), 1500); }}
+      className="group flex w-full items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 font-mono text-[12.5px] text-foreground/90 hover:border-[color:rgba(31,199,220,.4)] transition-colors">
+      <span className="shrink-0 text-[var(--togo-cyan,#1FC7DC)]">{sigil}</span>
+      <code className="truncate">{cmd}</code>
+      <span className="ms-auto shrink-0 text-muted-foreground group-hover:text-foreground">{ok ? <Check size={14} /> : <Copy size={14} />}</span>
+    </button>
+  );
+}
+
+// Hero demo: a CLI ⇄ AI toggle. The active player streams, then fades into the
+// running app (BrowserFrame) with a mode-aware "ship it" CTA.
+function HeroDemo() {
+  const [mode, setMode] = useState<"cli" | "ai">("cli");
+  const [done, setDone] = useState(false);
+  const [runKey, setRunKey] = useState(0);
+  const select = (m: "cli" | "ai") => { setMode(m); setDone(false); setRunKey((k) => k + 1); };
+  const replay = () => { setDone(false); setRunKey((k) => k + 1); };
+
+  return (
+    <div>
+      <div className="mb-5 flex justify-center">
+        <div className="inline-flex items-center rounded-full border border-border bg-card p-1 text-sm font-medium">
+          {([["cli", "CLI"], ["ai", "✻ AI · Claude Code"]] as const).map(([m, label]) => (
+            <button key={m} onClick={() => select(m)}
+              className={`rounded-full px-4 py-1.5 transition-colors ${mode === m ? "text-white" : "text-muted-foreground hover:text-foreground"}`}
+              style={mode === m ? { background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 60%,#1659C8)" } : undefined}>
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative min-h-[420px]">
+        <div className={`transition-all duration-500 ${done ? "pointer-events-none absolute inset-0 scale-[0.97] opacity-0" : "scale-100 opacity-100"}`}>
+          {mode === "cli"
+            ? <TypingTerminal key={`cli-${runKey}`} steps={HERO_STEPS} title="~/ — togo" onComplete={() => setDone(true)} />
+            : <ClaudeSession key={`ai-${runKey}`} steps={CLAUDE_STEPS} onComplete={() => setDone(true)} />}
+        </div>
+
+        <div className={`transition-all duration-500 ${done ? "scale-100 opacity-100" : "pointer-events-none absolute inset-0 scale-[0.97] opacity-0"}`}>
+          <BrowserFrame url="localhost:8080/posts"><AppPreview /></BrowserFrame>
+          <div className="mt-5 flex flex-col items-center gap-3">
+            {mode === "cli" ? (
+              <div className="w-full max-w-md space-y-2 text-center">
+                <p className="text-sm text-muted-foreground">Ship it yourself — one command:</p>
+                <CopyCmd cmd={INSTALL} />
+              </div>
+            ) : (
+              <div className="w-full max-w-md space-y-2 text-center">
+                <p className="text-sm text-muted-foreground">Drive togo with Claude Code — add the plugin:</p>
+                <CopyCmd cmd={PLUGIN_ADD} sigil="✻" />
+                <CopyCmd cmd={PLUGIN_INSTALL} sigil="✻" />
+              </div>
+            )}
+            <button onClick={replay} className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+              <RotateCcw size={12} /> Replay
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Landing() {
   return (
     <Page>
@@ -164,9 +245,9 @@ export function Landing() {
         </div>
       </section>
 
-      {/* live CLI playthrough — types the real commands, streams output, reveals the running app */}
+      {/* live playthrough — CLI or Claude Code session → fades into the running app */}
       <section className="mx-auto max-w-3xl px-6 pb-4">
-        <TypingTerminal steps={HERO_STEPS} title="~/ — togo" endSlot={<AppPreview />} />
+        <HeroDemo />
       </section>
 
       {/* value band */}

@@ -20,6 +20,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [auth-workos](https://to-go.dev/plugins/auth-workos) (auth): WorkOS SSO/SAML driver for togo auth — install: `togo install togo-framework/auth-workos`
 - [cache](https://to-go.dev/plugins/cache) (infra): togo cache provider plugin — install: `togo install togo-framework/cache`
 - [cache-redis](https://to-go.dev/plugins/cache-redis) (infra): Redis driver for togo cache — install: `togo install togo-framework/cache-redis`
+- [claude-togo](https://to-go.dev/plugins/claude-togo) (other): Official ToGO plugin for Claude Code — scaffold & drive togo apps with AI (commands, agents, hooks + auto-connected MCP). — install: `togo install togo-framework/claude-togo`
 - [dashboard](https://to-go.dev/plugins/dashboard) (ui): togo dashboard + auth UI (depends on auth) — install: `togo install togo-framework/dashboard`
 - [db-mongodb](https://to-go.dev/plugins/db-mongodb) (data):  — install: `togo install togo-framework/db-mongodb`
 - [db-mysql](https://to-go.dev/plugins/db-mysql) (data):  — install: `togo install togo-framework/db-mysql`
@@ -58,6 +59,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [auth-workos](https://to-go.dev/docs/auth-workos): WorkOS SSO/SAML driver for togo auth — markdown: https://to-go.dev/docs/auth-workos.md
 - [cache](https://to-go.dev/docs/cache): togo cache provider plugin — markdown: https://to-go.dev/docs/cache.md
 - [cache-redis](https://to-go.dev/docs/cache-redis): Redis driver for togo cache — markdown: https://to-go.dev/docs/cache-redis.md
+- [claude-togo](https://to-go.dev/docs/claude-togo): Official ToGO plugin for Claude Code — scaffold & drive togo apps with AI (commands, agents, hooks + auto-connected MCP). — markdown: https://to-go.dev/docs/claude-togo.md
 - [cli](https://to-go.dev/docs/cli): The togo CLI — Laravel-artisan-like generators, codegen, plugins, MCP, deploy — markdown: https://to-go.dev/docs/cli.md
 - [create-togo-app](https://to-go.dev/docs/create-togo-app): Project template for togo, rendered by `togo new` — markdown: https://to-go.dev/docs/create-togo-app.md
 - [dashboard](https://to-go.dev/docs/dashboard): togo dashboard + auth UI (depends on auth) — markdown: https://to-go.dev/docs/dashboard.md
