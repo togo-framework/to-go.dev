@@ -12,9 +12,10 @@ export function SiteHeader() {
           <Wordmark size={20} />
         </Link>
         <nav className="flex items-center gap-7 text-sm">
-          <Link to="/repos" className="text-muted-foreground hover:text-foreground transition-colors">Repos</Link>
-          <a href="https://www.npmjs.com/package/@togo-framework/cli" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">npm</a>
+          <Link to="/docs" className="text-muted-foreground hover:text-foreground transition-colors">Docs</Link>
+          <Link to="/plugins" className="text-muted-foreground hover:text-foreground transition-colors">Plugins</Link>
           <a href="https://ui.to-go.dev" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">UI</a>
+          <a href="https://www.npmjs.com/package/@togo-framework/cli" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">npm</a>
           <Button asChild variant="outline" size="sm">
             <a href="https://github.com/togo-framework"><Github size={16} />GitHub</a>
           </Button>
@@ -30,8 +31,9 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-wrap items-center justify-between gap-6">
           <Link to="/" className="flex items-center gap-2.5"><Logo variant="mark" size={26} /><Wordmark size={18} /></Link>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <Link to="/repos" className="hover:text-foreground">Repos</Link>
+          <div className="flex gap-6 text-sm text-muted-foreground flex-wrap">
+            <Link to="/docs" className="hover:text-foreground">Docs</Link>
+            <Link to="/plugins" className="hover:text-foreground">Plugins</Link>
             <a href="https://github.com/togo-framework" className="hover:text-foreground">GitHub</a>
             <a href="https://www.npmjs.com/package/@togo-framework/cli" className="hover:text-foreground">npm</a>
             <a href="https://ui.to-go.dev" className="hover:text-foreground">UI kit</a>

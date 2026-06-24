@@ -1,0 +1,59 @@
+name: refresh
+
+# Background refresh: re-pull every togo-framework repo (stars / descriptions / READMEs),
+# regenerate sitemap.xml + llms.txt + repos.json + per-repo .md, rebuild + prerender, and
+# redeploy. Keeps the sitemap and docs current as the org changes — no push needed.
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily, 06:00 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: to-go-dev-deploy
+  cancel-in-progress: false
+
+jobs:
+  refresh-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Rebuild static site (fresh data → vite → prerender)
+        working-directory: web
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUPPETEER_SKIP_DOWNLOAD: "false"
+        run: |
+          npm ci
+          npx puppeteer browsers install chrome
+          npm run build:ci
+
+      - name: Ship dist to the box
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          tar czf /tmp/togo-dist.tgz -C web/dist .
+          SSH="ssh -i $HOME/.ssh/deploy -o StrictHostKeyChecking=no -o ConnectTimeout=25"
+          scp -i ~/.ssh/deploy -o StrictHostKeyChecking=no /tmp/togo-dist.tgz "root@$DEPLOY_HOST:/tmp/togo-dist.tgz"
+          scp -i ~/.ssh/deploy -o StrictHostKeyChecking=no deploy/nginx.conf "root@$DEPLOY_HOST:/tmp/togo-nginx.conf"
+          $SSH "root@$DEPLOY_HOST" '
+            pct push 201 /tmp/togo-dist.tgz /tmp/togo-dist.tgz
+            pct push 201 /tmp/togo-nginx.conf /tmp/togo-nginx.conf
+            pct exec 201 -- bash -c "
+              rm -rf /opt/to-go.dev-site && mkdir -p /opt/to-go.dev-site &&
+              tar xzf /tmp/togo-dist.tgz -C /opt/to-go.dev-site &&
+              cp /tmp/togo-nginx.conf /opt/to-go.dev-nginx.conf &&
+              (docker exec togo-web nginx -t && docker restart togo-web ||
+               docker run -d --name togo-web --network npm_default --restart unless-stopped \
+                 -v /opt/to-go.dev-site:/usr/share/nginx/html:ro \
+                 -v /opt/to-go.dev-nginx.conf:/etc/nginx/conf.d/default.conf:ro nginx:alpine)
+            "
+            rm -f /tmp/togo-dist.tgz /tmp/togo-nginx.conf
+          '
+          rm -f ~/.ssh/deploy

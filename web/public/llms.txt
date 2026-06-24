@@ -5,10 +5,47 @@
 Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-framework/cli`
 
 ## Pages
-- [Home](https://to-go.dev/): overview, install, features
-- [Repositories](https://to-go.dev/repos): every togo-framework repo
+- [Home](https://to-go.dev/): overview, install, the generator workflow, API-first, databases, AI-native
+- [Docs](https://to-go.dev/docs): documentation home — every repo's README
+- [Plugins](https://to-go.dev/plugins): the plugin marketplace
+- [Submit a plugin](https://to-go.dev/plugins/submit): propose a plugin (opens a GitHub issue)
 
-## Repositories
+## Plugins
+- [auth](https://to-go.dev/plugins/auth) (auth): togo base auth: JWT + RBAC + multi-guard, Supabase/GoTrue first-class, OAuth/Firebase/WorkOS as plugins — install: `togo install togo-framework/auth`
+- [auth-dev](https://to-go.dev/plugins/auth-dev) (auth): Developer login for togo auth (dev-only) — install: `togo install togo-framework/auth-dev`
+- [auth-firebase](https://to-go.dev/plugins/auth-firebase) (auth): Firebase Authentication driver for togo auth — install: `togo install togo-framework/auth-firebase`
+- [auth-oauth](https://to-go.dev/plugins/auth-oauth) (auth): OAuth2 social login for togo auth — install: `togo install togo-framework/auth-oauth`
+- [auth-session-redis](https://to-go.dev/plugins/auth-session-redis) (auth): Redis session store for togo auth — install: `togo install togo-framework/auth-session-redis`
+- [auth-workos](https://to-go.dev/plugins/auth-workos) (auth): WorkOS SSO/SAML driver for togo auth — install: `togo install togo-framework/auth-workos`
+- [cache](https://to-go.dev/plugins/cache) (infra): togo cache provider plugin — install: `togo install togo-framework/cache`
+- [cache-redis](https://to-go.dev/plugins/cache-redis) (infra): Redis driver for togo cache — install: `togo install togo-framework/cache-redis`
+- [dashboard](https://to-go.dev/plugins/dashboard) (ui): togo dashboard + auth UI (depends on auth) — install: `togo install togo-framework/dashboard`
+- [db-mongodb](https://to-go.dev/plugins/db-mongodb) (data):  — install: `togo install togo-framework/db-mongodb`
+- [db-mysql](https://to-go.dev/plugins/db-mysql) (data):  — install: `togo install togo-framework/db-mysql`
+- [db-postgres](https://to-go.dev/plugins/db-postgres) (data):  — install: `togo install togo-framework/db-postgres`
+- [db-supabase](https://to-go.dev/plugins/db-supabase) (data): Postgres/Supabase driver for togo ORM — install: `togo install togo-framework/db-supabase`
+- [faker](https://to-go.dev/plugins/faker) (dev): togo faker: fake data for factories/seeders — install: `togo install togo-framework/faker`
+- [i18n](https://to-go.dev/plugins/i18n) (ui): togo i18n provider plugin — install: `togo install togo-framework/i18n`
+- [log](https://to-go.dev/plugins/log) (infra): togo logging: levels, text/json, file output — install: `togo install togo-framework/log`
+- [mail](https://to-go.dev/plugins/mail) (messaging): togo mail: SMTP + driver plugins (SES/Resend) — install: `togo install togo-framework/mail`
+- [mail-resend](https://to-go.dev/plugins/mail-resend) (messaging): Resend driver for togo mail — install: `togo install togo-framework/mail-resend`
+- [notifications](https://to-go.dev/plugins/notifications) (messaging): togo notifications: channels (mail/broadcast/db) + push plugins — install: `togo install togo-framework/notifications`
+- [notifications-onesignal](https://to-go.dev/plugins/notifications-onesignal) (messaging): OneSignal push channel for togo notifications — install: `togo install togo-framework/notifications-onesignal`
+- [orm](https://to-go.dev/plugins/orm) (data): togo ORM: driver-agnostic query builder (SQLi-validated) — install: `togo install togo-framework/orm`
+- [plugin-auth-supabase](https://to-go.dev/plugins/plugin-auth-supabase) (auth): togo plugin: Supabase (GoTrue) JWT auth — /auth/me + bearer middleware — install: `togo install togo-framework/plugin-auth-supabase`
+- [queue](https://to-go.dev/plugins/queue) (infra): togo queue provider plugin — install: `togo install togo-framework/queue`
+- [realtime](https://to-go.dev/plugins/realtime) (infra): togo realtime provider plugin — install: `togo install togo-framework/realtime`
+- [realtime-ws](https://to-go.dev/plugins/realtime-ws) (infra): WebSocket realtime transport for togo — install: `togo install togo-framework/realtime-ws`
+- [search](https://to-go.dev/plugins/search) (data): togo search: ParadeDB default + ES/OpenSearch plugins — install: `togo install togo-framework/search`
+- [search-elasticsearch](https://to-go.dev/plugins/search-elasticsearch) (data): Elasticsearch/OpenSearch driver for togo search — install: `togo install togo-framework/search-elasticsearch`
+- [storage](https://to-go.dev/plugins/storage) (data): togo storage provider plugin — install: `togo install togo-framework/storage`
+- [storage-supabase](https://to-go.dev/plugins/storage-supabase) (data): Supabase Storage driver for togo — install: `togo install togo-framework/storage-supabase`
+- [supabase](https://to-go.dev/plugins/supabase) (data): togo Supabase integration: custom image (ParadeDB/pgvector/pg_partman) + stack — install: `togo install togo-framework/supabase`
+- [testing](https://to-go.dev/plugins/testing) (dev): togo test harness (HTTP + assertions + sqlite) — install: `togo install togo-framework/testing`
+- [validation](https://to-go.dev/plugins/validation) (dev): togo request validation (Laravel-style rules) — install: `togo install togo-framework/validation`
+- [worker](https://to-go.dev/plugins/worker) (infra): togo worker: supervised multi-threaded worker pools — install: `togo install togo-framework/worker`
+
+## All repositories (docs)
 - [.github](https://to-go.dev/docs/.github): Org-wide community health files (issue/PR templates, sponsor, profile) — markdown: https://to-go.dev/docs/.github.md
 - [auth](https://to-go.dev/docs/auth): togo base auth: JWT + RBAC + multi-guard, Supabase/GoTrue first-class, OAuth/Firebase/WorkOS as plugins — markdown: https://to-go.dev/docs/auth.md
 - [auth-dev](https://to-go.dev/docs/auth-dev): Developer login for togo auth (dev-only) — markdown: https://to-go.dev/docs/auth-dev.md

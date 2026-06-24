@@ -7,6 +7,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T10:47:16Z",
+    "kind": "core",
+    "category": "core",
+    "navColor": "#1FC7DC",
+    "install": null,
     "hasReadme": true
   },
   {
@@ -17,6 +21,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:33:12Z",
+    "kind": "plugin",
+    "category": "auth",
+    "navColor": "#2D8CE6",
+    "install": "togo install togo-framework/auth",
     "hasReadme": true
   },
   {
@@ -27,6 +35,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:37:43Z",
+    "kind": "plugin",
+    "category": "auth",
+    "navColor": "#2D8CE6",
+    "install": "togo install togo-framework/auth-dev",
     "hasReadme": true
   },
   {
@@ -37,6 +49,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:37:48Z",
+    "kind": "plugin",
+    "category": "auth",
+    "navColor": "#2D8CE6",
+    "install": "togo install togo-framework/auth-firebase",
     "hasReadme": true
   },
   {
@@ -47,6 +63,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:37:52Z",
+    "kind": "plugin",
+    "category": "auth",
+    "navColor": "#2D8CE6",
+    "install": "togo install togo-framework/auth-oauth",
     "hasReadme": true
   },
   {
@@ -57,6 +77,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:37:53Z",
+    "kind": "plugin",
+    "category": "auth",
+    "navColor": "#2D8CE6",
+    "install": "togo install togo-framework/auth-session-redis",
     "hasReadme": true
   },
   {
@@ -67,6 +91,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:01Z",
+    "kind": "plugin",
+    "category": "auth",
+    "navColor": "#2D8CE6",
+    "install": "togo install togo-framework/auth-workos",
     "hasReadme": true
   },
   {
@@ -77,6 +105,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:03Z",
+    "kind": "plugin",
+    "category": "infra",
+    "navColor": "#1659C8",
+    "install": "togo install togo-framework/cache",
     "hasReadme": true
   },
   {
@@ -87,6 +119,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:01Z",
+    "kind": "plugin",
+    "category": "infra",
+    "navColor": "#1659C8",
+    "install": "togo install togo-framework/cache-redis",
     "hasReadme": true
   },
   {
@@ -97,6 +133,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T10:02:43Z",
+    "kind": "core",
+    "category": "core",
+    "navColor": "#1FC7DC",
+    "install": null,
     "hasReadme": true
   },
   {
@@ -107,6 +147,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:43:19Z",
+    "kind": "core",
+    "category": "core",
+    "navColor": "#1FC7DC",
+    "install": null,
     "hasReadme": true
   },
   {
@@ -117,6 +161,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:14Z",
+    "kind": "plugin",
+    "category": "ui",
+    "navColor": "#1FC7DC",
+    "install": "togo install togo-framework/dashboard",
     "hasReadme": true
   },
   {
@@ -127,6 +175,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:43:43Z",
+    "kind": "core",
+    "category": "core",
+    "navColor": "#1FC7DC",
+    "install": null,
     "hasReadme": true
   },
   {
@@ -137,6 +189,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:43:30Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/db-mongodb",
     "hasReadme": true
   },
   {
@@ -147,6 +203,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:43:27Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/db-mysql",
     "hasReadme": true
   },
   {
@@ -157,6 +217,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:43:23Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/db-postgres",
     "hasReadme": true
   },
   {
@@ -167,6 +231,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:43:34Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/db-supabase",
     "hasReadme": true
   },
   {
@@ -177,6 +245,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:13Z",
+    "kind": "plugin",
+    "category": "dev",
+    "navColor": "#8B5CF6",
+    "install": "togo install togo-framework/faker",
     "hasReadme": true
   },
   {
@@ -187,6 +259,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:16Z",
+    "kind": "plugin",
+    "category": "ui",
+    "navColor": "#1FC7DC",
+    "install": "togo install togo-framework/i18n",
     "hasReadme": true
   },
   {
@@ -197,6 +273,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:23Z",
+    "kind": "plugin",
+    "category": "infra",
+    "navColor": "#1659C8",
+    "install": "togo install togo-framework/log",
     "hasReadme": true
   },
   {
@@ -207,6 +287,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:24Z",
+    "kind": "plugin",
+    "category": "messaging",
+    "navColor": "#5CDDEC",
+    "install": "togo install togo-framework/mail",
     "hasReadme": true
   },
   {
@@ -217,6 +301,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:35Z",
+    "kind": "plugin",
+    "category": "messaging",
+    "navColor": "#5CDDEC",
+    "install": "togo install togo-framework/mail-resend",
     "hasReadme": true
   },
   {
@@ -227,6 +315,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:33Z",
+    "kind": "core",
+    "category": "core",
+    "navColor": "#1FC7DC",
+    "install": null,
     "hasReadme": true
   },
   {
@@ -237,6 +329,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:43Z",
+    "kind": "plugin",
+    "category": "messaging",
+    "navColor": "#5CDDEC",
+    "install": "togo install togo-framework/notifications",
     "hasReadme": true
   },
   {
@@ -247,6 +343,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:38Z",
+    "kind": "plugin",
+    "category": "messaging",
+    "navColor": "#5CDDEC",
+    "install": "togo install togo-framework/notifications-onesignal",
     "hasReadme": true
   },
   {
@@ -257,6 +357,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:43:40Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/orm",
     "hasReadme": true
   },
   {
@@ -267,6 +371,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:46Z",
+    "kind": "plugin",
+    "category": "auth",
+    "navColor": "#2D8CE6",
+    "install": "togo install togo-framework/plugin-auth-supabase",
     "hasReadme": true
   },
   {
@@ -277,6 +385,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:58Z",
+    "kind": "core",
+    "category": "core",
+    "navColor": "#1FC7DC",
+    "install": null,
     "hasReadme": true
   },
   {
@@ -287,6 +399,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:56Z",
+    "kind": "plugin",
+    "category": "infra",
+    "navColor": "#1659C8",
+    "install": "togo install togo-framework/queue",
     "hasReadme": true
   },
   {
@@ -297,6 +413,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:59Z",
+    "kind": "plugin",
+    "category": "infra",
+    "navColor": "#1659C8",
+    "install": "togo install togo-framework/realtime",
     "hasReadme": true
   },
   {
@@ -307,6 +427,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:38:59Z",
+    "kind": "plugin",
+    "category": "infra",
+    "navColor": "#1659C8",
+    "install": "togo install togo-framework/realtime-ws",
     "hasReadme": true
   },
   {
@@ -317,6 +441,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:39:01Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/search",
     "hasReadme": true
   },
   {
@@ -327,6 +455,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:39:06Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/search-elasticsearch",
     "hasReadme": true
   },
   {
@@ -337,6 +469,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:39:08Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/storage",
     "hasReadme": true
   },
   {
@@ -347,6 +483,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:39:12Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/storage-supabase",
     "hasReadme": true
   },
   {
@@ -357,6 +497,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:43:37Z",
+    "kind": "plugin",
+    "category": "data",
+    "navColor": "#00ADD8",
+    "install": "togo install togo-framework/supabase",
     "hasReadme": true
   },
   {
@@ -367,16 +511,24 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:39:15Z",
+    "kind": "plugin",
+    "category": "dev",
+    "navColor": "#8B5CF6",
+    "install": "togo install togo-framework/testing",
     "hasReadme": true
   },
   {
     "name": "to-go.dev",
     "slug": "to-go.dev",
     "description": "to-go.dev — the togo framework website: landing, docs, install.sh/update.sh.",
-    "language": "HTML",
+    "language": "TypeScript",
     "stars": 0,
     "branch": "main",
-    "updatedAt": "2026-06-24T10:49:10Z",
+    "updatedAt": "2026-06-24T11:03:47Z",
+    "kind": "core",
+    "category": "core",
+    "navColor": "#1FC7DC",
+    "install": null,
     "hasReadme": true
   },
   {
@@ -387,6 +539,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:43:13Z",
+    "kind": "core",
+    "category": "core",
+    "navColor": "#1FC7DC",
+    "install": null,
     "hasReadme": true
   },
   {
@@ -396,7 +552,11 @@
     "language": "TypeScript",
     "stars": 0,
     "branch": "main",
-    "updatedAt": "2026-06-24T09:39:18Z",
+    "updatedAt": "2026-06-24T11:20:21Z",
+    "kind": "core",
+    "category": "core",
+    "navColor": "#1FC7DC",
+    "install": null,
     "hasReadme": true
   },
   {
@@ -407,6 +567,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:39:22Z",
+    "kind": "plugin",
+    "category": "dev",
+    "navColor": "#8B5CF6",
+    "install": "togo install togo-framework/validation",
     "hasReadme": true
   },
   {
@@ -417,6 +581,10 @@
     "stars": 0,
     "branch": "main",
     "updatedAt": "2026-06-24T09:39:20Z",
+    "kind": "plugin",
+    "category": "infra",
+    "navColor": "#1659C8",
+    "install": "togo install togo-framework/worker",
     "hasReadme": true
   }
 ]

@@ -14,7 +14,21 @@ const PORT = 4178;
 const BASE = `http://localhost:${PORT}`;
 
 const repos = JSON.parse(readFileSync(join(ROOT, "src/data/repos.json"), "utf8"));
-const routes = ["/", "/repos", ...repos.map((r) => `/docs/${r.slug}`)];
+const plugins = repos.filter((r) => r.kind === "plugin");
+const docs = repos.filter((r) => r.hasReadme);
+const routes = [
+  "/",
+  "/docs",
+  "/plugins",
+  "/plugins/submit",
+  ...plugins.map((p) => `/plugins/${p.slug}`),
+  ...docs.map((r) => `/docs/${r.slug}`),
+];
+
+// pages whose main content is a README fetched client-side (wait for it before snapshot)
+const isReadmePage = (route) =>
+  route.startsWith("/docs/") ||
+  (route.startsWith("/plugins/") && route !== "/plugins/submit" && route !== "/plugins");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -44,8 +58,8 @@ try {
   for (const route of routes) {
     const page = await browser.newPage();
     await page.goto(BASE + route, { waitUntil: "networkidle0", timeout: 45000 });
-    // for doc pages, wait until the README has rendered (client fetch of /docs/<slug>.md)
-    if (route.startsWith("/docs/")) {
+    // for README pages, wait until the README has rendered (client fetch of /docs/<slug>.md)
+    if (isReadmePage(route)) {
       await page.waitForFunction(
         () => {
           const el = document.querySelector(".tg-readme");
@@ -77,7 +91,9 @@ try {
   preview.kill("SIGTERM");
 }
 
-if (!existsSync(join(DIST, "repos/index.html"))) {
-  console.error("✗ prerender did not produce repos/index.html");
-  process.exit(1);
+for (const must of ["plugins/index.html", "docs/index.html", "plugins/submit/index.html"]) {
+  if (!existsSync(join(DIST, must))) {
+    console.error(`✗ prerender did not produce ${must}`);
+    process.exit(1);
+  }
 }
