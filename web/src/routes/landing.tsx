@@ -9,8 +9,13 @@ import type { TerminalStep, ClaudeStep } from "@togo-framework/ui";
 import type { CodeShowcaseTab } from "@togo-framework/ui";
 import {
   Boxes, TerminalSquare, Blocks, Database, Globe, Sparkles, Copy, Check, ArrowRight,
-  Package, GitBranch, Rocket, Bot, Layers, Workflow, RotateCcw,
+  Package, GitBranch, Rocket, Bot, Layers, Workflow, RotateCcw, Search,
 } from "lucide-react";
+
+// Opens the global ⌘K palette from anywhere by synthesizing the shortcut the
+// kit's CommandPalette already listens for (it toggles on meta/ctrl + K).
+const openCommandPalette = () =>
+  window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true, ctrlKey: true, bubbles: true }));
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
 
@@ -228,13 +233,22 @@ export function Landing() {
           <p className="mx-auto mt-6 max-w-[600px] text-lg sm:text-xl text-muted-foreground">
             The full-stack framework that ships your <span className="text-foreground font-semibold">Go backend</span> and <span className="text-foreground font-semibold">React frontend</span> as a single deployable app — a Laravel-artisan-grade CLI for the Go + sqlc + Atlas + React stack.
           </p>
-          <div className="mt-9 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 max-w-md sm:max-w-none mx-auto">
+          {/* Raycast-style command bar — opens the global ⌘K palette over the whole ecosystem */}
+          <div className="mt-8 flex justify-center">
+            <button onClick={openCommandPalette}
+              className="group flex items-center gap-3 w-full max-w-md h-12 ps-4 pe-2 rounded-full border border-border bg-card hover:border-[color:rgba(31,199,220,.45)] transition-colors text-start">
+              <Search size={16} className="text-muted-foreground shrink-0" />
+              <span className="text-sm text-muted-foreground flex-1 truncate group-hover:text-foreground transition-colors">Search plugins, agents, skills…</span>
+              <kbd className="font-mono text-[10px] text-muted-foreground border border-border rounded px-1.5 py-1 shrink-0">⌘K</kbd>
+            </button>
+          </div>
+          <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 max-w-md sm:max-w-none mx-auto">
             <InstallBar />
             <Button asChild size="lg" className="h-[52px] text-base w-full sm:w-auto"
               style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", color: "#fff", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
               <a href="https://github.com/togo-framework">Get started <ArrowRight size={18} /></a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-[52px] w-full sm:w-auto"><Link to="/docs">Read the docs</Link></Button>
+            <Button asChild variant="outline" size="lg" className="h-[52px] w-full sm:w-auto"><Link to="/marketplace">Explore plugins</Link></Button>
           </div>
         </div>
       </section>

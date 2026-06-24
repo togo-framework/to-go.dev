@@ -1,0 +1,392 @@
+[
+  {
+    "label": "auth",
+    "sublabel": "togo base auth: JWT + RBAC + multi-guard, Supabase/GoTrue first-class, OAuth/Firebase/WorkOS as plugins",
+    "href": "/plugins/auth",
+    "group": "Auth"
+  },
+  {
+    "label": "auth-dev",
+    "sublabel": "Developer login for togo auth (dev-only)",
+    "href": "/plugins/auth-dev",
+    "group": "Auth"
+  },
+  {
+    "label": "auth-firebase",
+    "sublabel": "Firebase Authentication driver for togo auth",
+    "href": "/plugins/auth-firebase",
+    "group": "Auth"
+  },
+  {
+    "label": "auth-oauth",
+    "sublabel": "OAuth2 social login for togo auth",
+    "href": "/plugins/auth-oauth",
+    "group": "Auth"
+  },
+  {
+    "label": "auth-session-redis",
+    "sublabel": "Redis session store for togo auth",
+    "href": "/plugins/auth-session-redis",
+    "group": "Auth"
+  },
+  {
+    "label": "auth-workos",
+    "sublabel": "WorkOS SSO/SAML driver for togo auth",
+    "href": "/plugins/auth-workos",
+    "group": "Auth"
+  },
+  {
+    "label": "cache",
+    "sublabel": "togo cache provider plugin",
+    "href": "/plugins/cache",
+    "group": "Infra"
+  },
+  {
+    "label": "cache-redis",
+    "sublabel": "Redis driver for togo cache",
+    "href": "/plugins/cache-redis",
+    "group": "Infra"
+  },
+  {
+    "label": "claude-togo",
+    "sublabel": "Official ToGO plugin for Claude Code — scaffold & drive togo apps with AI (commands, agents, hooks + auto-connected MCP).",
+    "href": "/plugins/claude-togo",
+    "group": "Plugin"
+  },
+  {
+    "label": "dashboard",
+    "sublabel": "togo dashboard + auth UI (depends on auth)",
+    "href": "/plugins/dashboard",
+    "group": "UI"
+  },
+  {
+    "label": "db-mongodb",
+    "sublabel": "",
+    "href": "/plugins/db-mongodb",
+    "group": "Data"
+  },
+  {
+    "label": "db-mysql",
+    "sublabel": "",
+    "href": "/plugins/db-mysql",
+    "group": "Data"
+  },
+  {
+    "label": "db-postgres",
+    "sublabel": "",
+    "href": "/plugins/db-postgres",
+    "group": "Data"
+  },
+  {
+    "label": "db-supabase",
+    "sublabel": "Postgres/Supabase driver for togo ORM",
+    "href": "/plugins/db-supabase",
+    "group": "Data"
+  },
+  {
+    "label": "faker",
+    "sublabel": "togo faker: fake data for factories/seeders",
+    "href": "/plugins/faker",
+    "group": "Dev"
+  },
+  {
+    "label": "i18n",
+    "sublabel": "togo i18n provider plugin",
+    "href": "/plugins/i18n",
+    "group": "UI"
+  },
+  {
+    "label": "log",
+    "sublabel": "togo logging: levels, text/json, file output",
+    "href": "/plugins/log",
+    "group": "Infra"
+  },
+  {
+    "label": "mail",
+    "sublabel": "togo mail: SMTP + driver plugins (SES/Resend)",
+    "href": "/plugins/mail",
+    "group": "Messaging"
+  },
+  {
+    "label": "mail-resend",
+    "sublabel": "Resend driver for togo mail",
+    "href": "/plugins/mail-resend",
+    "group": "Messaging"
+  },
+  {
+    "label": "mcp-web",
+    "sublabel": "Public MCP server for togo — docs, plugins, and plugin submission for agents (mcp.to-go.dev).",
+    "href": "/plugins/mcp-web",
+    "group": "Plugin"
+  },
+  {
+    "label": "notifications",
+    "sublabel": "togo notifications: channels (mail/broadcast/db) + push plugins",
+    "href": "/plugins/notifications",
+    "group": "Messaging"
+  },
+  {
+    "label": "notifications-onesignal",
+    "sublabel": "OneSignal push channel for togo notifications",
+    "href": "/plugins/notifications-onesignal",
+    "group": "Messaging"
+  },
+  {
+    "label": "orm",
+    "sublabel": "togo ORM: driver-agnostic query builder (SQLi-validated)",
+    "href": "/plugins/orm",
+    "group": "Data"
+  },
+  {
+    "label": "plugin-auth-supabase",
+    "sublabel": "togo plugin: Supabase (GoTrue) JWT auth — /auth/me + bearer middleware",
+    "href": "/plugins/plugin-auth-supabase",
+    "group": "Auth"
+  },
+  {
+    "label": "queue",
+    "sublabel": "togo queue provider plugin",
+    "href": "/plugins/queue",
+    "group": "Infra"
+  },
+  {
+    "label": "realtime",
+    "sublabel": "togo realtime provider plugin",
+    "href": "/plugins/realtime",
+    "group": "Infra"
+  },
+  {
+    "label": "realtime-ws",
+    "sublabel": "WebSocket realtime transport for togo",
+    "href": "/plugins/realtime-ws",
+    "group": "Infra"
+  },
+  {
+    "label": "search",
+    "sublabel": "togo search: ParadeDB default + ES/OpenSearch plugins",
+    "href": "/plugins/search",
+    "group": "Data"
+  },
+  {
+    "label": "search-elasticsearch",
+    "sublabel": "Elasticsearch/OpenSearch driver for togo search",
+    "href": "/plugins/search-elasticsearch",
+    "group": "Data"
+  },
+  {
+    "label": "seo",
+    "sublabel": "togo SEO/AEO plugin — sitemap, robots, llms.txt, meta/OG/JSON-LD + IndexNow / Google Analytics / Search Console / Bing providers.",
+    "href": "/plugins/seo",
+    "group": "Plugin"
+  },
+  {
+    "label": "storage",
+    "sublabel": "togo storage provider plugin",
+    "href": "/plugins/storage",
+    "group": "Data"
+  },
+  {
+    "label": "storage-supabase",
+    "sublabel": "Supabase Storage driver for togo",
+    "href": "/plugins/storage-supabase",
+    "group": "Data"
+  },
+  {
+    "label": "supabase",
+    "sublabel": "togo Supabase integration: custom image (ParadeDB/pgvector/pg_partman) + stack",
+    "href": "/plugins/supabase",
+    "group": "Data"
+  },
+  {
+    "label": "testing",
+    "sublabel": "togo test harness (HTTP + assertions + sqlite)",
+    "href": "/plugins/testing",
+    "group": "Dev"
+  },
+  {
+    "label": "validation",
+    "sublabel": "togo request validation (Laravel-style rules)",
+    "href": "/plugins/validation",
+    "group": "Dev"
+  },
+  {
+    "label": "worker",
+    "sublabel": "togo worker: supervised multi-threaded worker pools",
+    "href": "/plugins/worker",
+    "group": "Infra"
+  },
+  {
+    "label": "togo",
+    "sublabel": "Master orchestrator for a togo app — routes work to the right specialist, owns architecture and the generate→migrate→serve sequence, verifies integration across Go API and React UI before reporting done.",
+    "href": "/ai/agents/togo",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-architect",
+    "sublabel": "Architecture guide for togo apps — microkernel/plugin design, generator-first workflow, codegen pipeline order, and API-first (GraphQL + REST) decisions. Use for design questions and when deciding resource vs plugin.",
+    "href": "/ai/agents/togo-architect",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-backend",
+    "sublabel": "Backend specialist for this togo app — Go, chi, Huma (REST/OpenAPI), gqlgen (GraphQL), sqlc, Atlas, pgx/Postgres. Use for API endpoints, resolvers, queries, migrations.",
+    "href": "/ai/agents/togo-backend",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-data",
+    "sublabel": "Data specialist for togo — sqlc typed queries, Atlas schema/migrations, query performance, seeders/factories, and analytics over Postgres/togo-postgres (pgvector, FTS). Use for data modeling and DB performance.",
+    "href": "/ai/agents/togo-data",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-db",
+    "sublabel": "Database specialist for a togo app — Atlas schema/migrations (HCL), sqlc typed queries, seeders, and the DB driver registry (Postgres/SQLite/MySQL/Mongo). Use for schema, queries, and data.",
+    "href": "/ai/agents/togo-db",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-devops",
+    "sublabel": "DevOps for a togo app — togo deploy (rsync/ssh), infra, Docker, CI/CD, and environment config. Use for shipping the single binary + frontend to a server and wiring pipelines.",
+    "href": "/ai/agents/togo-devops",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-frontend",
+    "sublabel": "Frontend specialist for a togo app — React, TanStack Router/Query or Next.js App Router, Vite, the generated typed API client + hooks, and pages. Use for UI, data fetching, and routes.",
+    "href": "/ai/agents/togo-frontend",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-plugin-architect",
+    "sublabel": "Plugin architect for togo — the microkernel contract (Register/Boot, priority, hooks), capability boundaries, and the base→providers model (e.g. auth → auth-dev/auth-firebase). Use for designing plugins and their interfaces.",
+    "href": "/ai/agents/togo-plugin-architect",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-plugin-author",
+    "sublabel": "Author togo capability plugins — the microkernel Plugin contract (Priority/Register/Boot), CLI/route/schema registration, packaging, and publishing to the marketplace. Use when building or extending a togo plugin.",
+    "href": "/ai/agents/togo-plugin-author",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-prompt-engineer",
+    "sublabel": "Prompt/agent engineer for togo — the .claude/ tree (agents, skills, rules, hooks), the MCP wiring, and the claude-togo plugin. Use for authoring or improving AI tooling around a togo app.",
+    "href": "/ai/agents/togo-prompt-engineer",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-qa",
+    "sublabel": "QA for a togo app — Go testing (table-driven, httptest), the generated REST/GraphQL contract, and React UI tests (Vitest/Playwright). Use for test coverage, E2E flows, and regression checks.",
+    "href": "/ai/agents/togo-qa",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-release-manager",
+    "sublabel": "Release manager for togo packages — semver, CHANGELOG, goreleaser tags, npm wrapper publishing, and pkg.go.dev. Use for cutting releases and promotion governance.",
+    "href": "/ai/agents/togo-release-manager",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-security",
+    "sublabel": "Security for a togo app — auth/RBAC (JWT, OTP/2FA, sessions), secrets handling, dependency/VAPT audit, and safe plugin installation. Use for threat review, auth flows, and hardening.",
+    "href": "/ai/agents/togo-security",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-technical-writer",
+    "sublabel": "Technical writer for togo — READMEs, docs pages, llms.txt, command/agent reference, and the plugin marketplace copy. Use for clear, accurate, example-first documentation.",
+    "href": "/ai/agents/togo-technical-writer",
+    "group": "Agent"
+  },
+  {
+    "label": "togo-ui-designer",
+    "sublabel": "UI/design for togo apps — the @togo-framework/ui kit, semantic theme tokens, dark/light + RTL, and component composition. Use for building/adjusting UI with the kit instead of raw CSS.",
+    "href": "/ai/agents/togo-ui-designer",
+    "group": "Agent"
+  },
+  {
+    "label": "/togo:deploy",
+    "sublabel": "Provision infra and deploy the togo app (Terraform).",
+    "href": "/ai/skills/deploy",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:doctor",
+    "sublabel": "Check the togo toolchain (Go, Node/npm, sqlc, Atlas) and auto-install what's missing.",
+    "href": "/ai/skills/doctor",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:generate",
+    "sublabel": "Run the togo codegen pipeline (sqlc → gqlgen → Atlas → OpenAPI).",
+    "href": "/ai/skills/generate",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:logs",
+    "sublabel": "Tail and explain the running togo app's logs (API + web).",
+    "href": "/ai/skills/logs",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:mcp",
+    "sublabel": "Inspect / wire the togo MCP server (generators + project introspection as tools).",
+    "href": "/ai/skills/mcp",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:migrate",
+    "sublabel": "Apply / manage database migrations (Atlas) for the current togo app.",
+    "href": "/ai/skills/migrate",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:new",
+    "sublabel": "Scaffold a new togo app (Go API + React UI, one binary). Installs the togo CLI if missing.",
+    "href": "/ai/skills/new",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:new-plugin",
+    "sublabel": "Scaffold a new togo plugin (microkernel capability) from the plugin template.",
+    "href": "/ai/skills/new-plugin",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:plugin",
+    "sublabel": "Install or scaffold a togo capability plugin (auth, dashboard, cache, queue, …).",
+    "href": "/ai/skills/plugin",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:resource",
+    "sublabel": "Generate a togo resource (model + sqlc + Atlas + GraphQL + REST + UI page) and run codegen.",
+    "href": "/ai/skills/resource",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:serve",
+    "sublabel": "Run the togo app (Go API + React UI) locally.",
+    "href": "/ai/skills/serve",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:status",
+    "sublabel": "Show togo project health — toolchain, MCP connectivity, build/generate status, and running services.",
+    "href": "/ai/skills/status",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:team",
+    "sublabel": "List the togo agent team and what each specialist owns.",
+    "href": "/ai/skills/team",
+    "group": "Skill"
+  },
+  {
+    "label": "/togo:test",
+    "sublabel": "Run the togo app's tests — Go tests and the frontend tests — and report results.",
+    "href": "/ai/skills/test",
+    "group": "Skill"
+  }
+]

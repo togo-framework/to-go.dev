@@ -103,6 +103,10 @@ for (const r of repos) {
   md = cleanReadme(md);
   r.hasReadme = md.trim().length > 0;
   if (r.hasReadme) writeFileSync(join(ROOT, "public/docs", `${r.slug}.md`), md);
+  // plain-text README snippet → fuels the ⌘K palette's full-text search (sublabel).
+  r.snippet = md
+    ? md.replace(/```[\s\S]*?```/g, " ").replace(/<[^>]+>/g, " ").replace(/[#>*`\[\]()_~|>-]/g, " ").replace(/https?:\/\/\S+/g, " ").replace(/\s+/g, " ").trim().slice(0, 360)
+    : "";
   // GitHub release download total (public API) — 0 for repos with no binary releases.
   try {
     r.downloads = Number(sh(`gh api repos/togo-framework/${r.name}/releases --jq '[.[].assets[].download_count] | add // 0' 2>/dev/null`).trim()) || 0;
@@ -112,6 +116,23 @@ for (const r of repos) {
 }
 
 writeFileSync(join(ROOT, "src/data/repos.json"), JSON.stringify(out, null, 2));
+
+// search-index.json — powers the global ⌘K command palette: every plugin
+// (name + description + README text), agent, and skill, with a link to its page.
+// The README snippet rides in `sublabel` so the palette's text filter searches it.
+const GROUP = { auth: "Auth", data: "Data", infra: "Infra", dev: "Dev", messaging: "Messaging", ui: "UI", ai: "AI", payment: "Payments", other: "Plugin" };
+const searchIndex = [
+  ...out.filter((r) => r.kind === "plugin").map((r) => ({
+    label: r.name,
+    sublabel: [r.description, r.snippet].filter(Boolean).join(" — ").slice(0, 340),
+    href: `/plugins/${r.slug}`,
+    group: GROUP[r.category] || "Plugin",
+  })),
+  ...(AI.agents || []).map((a) => ({ label: a.title || a.name || a.slug, sublabel: a.description || "", href: `/ai/agents/${a.slug}`, group: "Agent" })),
+  ...(AI.skills || []).map((s) => ({ label: s.title || s.name || s.slug, sublabel: s.description || "", href: `/ai/skills/${s.slug}`, group: "Skill" })),
+];
+writeFileSync(join(ROOT, "src/data/search-index.json"), JSON.stringify(searchIndex, null, 2));
+console.log(`✓ search-index.json (${searchIndex.length} items)`);
 
 const plugins = out.filter((r) => r.kind === "plugin");
 const docs = out.filter((r) => r.hasReadme);
