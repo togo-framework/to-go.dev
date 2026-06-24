@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToGO — ship your Go backend and React frontend as one binary</title>
+<meta name="description" content="ToGO is an open-source, API-first full-stack framework: a Laravel-artisan-like CLI for Go + React, one binary, one repo, zero glue.">
+<link rel="icon" href="/togo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cyan:#1FC7DC;--sky:#2D8CE6;--cobalt:#1659C8;--ink:#0b0f12;--ink2:#141A1D;--mist:#9BAAB0;--line:#26323a;--flow:linear-gradient(110deg,#1FC7DC 0%,#2D8CE6 52%,#1659C8 100%)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:#E8EEF0;font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--cyan);text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:34px}
+  .brand span{font-family:"Sora",sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand .to{color:var(--cyan)} .brand .go{color:var(--sky)}
+  nav a{margin-left:22px;color:var(--mist);font-size:14px}
+  nav a:hover{color:#fff}
+  .hero{text-align:center;padding:88px 0 64px}
+  .badge{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);border:1px solid var(--line);border-radius:100px;padding:7px 14px;margin-bottom:28px}
+  .hero img{height:200px;filter:drop-shadow(0 24px 48px rgba(22,89,200,.35));margin-bottom:8px}
+  h1{font-family:"Sora",sans-serif;font-weight:800;font-size:clamp(40px,7vw,84px);line-height:.95;letter-spacing:-.04em}
+  h1 .to{color:var(--cyan)} h1 .go{background:linear-gradient(120deg,var(--sky),var(--cobalt));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tag{font-size:clamp(17px,2.4vw,22px);color:#B7C2C6;max-width:620px;margin:22px auto 0}
+  .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .install{font-family:"JetBrains Mono",monospace;font-size:15px;background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px}
+  .install .p{color:var(--cyan)}
+  .btn{background:var(--flow);color:#fff;font-weight:600;border-radius:12px;padding:14px 22px;font-size:15px;display:inline-block}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:#E8EEF0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:72px 0}
+  .card{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .card h3{font-family:"Sora",sans-serif;font-weight:700;font-size:18px;margin-bottom:8px}
+  .card p{color:var(--mist);font-size:14.5px}
+  .flowbar{height:6px;border-radius:100px;background:var(--flow);margin:8px 0 0}
+  pre{font-family:"JetBrains Mono",monospace;font-size:13.5px;background:#0a0e12;border:1px solid var(--line);border-radius:14px;padding:20px;overflow:auto;line-height:1.9;color:#9AAAB0}
+  pre .c{color:var(--cyan)} pre .b{color:#5AA6F0}
+  footer{border-top:1px solid var(--line);margin-top:80px;padding:34px 0;color:var(--mist);font-size:13px;text-align:center}
+  .sponsors{display:flex;align-items:center;justify-content:center;gap:28px;margin:18px 0}
+  .sponsors img{height:34px;opacity:.9} .sponsors strong{color:#cbd5da}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><img src="/togo-mark.svg" alt="ToGO"><span><span class="to">To</span><span class="go">GO</span></span></div>
+    <nav>
+      <a href="https://github.com/togo-framework">GitHub</a>
+      <a href="https://www.npmjs.com/package/@togo-framework/cli">npm</a>
+      <a href="https://docs.to-go.dev">Docs</a>
+      <a href="https://demo.to-go.dev">Demo</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="badge">Open-source · Full-stack · One binary</span>
+    <img src="/togo-mark.svg" alt="ToGO mascot">
+    <h1><span class="to">To</span><span class="go">GO</span></h1>
+    <p class="tag">The full-stack framework that ships your Go backend and React frontend as a single deployable app — a Laravel-artisan-like CLI for the Go + sqlc + Atlas + React stack.</p>
+    <div class="cta">
+      <div class="install"><span class="p">$</span> curl -fsSL https://to-go.dev/install.sh | sh</div>
+      <a class="btn" href="https://github.com/togo-framework">Get started →</a>
+      <a class="btn ghost" href="https://www.npmjs.com/package/@togo-framework/cli">npm i -g @togo-framework/cli</a>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card"><h3>One repo, one binary</h3><div class="flowbar"></div><p style="margin-top:14px">Your Go API and React UI compile into a single artifact. No glue, no orchestration.</p></div>
+    <div class="card"><h3>artisan-grade CLI</h3><div class="flowbar"></div><p style="margin-top:14px"><code>togo new</code>, <code>make:resource</code>, <code>migrate</code>, <code>generate</code>, <code>serve</code> — generators first.</p></div>
+    <div class="card"><h3>Everything is a plugin</h3><div class="flowbar"></div><p style="margin-top:14px">A thin microkernel. Auth, dashboard, DB drivers, cache, queue — installed via <code>togo install</code>.</p></div>
+    <div class="card"><h3>Pick your database</h3><div class="flowbar"></div><p style="margin-top:14px">sqlite by default · postgres · <strong>togo-postgres</strong> (ParadeDB + pgvector + pg_cron) · supabase · mysql · mongodb.</p></div>
+  </section>
+
+  <section>
+    <pre><span class="c">$</span> npm install -g @togo-framework/cli
+<span class="c">$</span> togo new myapp        <span class="b"># pick frontend (TanStack/Next.js) + database</span>
+<span class="c">$</span> cd myapp && togo serve
+<span class="c">→</span> serving on http://localhost:8080  <span class="b"># Go API + React UI, one binary</span></pre>
+  </section>
+
+  <footer>
+    <div class="sponsors">
+      <span>Sponsored by</span>
+      <a href="https://id8media.com"><img src="/.sponsors/id8media.svg" alt="ID8 Media" onerror="this.replaceWith(Object.assign(document.createElement('strong'),{textContent:'ID8 Media'}))"></a>
+      <a href="https://one-studio.co"><img src="/.sponsors/one-studio.jpeg" alt="One Studio"></a>
+    </div>
+    FULL-STACK UNIFICATION · © 2026 ToGO · MIT · <a href="https://github.com/togo-framework">togo-framework</a>
+  </footer>
+</div>
+</body>
+</html>
