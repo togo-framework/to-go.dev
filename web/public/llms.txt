@@ -29,6 +29,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [log](https://to-go.dev/plugins/log) (infra): togo logging: levels, text/json, file output — install: `togo install togo-framework/log`
 - [mail](https://to-go.dev/plugins/mail) (messaging): togo mail: SMTP + driver plugins (SES/Resend) — install: `togo install togo-framework/mail`
 - [mail-resend](https://to-go.dev/plugins/mail-resend) (messaging): Resend driver for togo mail — install: `togo install togo-framework/mail-resend`
+- [mcp-web](https://to-go.dev/plugins/mcp-web) (other): Public MCP server for togo — docs, plugins, and plugin submission for agents (mcp.to-go.dev). — install: `togo install togo-framework/mcp-web`
 - [notifications](https://to-go.dev/plugins/notifications) (messaging): togo notifications: channels (mail/broadcast/db) + push plugins — install: `togo install togo-framework/notifications`
 - [notifications-onesignal](https://to-go.dev/plugins/notifications-onesignal) (messaging): OneSignal push channel for togo notifications — install: `togo install togo-framework/notifications-onesignal`
 - [orm](https://to-go.dev/plugins/orm) (data): togo ORM: driver-agnostic query builder (SQLi-validated) — install: `togo install togo-framework/orm`
@@ -38,6 +39,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [realtime-ws](https://to-go.dev/plugins/realtime-ws) (infra): WebSocket realtime transport for togo — install: `togo install togo-framework/realtime-ws`
 - [search](https://to-go.dev/plugins/search) (data): togo search: ParadeDB default + ES/OpenSearch plugins — install: `togo install togo-framework/search`
 - [search-elasticsearch](https://to-go.dev/plugins/search-elasticsearch) (data): Elasticsearch/OpenSearch driver for togo search — install: `togo install togo-framework/search-elasticsearch`
+- [seo](https://to-go.dev/plugins/seo) (other): togo SEO/AEO plugin — sitemap, robots, llms.txt, meta/OG/JSON-LD + IndexNow / Google Analytics / Search Console / Bing providers. — install: `togo install togo-framework/seo`
 - [storage](https://to-go.dev/plugins/storage) (data): togo storage provider plugin — install: `togo install togo-framework/storage`
 - [storage-supabase](https://to-go.dev/plugins/storage-supabase) (data): Supabase Storage driver for togo — install: `togo install togo-framework/storage-supabase`
 - [supabase](https://to-go.dev/plugins/supabase) (data): togo Supabase integration: custom image (ParadeDB/pgvector/pg_partman) + stack — install: `togo install togo-framework/supabase`
@@ -69,6 +71,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [mail](https://to-go.dev/docs/mail): togo mail: SMTP + driver plugins (SES/Resend) — markdown: https://to-go.dev/docs/mail.md
 - [mail-resend](https://to-go.dev/docs/mail-resend): Resend driver for togo mail — markdown: https://to-go.dev/docs/mail-resend.md
 - [mcp](https://to-go.dev/docs/mcp): MCP server exposing togo generators to AI agents (Claude Code, Cursor, …) — markdown: https://to-go.dev/docs/mcp.md
+- [mcp-web](https://to-go.dev/docs/mcp-web): Public MCP server for togo — docs, plugins, and plugin submission for agents (mcp.to-go.dev). — markdown: https://to-go.dev/docs/mcp-web.md
 - [notifications](https://to-go.dev/docs/notifications): togo notifications: channels (mail/broadcast/db) + push plugins — markdown: https://to-go.dev/docs/notifications.md
 - [notifications-onesignal](https://to-go.dev/docs/notifications-onesignal): OneSignal push channel for togo notifications — markdown: https://to-go.dev/docs/notifications-onesignal.md
 - [orm](https://to-go.dev/docs/orm): togo ORM: driver-agnostic query builder (SQLi-validated) — markdown: https://to-go.dev/docs/orm.md
@@ -76,9 +79,9 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [plugin-template](https://to-go.dev/docs/plugin-template): Starter template for togo plugins — markdown: https://to-go.dev/docs/plugin-template.md
 - [queue](https://to-go.dev/docs/queue): togo queue provider plugin — markdown: https://to-go.dev/docs/queue.md
 - [realtime](https://to-go.dev/docs/realtime): togo realtime provider plugin — markdown: https://to-go.dev/docs/realtime.md
-- [realtime-ws](https://to-go.dev/docs/realtime-ws): WebSocket realtime transport for togo — markdown: https://to-go.dev/docs/realtime-ws.md
 - [search](https://to-go.dev/docs/search): togo search: ParadeDB default + ES/OpenSearch plugins — markdown: https://to-go.dev/docs/search.md
 - [search-elasticsearch](https://to-go.dev/docs/search-elasticsearch): Elasticsearch/OpenSearch driver for togo search — markdown: https://to-go.dev/docs/search-elasticsearch.md
+- [seo](https://to-go.dev/docs/seo): togo SEO/AEO plugin — sitemap, robots, llms.txt, meta/OG/JSON-LD + IndexNow / Google Analytics / Search Console / Bing providers. — markdown: https://to-go.dev/docs/seo.md
 - [storage](https://to-go.dev/docs/storage): togo storage provider plugin — markdown: https://to-go.dev/docs/storage.md
 - [storage-supabase](https://to-go.dev/docs/storage-supabase): Supabase Storage driver for togo — markdown: https://to-go.dev/docs/storage-supabase.md
 - [supabase](https://to-go.dev/docs/supabase): togo Supabase integration: custom image (ParadeDB/pgvector/pg_partman) + stack — markdown: https://to-go.dev/docs/supabase.md

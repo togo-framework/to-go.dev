@@ -147,7 +147,7 @@
     "navColor": "#1FC7DC",
     "install": null,
     "hasReadme": true,
-    "downloads": 66
+    "downloads": 67
   },
   {
     "name": "create-togo-app",
@@ -345,6 +345,21 @@
     "downloads": 0
   },
   {
+    "name": "mcp-web",
+    "slug": "mcp-web",
+    "description": "Public MCP server for togo — docs, plugins, and plugin submission for agents (mcp.to-go.dev).",
+    "language": "TypeScript",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T12:11:03Z",
+    "kind": "plugin",
+    "category": "other",
+    "navColor": "#7C8B98",
+    "install": "togo install togo-framework/mcp-web",
+    "hasReadme": true,
+    "downloads": 0
+  },
+  {
     "name": "notifications",
     "slug": "notifications",
     "description": "togo notifications: channels (mail/broadcast/db) + push plugins",
@@ -461,7 +476,7 @@
     "category": "infra",
     "navColor": "#1659C8",
     "install": "togo install togo-framework/realtime-ws",
-    "hasReadme": true,
+    "hasReadme": false,
     "downloads": 0
   },
   {
@@ -491,6 +506,21 @@
     "category": "data",
     "navColor": "#00ADD8",
     "install": "togo install togo-framework/search-elasticsearch",
+    "hasReadme": true,
+    "downloads": 0
+  },
+  {
+    "name": "seo",
+    "slug": "seo",
+    "description": "togo SEO/AEO plugin — sitemap, robots, llms.txt, meta/OG/JSON-LD + IndexNow / Google Analytics / Search Console / Bing providers.",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T12:08:09Z",
+    "kind": "plugin",
+    "category": "other",
+    "navColor": "#7C8B98",
+    "install": "togo install togo-framework/seo",
     "hasReadme": true,
     "downloads": 0
   },
@@ -561,7 +591,7 @@
     "language": "TypeScript",
     "stars": 0,
     "branch": "main",
-    "updatedAt": "2026-06-24T11:29:30Z",
+    "updatedAt": "2026-06-24T11:55:36Z",
     "kind": "core",
     "category": "core",
     "navColor": "#1FC7DC",
@@ -591,7 +621,7 @@
     "language": "TypeScript",
     "stars": 0,
     "branch": "main",
-    "updatedAt": "2026-06-24T11:41:18Z",
+    "updatedAt": "2026-06-24T12:12:06Z",
     "kind": "core",
     "category": "core",
     "navColor": "#1FC7DC",

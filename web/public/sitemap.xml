@@ -22,6 +22,7 @@
   <url><loc>https://to-go.dev/plugins/log</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/mail</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/mail-resend</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/mcp-web</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/notifications</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/notifications-onesignal</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/orm</loc><changefreq>weekly</changefreq></url>
@@ -31,6 +32,7 @@
   <url><loc>https://to-go.dev/plugins/realtime-ws</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/search</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/search-elasticsearch</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/seo</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/storage</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/storage-supabase</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/supabase</loc><changefreq>weekly</changefreq></url>
@@ -60,6 +62,7 @@
   <url><loc>https://to-go.dev/docs/mail</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/mail-resend</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/mcp</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/docs/mcp-web</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/notifications</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/notifications-onesignal</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/orm</loc><changefreq>weekly</changefreq></url>
@@ -67,9 +70,9 @@
   <url><loc>https://to-go.dev/docs/plugin-template</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/queue</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/realtime</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://to-go.dev/docs/realtime-ws</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/search</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/search-elasticsearch</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/docs/seo</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/storage</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/storage-supabase</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/supabase</loc><changefreq>weekly</changefreq></url>
