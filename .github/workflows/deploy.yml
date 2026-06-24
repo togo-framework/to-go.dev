@@ -33,7 +33,7 @@ jobs:
           DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
         run: |
-          mkdir -p ~/.ssh && printf '%s' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          mkdir -p ~/.ssh && printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
           tar czf /tmp/togo-dist.tgz -C web/dist .
           SSH="ssh -i $HOME/.ssh/deploy -o StrictHostKeyChecking=no -o ConnectTimeout=25"
           scp -i ~/.ssh/deploy -o StrictHostKeyChecking=no /tmp/togo-dist.tgz "root@$DEPLOY_HOST:/tmp/togo-dist.tgz"
