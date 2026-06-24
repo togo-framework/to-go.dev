@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { PluginCard, PluginPageHeader, Button } from "@togo-framework/ui";
+import { PluginCard, PluginPageHeader, Button, AuroraBackground } from "@togo-framework/ui";
 import { Blocks, Plus } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
@@ -33,6 +33,7 @@ export function Plugins() {
           })),
         }}
       />
+      <div className="fixed inset-0 -z-10"><AuroraBackground intensity={0.6} /></div>
       <section className="mx-auto max-w-6xl px-6 pt-12 pb-16">
         <PluginPageHeader
           icon={Blocks}
@@ -58,10 +59,10 @@ export function Plugins() {
               <button
                 key={c}
                 onClick={() => setCat(c)}
-                className={`font-mono text-[12.5px] px-3.5 py-2 rounded-lg border transition-colors ${
+                className={`font-mono text-[12.5px] px-3.5 py-2 rounded-full border backdrop-blur-md transition-colors ${
                   active
-                    ? "border-[color:rgba(31,199,220,.5)] text-[var(--togo-cyan,#5CDDEC)] bg-[color:rgba(31,199,220,.08)]"
-                    : "border-border text-muted-foreground hover:text-foreground hover:bg-muted/40"
+                    ? "border-[color:rgba(31,199,220,.5)] text-[#5CDDEC] bg-[color:rgba(31,199,220,.08)]"
+                    : "border-white/12 text-muted-foreground hover:text-foreground hover:bg-white/[0.05]"
                 }`}
               >
                 {label} <span className="opacity-60">{count}</span>
