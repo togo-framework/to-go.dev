@@ -5,6 +5,7 @@ import {
   Globe, HardDrive, ScrollText, Languages, Cog, BadgeCheck, Fingerprint,
   CreditCard, Sparkles, FileText, ScanText, Workflow as WorkflowIcon,
   Settings as SettingsIcon, MapPin, Building2, Users, Network, Activity, Brain, Receipt,
+  Rocket, Cloud, MessageCircle,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -13,6 +14,8 @@ import {
   siStripe, siLemonsqueezy, siAnthropic, siGooglegemini, siOllama, siCloudflare,
   siGoogledrive, siSentry, siDatadog, siAlgolia, siMeilisearch, siPusher,
   siNatsdotio, siElevenlabs, siDeepgram, siRss, siGoogle, siSearxng,
+  siTelegram, siDiscord, siDocker, siKubernetes, siTerraform, siGooglecloud,
+  siDigitalocean, siVultr, siHetzner, siOvh, siCaddy, siKong, siNginxproxymanager,
 } from "simple-icons";
 import reposData from "../data/repos.json";
 
@@ -77,6 +80,9 @@ const STR = brand(siStripe), LS = brand(siLemonsqueezy), AN = brand(siAnthropic)
   DD = brand(siDatadog), AL = brand(siAlgolia), ML = brand(siMeilisearch), PU = brand(siPusher),
   NA = brand(siNatsdotio), EL = brand(siElevenlabs), DG = brand(siDeepgram), RSS = brand(siRss),
   GO = brand(siGoogle), SX = brand(siSearxng);
+const TG = brand(siTelegram), DC = brand(siDiscord), DK = brand(siDocker), K8 = brand(siKubernetes),
+  TF = brand(siTerraform), GCP = brand(siGooglecloud), DO = brand(siDigitalocean), VU = brand(siVultr),
+  HZ = brand(siHetzner), OVH = brand(siOvh), CA = brand(siCaddy), KO = brand(siKong), NPM = brand(siNginxproxymanager);
 
 export const PLUGIN_META: Record<string, PluginVisual> = {
   auth: { title: "Auth", color: "#1FC7DC", icon: ShieldCheck, description: "JWT + RBAC + multi-guard sessions — the base auth kernel." },
@@ -184,6 +190,35 @@ export const PLUGIN_META: Record<string, PluginVisual> = {
   pdf: { title: "PDF", color: "#DC2626", icon: FileText, description: "HTML → PDF via headless Chromium." },
   ocr: { title: "OCR", color: "#7C3AED", icon: ScanText, description: "Image → text via AI vision or tesseract." },
   "testing-playwright": { title: "Playwright E2E", color: "#2EAD33", icon: FlaskConical, description: "Playwright end-to-end test harness." },
+
+  // ── Bots ──
+  bot: { title: "Bots", color: "#6366F1", icon: Bot, description: "Chat-bot subsystem — one command/message registry across platforms." },
+  "bot-telegram": { title: "Telegram Bot", color: TG.hex, brandIcon: TG, description: "Telegram bot driver (long-polling)." },
+  "bot-discord": { title: "Discord Bot", color: DC.hex, brandIcon: DC, description: "Discord bot driver (gateway)." },
+  "bot-slack": { title: "Slack Bot", color: "#4A154B", icon: MessageCircle, description: "Slack bot driver (Socket Mode)." },
+
+  // ── Deploy ──
+  deploy: { title: "Deploy", color: "#0EA5E9", icon: Rocket, description: "Provider-routed deploys — VPS, cloud, Docker & Kubernetes." },
+  "deploy-terraform": { title: "Terraform", color: TF.hex, brandIcon: TF, description: "Terraform deploy driver." },
+  "deploy-docker": { title: "Docker", color: DK.hex, brandIcon: DK, description: "Docker / Compose deploy driver." },
+  "deploy-kubernetes": { title: "Kubernetes", color: K8.hex, brandIcon: K8, description: "Kubernetes deploy driver." },
+  "deploy-gcp": { title: "Google Cloud", color: GCP.hex, brandIcon: GCP, description: "Google Cloud deploy driver." },
+  "deploy-aws": { title: "AWS", color: "#FF9900", icon: Cloud, description: "Amazon Web Services deploy driver." },
+  "deploy-azure": { title: "Azure", color: "#0078D4", icon: Cloud, description: "Microsoft Azure deploy driver." },
+  "deploy-digitalocean": { title: "DigitalOcean", color: DO.hex, brandIcon: DO, description: "DigitalOcean deploy driver." },
+  "deploy-vultr": { title: "Vultr", color: VU.hex, brandIcon: VU, description: "Vultr deploy driver." },
+  "deploy-hetzner": { title: "Hetzner", color: HZ.hex, brandIcon: HZ, description: "Hetzner Cloud deploy driver." },
+  "deploy-ovh": { title: "OVH", color: OVH.hex, brandIcon: OVH, description: "OVHcloud deploy driver." },
+  "deploy-ubuntu": { title: "Ubuntu VPS", color: "#E95420", icon: Server, description: "Ubuntu VPS deploy driver." },
+  "deploy-centos": { title: "CentOS VPS", color: "#262577", icon: Server, description: "CentOS VPS deploy driver." },
+  "deploy-debian": { title: "Debian VPS", color: "#A81D33", icon: Server, description: "Debian VPS deploy driver." },
+
+  // ── DNS / proxy / gateway ──
+  dns: { title: "DNS / Proxy", color: "#22C55E", icon: Network, description: "Manage DNS records, reverse-proxy hosts & gateway routes." },
+  "dns-cloudflare": { title: "Cloudflare DNS", color: CF.hex, brandIcon: CF, description: "Cloudflare DNS records driver." },
+  "dns-npm": { title: "Nginx Proxy Manager", color: NPM.hex, brandIcon: NPM, description: "Nginx Proxy Manager reverse-proxy driver." },
+  "dns-caddy": { title: "Caddy", color: CA.hex, brandIcon: CA, description: "Caddy reverse-proxy driver." },
+  "dns-kong": { title: "Kong", color: KO.hex, brandIcon: KO, description: "Kong API-gateway routes driver." },
 };
 
 const DEFAULT_VISUAL: PluginVisual = { title: "", color: "#2D8CE6", icon: Boxes };
