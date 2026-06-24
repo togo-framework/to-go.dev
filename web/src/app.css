@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "@togo-framework/ui/styles.css";
+@source "../node_modules/@togo-framework/ui/dist";
+@custom-variant dark (&:where(.dark, .dark *));
+
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--tg-font); }
+
+/* README rendering fallback (in case the kit MarkdownRenderer leaves base elements unstyled) */
+.tg-readme { line-height: 1.7; color: var(--foreground); }
+.tg-readme h1, .tg-readme h2, .tg-readme h3 { font-family: Sora, var(--tg-font); font-weight: 700; line-height: 1.25; margin: 1.6em 0 .6em; }
+.tg-readme h1 { font-size: 1.9rem; }
+.tg-readme h2 { font-size: 1.45rem; padding-bottom: .3em; border-bottom: 1px solid var(--border); }
+.tg-readme h3 { font-size: 1.15rem; }
+.tg-readme p, .tg-readme ul, .tg-readme ol, .tg-readme blockquote, .tg-readme table { margin: .8em 0; }
+.tg-readme ul, .tg-readme ol { padding-inline-start: 1.4em; }
+.tg-readme li { margin: .3em 0; }
+.tg-readme a { color: var(--togo-cyan, #1FC7DC); text-decoration: none; }
+.tg-readme a:hover { text-decoration: underline; }
+.tg-readme code { font-family: "JetBrains Mono", monospace; font-size: .85em; background: var(--muted); padding: .15em .4em; border-radius: 4px; }
+.tg-readme pre { background: #080b0f; border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.2rem; overflow: auto; }
+.tg-readme pre code { background: transparent; padding: 0; }
+.tg-readme blockquote { border-inline-start: 3px solid var(--border); padding-inline-start: 1em; color: var(--muted-foreground); }
+.tg-readme img { max-width: 100%; }
+.tg-readme table { border-collapse: collapse; }
+.tg-readme th, .tg-readme td { border: 1px solid var(--border); padding: .5em .8em; text-align: start; }
+.tg-readme hr { border: none; border-top: 1px solid var(--border); margin: 1.6em 0; }

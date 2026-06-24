@@ -1,0 +1,57 @@
+# ToGO
+
+> ToGO is an open-source, API-first full-stack framework: a Laravel-artisan-grade CLI for the Go + sqlc + Atlas + React stack. One binary, one repo, zero glue.
+
+Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-framework/cli`
+
+## Pages
+- [Home](https://to-go.dev/): overview, install, features
+- [Repositories](https://to-go.dev/repos): every togo-framework repo
+
+## Repositories
+- [.github](https://to-go.dev/docs/.github): Org-wide community health files (issue/PR templates, sponsor, profile) — markdown: https://to-go.dev/docs/.github.md
+- [auth](https://to-go.dev/docs/auth): togo base auth: JWT + RBAC + multi-guard, Supabase/GoTrue first-class, OAuth/Firebase/WorkOS as plugins — markdown: https://to-go.dev/docs/auth.md
+- [auth-dev](https://to-go.dev/docs/auth-dev): Developer login for togo auth (dev-only) — markdown: https://to-go.dev/docs/auth-dev.md
+- [auth-firebase](https://to-go.dev/docs/auth-firebase): Firebase Authentication driver for togo auth — markdown: https://to-go.dev/docs/auth-firebase.md
+- [auth-oauth](https://to-go.dev/docs/auth-oauth): OAuth2 social login for togo auth — markdown: https://to-go.dev/docs/auth-oauth.md
+- [auth-session-redis](https://to-go.dev/docs/auth-session-redis): Redis session store for togo auth — markdown: https://to-go.dev/docs/auth-session-redis.md
+- [auth-workos](https://to-go.dev/docs/auth-workos): WorkOS SSO/SAML driver for togo auth — markdown: https://to-go.dev/docs/auth-workos.md
+- [cache](https://to-go.dev/docs/cache): togo cache provider plugin — markdown: https://to-go.dev/docs/cache.md
+- [cache-redis](https://to-go.dev/docs/cache-redis): Redis driver for togo cache — markdown: https://to-go.dev/docs/cache-redis.md
+- [cli](https://to-go.dev/docs/cli): The togo CLI — Laravel-artisan-like generators, codegen, plugins, MCP, deploy — markdown: https://to-go.dev/docs/cli.md
+- [create-togo-app](https://to-go.dev/docs/create-togo-app): Project template for togo, rendered by `togo new` — markdown: https://to-go.dev/docs/create-togo-app.md
+- [dashboard](https://to-go.dev/docs/dashboard): togo dashboard + auth UI (depends on auth) — markdown: https://to-go.dev/docs/dashboard.md
+- [db](https://to-go.dev/docs/db): togo database stack — the togo-postgres image (ParadeDB: pg_search + pgvector + pg_analytics, plus pg_cron + pg_partman) and the batteries-included compose. — markdown: https://to-go.dev/docs/db.md
+- [db-mongodb](https://to-go.dev/docs/db-mongodb) — markdown: https://to-go.dev/docs/db-mongodb.md
+- [db-mysql](https://to-go.dev/docs/db-mysql) — markdown: https://to-go.dev/docs/db-mysql.md
+- [db-postgres](https://to-go.dev/docs/db-postgres) — markdown: https://to-go.dev/docs/db-postgres.md
+- [db-supabase](https://to-go.dev/docs/db-supabase): Postgres/Supabase driver for togo ORM — markdown: https://to-go.dev/docs/db-supabase.md
+- [faker](https://to-go.dev/docs/faker): togo faker: fake data for factories/seeders — markdown: https://to-go.dev/docs/faker.md
+- [i18n](https://to-go.dev/docs/i18n): togo i18n provider plugin — markdown: https://to-go.dev/docs/i18n.md
+- [log](https://to-go.dev/docs/log): togo logging: levels, text/json, file output — markdown: https://to-go.dev/docs/log.md
+- [mail](https://to-go.dev/docs/mail): togo mail: SMTP + driver plugins (SES/Resend) — markdown: https://to-go.dev/docs/mail.md
+- [mail-resend](https://to-go.dev/docs/mail-resend): Resend driver for togo mail — markdown: https://to-go.dev/docs/mail-resend.md
+- [mcp](https://to-go.dev/docs/mcp): MCP server exposing togo generators to AI agents (Claude Code, Cursor, …) — markdown: https://to-go.dev/docs/mcp.md
+- [notifications](https://to-go.dev/docs/notifications): togo notifications: channels (mail/broadcast/db) + push plugins — markdown: https://to-go.dev/docs/notifications.md
+- [notifications-onesignal](https://to-go.dev/docs/notifications-onesignal): OneSignal push channel for togo notifications — markdown: https://to-go.dev/docs/notifications-onesignal.md
+- [orm](https://to-go.dev/docs/orm): togo ORM: driver-agnostic query builder (SQLi-validated) — markdown: https://to-go.dev/docs/orm.md
+- [plugin-auth-supabase](https://to-go.dev/docs/plugin-auth-supabase): togo plugin: Supabase (GoTrue) JWT auth — /auth/me + bearer middleware — markdown: https://to-go.dev/docs/plugin-auth-supabase.md
+- [plugin-template](https://to-go.dev/docs/plugin-template): Starter template for togo plugins — markdown: https://to-go.dev/docs/plugin-template.md
+- [queue](https://to-go.dev/docs/queue): togo queue provider plugin — markdown: https://to-go.dev/docs/queue.md
+- [realtime](https://to-go.dev/docs/realtime): togo realtime provider plugin — markdown: https://to-go.dev/docs/realtime.md
+- [realtime-ws](https://to-go.dev/docs/realtime-ws): WebSocket realtime transport for togo — markdown: https://to-go.dev/docs/realtime-ws.md
+- [search](https://to-go.dev/docs/search): togo search: ParadeDB default + ES/OpenSearch plugins — markdown: https://to-go.dev/docs/search.md
+- [search-elasticsearch](https://to-go.dev/docs/search-elasticsearch): Elasticsearch/OpenSearch driver for togo search — markdown: https://to-go.dev/docs/search-elasticsearch.md
+- [storage](https://to-go.dev/docs/storage): togo storage provider plugin — markdown: https://to-go.dev/docs/storage.md
+- [storage-supabase](https://to-go.dev/docs/storage-supabase): Supabase Storage driver for togo — markdown: https://to-go.dev/docs/storage-supabase.md
+- [supabase](https://to-go.dev/docs/supabase): togo Supabase integration: custom image (ParadeDB/pgvector/pg_partman) + stack — markdown: https://to-go.dev/docs/supabase.md
+- [testing](https://to-go.dev/docs/testing): togo test harness (HTTP + assertions + sqlite) — markdown: https://to-go.dev/docs/testing.md
+- [to-go.dev](https://to-go.dev/docs/to-go.dev): to-go.dev — the togo framework website: landing, docs, install.sh/update.sh. — markdown: https://to-go.dev/docs/to-go.dev.md
+- [togo](https://to-go.dev/docs/togo): Go, the artisan way — microkernel of the togo framework (Go + sqlc + Atlas + GraphQL/OpenAPI + Next.js) — markdown: https://to-go.dev/docs/togo.md
+- [ui](https://to-go.dev/docs/ui): togo UI kit — prism-style admin + auth components (Storybook). RTL-ready, dark-first. — markdown: https://to-go.dev/docs/ui.md
+- [validation](https://to-go.dev/docs/validation): togo request validation (Laravel-style rules) — markdown: https://to-go.dev/docs/validation.md
+- [worker](https://to-go.dev/docs/worker): togo worker: supervised multi-threaded worker pools — markdown: https://to-go.dev/docs/worker.md
+
+## Source
+- GitHub org: https://github.com/togo-framework
+- npm CLI: https://www.npmjs.com/package/@togo-framework/cli

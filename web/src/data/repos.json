@@ -1,0 +1,422 @@
+[
+  {
+    "name": ".github",
+    "slug": ".github",
+    "description": "Org-wide community health files (issue/PR templates, sponsor, profile)",
+    "language": "",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T10:47:16Z",
+    "hasReadme": true
+  },
+  {
+    "name": "auth",
+    "slug": "auth",
+    "description": "togo base auth: JWT + RBAC + multi-guard, Supabase/GoTrue first-class, OAuth/Firebase/WorkOS as plugins",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:33:12Z",
+    "hasReadme": true
+  },
+  {
+    "name": "auth-dev",
+    "slug": "auth-dev",
+    "description": "Developer login for togo auth (dev-only)",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:37:43Z",
+    "hasReadme": true
+  },
+  {
+    "name": "auth-firebase",
+    "slug": "auth-firebase",
+    "description": "Firebase Authentication driver for togo auth",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:37:48Z",
+    "hasReadme": true
+  },
+  {
+    "name": "auth-oauth",
+    "slug": "auth-oauth",
+    "description": "OAuth2 social login for togo auth",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:37:52Z",
+    "hasReadme": true
+  },
+  {
+    "name": "auth-session-redis",
+    "slug": "auth-session-redis",
+    "description": "Redis session store for togo auth",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:37:53Z",
+    "hasReadme": true
+  },
+  {
+    "name": "auth-workos",
+    "slug": "auth-workos",
+    "description": "WorkOS SSO/SAML driver for togo auth",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:01Z",
+    "hasReadme": true
+  },
+  {
+    "name": "cache",
+    "slug": "cache",
+    "description": "togo cache provider plugin",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:03Z",
+    "hasReadme": true
+  },
+  {
+    "name": "cache-redis",
+    "slug": "cache-redis",
+    "description": "Redis driver for togo cache",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:01Z",
+    "hasReadme": true
+  },
+  {
+    "name": "cli",
+    "slug": "cli",
+    "description": "The togo CLI — Laravel-artisan-like generators, codegen, plugins, MCP, deploy",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T10:02:43Z",
+    "hasReadme": true
+  },
+  {
+    "name": "create-togo-app",
+    "slug": "create-togo-app",
+    "description": "Project template for togo, rendered by `togo new`",
+    "language": "TypeScript",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:43:19Z",
+    "hasReadme": true
+  },
+  {
+    "name": "dashboard",
+    "slug": "dashboard",
+    "description": "togo dashboard + auth UI (depends on auth)",
+    "language": "TypeScript",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:14Z",
+    "hasReadme": true
+  },
+  {
+    "name": "db",
+    "slug": "db",
+    "description": "togo database stack — the togo-postgres image (ParadeDB: pg_search + pgvector + pg_analytics, plus pg_cron + pg_partman) and the batteries-included compose.",
+    "language": "Dockerfile",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:43:43Z",
+    "hasReadme": true
+  },
+  {
+    "name": "db-mongodb",
+    "slug": "db-mongodb",
+    "description": "",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:43:30Z",
+    "hasReadme": true
+  },
+  {
+    "name": "db-mysql",
+    "slug": "db-mysql",
+    "description": "",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:43:27Z",
+    "hasReadme": true
+  },
+  {
+    "name": "db-postgres",
+    "slug": "db-postgres",
+    "description": "",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:43:23Z",
+    "hasReadme": true
+  },
+  {
+    "name": "db-supabase",
+    "slug": "db-supabase",
+    "description": "Postgres/Supabase driver for togo ORM",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:43:34Z",
+    "hasReadme": true
+  },
+  {
+    "name": "faker",
+    "slug": "faker",
+    "description": "togo faker: fake data for factories/seeders",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:13Z",
+    "hasReadme": true
+  },
+  {
+    "name": "i18n",
+    "slug": "i18n",
+    "description": "togo i18n provider plugin",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:16Z",
+    "hasReadme": true
+  },
+  {
+    "name": "log",
+    "slug": "log",
+    "description": "togo logging: levels, text/json, file output",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:23Z",
+    "hasReadme": true
+  },
+  {
+    "name": "mail",
+    "slug": "mail",
+    "description": "togo mail: SMTP + driver plugins (SES/Resend)",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:24Z",
+    "hasReadme": true
+  },
+  {
+    "name": "mail-resend",
+    "slug": "mail-resend",
+    "description": "Resend driver for togo mail",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:35Z",
+    "hasReadme": true
+  },
+  {
+    "name": "mcp",
+    "slug": "mcp",
+    "description": "MCP server exposing togo generators to AI agents (Claude Code, Cursor, …)",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:33Z",
+    "hasReadme": true
+  },
+  {
+    "name": "notifications",
+    "slug": "notifications",
+    "description": "togo notifications: channels (mail/broadcast/db) + push plugins",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:43Z",
+    "hasReadme": true
+  },
+  {
+    "name": "notifications-onesignal",
+    "slug": "notifications-onesignal",
+    "description": "OneSignal push channel for togo notifications",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:38Z",
+    "hasReadme": true
+  },
+  {
+    "name": "orm",
+    "slug": "orm",
+    "description": "togo ORM: driver-agnostic query builder (SQLi-validated)",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:43:40Z",
+    "hasReadme": true
+  },
+  {
+    "name": "plugin-auth-supabase",
+    "slug": "plugin-auth-supabase",
+    "description": "togo plugin: Supabase (GoTrue) JWT auth — /auth/me + bearer middleware",
+    "language": "TypeScript",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:46Z",
+    "hasReadme": true
+  },
+  {
+    "name": "plugin-template",
+    "slug": "plugin-template",
+    "description": "Starter template for togo plugins",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:58Z",
+    "hasReadme": true
+  },
+  {
+    "name": "queue",
+    "slug": "queue",
+    "description": "togo queue provider plugin",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:56Z",
+    "hasReadme": true
+  },
+  {
+    "name": "realtime",
+    "slug": "realtime",
+    "description": "togo realtime provider plugin",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:59Z",
+    "hasReadme": true
+  },
+  {
+    "name": "realtime-ws",
+    "slug": "realtime-ws",
+    "description": "WebSocket realtime transport for togo",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:38:59Z",
+    "hasReadme": true
+  },
+  {
+    "name": "search",
+    "slug": "search",
+    "description": "togo search: ParadeDB default + ES/OpenSearch plugins",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:39:01Z",
+    "hasReadme": true
+  },
+  {
+    "name": "search-elasticsearch",
+    "slug": "search-elasticsearch",
+    "description": "Elasticsearch/OpenSearch driver for togo search",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:39:06Z",
+    "hasReadme": true
+  },
+  {
+    "name": "storage",
+    "slug": "storage",
+    "description": "togo storage provider plugin",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:39:08Z",
+    "hasReadme": true
+  },
+  {
+    "name": "storage-supabase",
+    "slug": "storage-supabase",
+    "description": "Supabase Storage driver for togo",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:39:12Z",
+    "hasReadme": true
+  },
+  {
+    "name": "supabase",
+    "slug": "supabase",
+    "description": "togo Supabase integration: custom image (ParadeDB/pgvector/pg_partman) + stack",
+    "language": "Dockerfile",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:43:37Z",
+    "hasReadme": true
+  },
+  {
+    "name": "testing",
+    "slug": "testing",
+    "description": "togo test harness (HTTP + assertions + sqlite)",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:39:15Z",
+    "hasReadme": true
+  },
+  {
+    "name": "to-go.dev",
+    "slug": "to-go.dev",
+    "description": "to-go.dev — the togo framework website: landing, docs, install.sh/update.sh.",
+    "language": "HTML",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T10:49:10Z",
+    "hasReadme": true
+  },
+  {
+    "name": "togo",
+    "slug": "togo",
+    "description": "Go, the artisan way — microkernel of the togo framework (Go + sqlc + Atlas + GraphQL/OpenAPI + Next.js)",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:43:13Z",
+    "hasReadme": true
+  },
+  {
+    "name": "ui",
+    "slug": "ui",
+    "description": "togo UI kit — prism-style admin + auth components (Storybook). RTL-ready, dark-first.",
+    "language": "TypeScript",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:39:18Z",
+    "hasReadme": true
+  },
+  {
+    "name": "validation",
+    "slug": "validation",
+    "description": "togo request validation (Laravel-style rules)",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:39:22Z",
+    "hasReadme": true
+  },
+  {
+    "name": "worker",
+    "slug": "worker",
+    "description": "togo worker: supervised multi-threaded worker pools",
+    "language": "Go",
+    "stars": 0,
+    "branch": "main",
+    "updatedAt": "2026-06-24T09:39:20Z",
+    "hasReadme": true
+  }
+]

@@ -1,25 +1,55 @@
 name: deploy
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-# Push to main → SSH to the togo box → pull the repo on the LXC and refresh the
-# static container. The container mounts /opt/to-go.dev/public, so the pulled files
-# are served immediately.
+# Build the prerendered static site (data fetch → vite build → puppeteer prerender) and
+# ship dist/ to the togo box: SSH to the host → pct push into LXC 201 → extract into
+# /opt/to-go.dev-site → restart the togo-web container (which NPM fronts with TLS).
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to to-go.dev
-        uses: appleboy/ssh-action@v1.2.0
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: root
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
-          script: |
-            pct exec 201 -- bash -c '
-              if [ -d /opt/to-go.dev/.git ]; then git -C /opt/to-go.dev pull --ff-only; else git clone https://github.com/togo-framework/to-go.dev /opt/to-go.dev; fi
-              docker restart togo-web >/dev/null 2>&1 || true
-            '
-            echo "deployed $(pct exec 201 -- git -C /opt/to-go.dev rev-parse --short HEAD)"
+          node-version: "22"
+
+      - name: Build static site (data + vite + prerender)
+        working-directory: web
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUPPETEER_SKIP_DOWNLOAD: "false"
+        run: |
+          npm ci
+          npx puppeteer browsers install chrome
+          npm run build:ci
+
+      - name: Ship dist to the box
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          mkdir -p ~/.ssh && printf '%s' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          tar czf /tmp/togo-dist.tgz -C web/dist .
+          SSH="ssh -i $HOME/.ssh/deploy -o StrictHostKeyChecking=no -o ConnectTimeout=25"
+          scp -i ~/.ssh/deploy -o StrictHostKeyChecking=no /tmp/togo-dist.tgz "root@$DEPLOY_HOST:/tmp/togo-dist.tgz"
+          scp -i ~/.ssh/deploy -o StrictHostKeyChecking=no deploy/nginx.conf "root@$DEPLOY_HOST:/tmp/togo-nginx.conf"
+          $SSH "root@$DEPLOY_HOST" '
+            pct push 201 /tmp/togo-dist.tgz /tmp/togo-dist.tgz
+            pct push 201 /tmp/togo-nginx.conf /tmp/togo-nginx.conf
+            pct exec 201 -- bash -c "
+              rm -rf /opt/to-go.dev-site && mkdir -p /opt/to-go.dev-site &&
+              tar xzf /tmp/togo-dist.tgz -C /opt/to-go.dev-site &&
+              cp /tmp/togo-nginx.conf /opt/to-go.dev-nginx.conf &&
+              (docker exec togo-web nginx -t && docker restart togo-web ||
+               docker run -d --name togo-web --network npm_default --restart unless-stopped \
+                 -v /opt/to-go.dev-site:/usr/share/nginx/html:ro \
+                 -v /opt/to-go.dev-nginx.conf:/etc/nginx/conf.d/default.conf:ro nginx:alpine)
+            "
+            rm -f /tmp/togo-dist.tgz /tmp/togo-nginx.conf
+          '
+          rm -f ~/.ssh/deploy

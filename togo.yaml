@@ -1,0 +1,16 @@
+api:
+    docs: /docs
+    graphql: /graphql
+    rest: /api
+auth:
+    provider: supabase
+database:
+    driver: sqlite
+    url: ${DATABASE_URL}
+frontend:
+    dir: web
+module: github.com/togosite/togosite
+name: togosite
+plugins:
+    - github.com/togo-framework/auth
+    - github.com/togo-framework/auth-dev
