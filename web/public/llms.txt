@@ -8,6 +8,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [Home](https://to-go.dev/): overview, install, the generator workflow, API-first, databases, AI-native
 - [Docs](https://to-go.dev/docs): documentation home — every repo's README
 - [Plugins](https://to-go.dev/plugins): the plugin marketplace
+- [MCP](https://to-go.dev/mcp): the public MCP server — connect agents to togo
 - [Submit a plugin](https://to-go.dev/plugins/submit): propose a plugin (opens a GitHub issue)
 
 ## Plugins

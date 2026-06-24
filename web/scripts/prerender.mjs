@@ -20,6 +20,7 @@ const routes = [
   "/",
   "/docs",
   "/plugins",
+  "/mcp",
   "/plugins/submit",
   ...plugins.map((p) => `/plugins/${p.slug}`),
   ...docs.map((r) => `/docs/${r.slug}`),

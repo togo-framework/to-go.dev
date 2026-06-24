@@ -6,6 +6,7 @@ import { PluginDetail } from "./routes/plugin-detail";
 import { PluginSubmit } from "./routes/plugin-submit";
 import { DocsHome } from "./routes/docs-home";
 import { Doc } from "./routes/doc";
+import { Mcp } from "./routes/mcp";
 
 const rootRoute = createRootRoute({ component: () => (<Providers><Outlet /></Providers>) });
 
@@ -13,6 +14,7 @@ const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: "/", com
 
 const docsHomeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs", component: DocsHome });
 const docRoute = createRoute({ getParentRoute: () => rootRoute, path: "/docs/$slug", component: Doc });
+const mcpRoute = createRoute({ getParentRoute: () => rootRoute, path: "/mcp", component: Mcp });
 
 const pluginsRoute = createRoute({ getParentRoute: () => rootRoute, path: "/plugins", component: Plugins });
 const pluginSubmitRoute = createRoute({ getParentRoute: () => rootRoute, path: "/plugins/submit", component: PluginSubmit });
@@ -29,6 +31,7 @@ const reposRedirect = createRoute({
 const routeTree = rootRoute.addChildren([
   indexRoute,
   docsHomeRoute, docRoute,
+  mcpRoute,
   pluginsRoute, pluginSubmitRoute, pluginDetailRoute,
   reposRedirect,
 ]);

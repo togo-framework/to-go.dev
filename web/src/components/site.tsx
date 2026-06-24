@@ -14,7 +14,7 @@ export function SiteHeader() {
         <nav className="flex items-center gap-7 text-sm">
           <Link to="/docs" className="text-muted-foreground hover:text-foreground transition-colors">Docs</Link>
           <Link to="/plugins" className="text-muted-foreground hover:text-foreground transition-colors">Plugins</Link>
-          <a href="https://mcp.to-go.dev" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">MCP</a>
+          <Link to="/mcp" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">MCP</Link>
           <a href="https://ui.to-go.dev" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">UI</a>
           <a href="https://www.npmjs.com/package/@togo-framework/cli" className="text-muted-foreground hover:text-foreground transition-colors hidden sm:block">npm</a>
           <Button asChild variant="outline" size="sm">
