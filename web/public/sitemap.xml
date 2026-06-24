@@ -13,6 +13,7 @@
   <url><loc>https://to-go.dev/plugins/auth-workos</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/cache</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/cache-redis</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/plugins/claude-togo</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/dashboard</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/db-mongodb</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/plugins/db-mysql</loc><changefreq>weekly</changefreq></url>
@@ -49,6 +50,7 @@
   <url><loc>https://to-go.dev/docs/auth-workos</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/cache</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/cache-redis</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://to-go.dev/docs/claude-togo</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/cli</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/create-togo-app</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://to-go.dev/docs/dashboard</loc><changefreq>weekly</changefreq></url>
