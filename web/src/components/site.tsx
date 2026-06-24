@@ -5,7 +5,7 @@ import { Github } from "lucide-react";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-background/60 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img src="/togo-mark.svg" alt="ToGO" className="h-8 w-auto" />
@@ -36,6 +36,7 @@ export function SiteFooter() {
             <Link to="/plugins" className="hover:text-foreground">Plugins</Link>
             <a href="https://github.com/togo-framework" className="hover:text-foreground">GitHub</a>
             <a href="https://www.npmjs.com/package/@togo-framework/cli" className="hover:text-foreground">npm</a>
+            <a href="https://pkg.go.dev/search?q=togo-framework&m=package" className="hover:text-foreground">Packages</a>
             <a href="https://ui.to-go.dev" className="hover:text-foreground">UI kit</a>
             <a href="/llms.txt" className="hover:text-foreground">llms.txt</a>
           </div>
