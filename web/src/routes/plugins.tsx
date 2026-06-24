@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { MarketplaceCard, StatsRow, FilterBar, Pager, SectionHeading, PillButton, AuroraBackground } from "@togo-framework/ui";
+import { MarketplaceCard, StatsRow, FilterBar, Pager, SectionHeading, PillButton } from "@togo-framework/ui";
 import { Blocks, Sparkles, Plus } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
@@ -59,7 +59,6 @@ export function Plugins() {
           hasPart: plugins.map((p) => ({ "@type": "SoftwareApplication", name: p.name, applicationCategory: "DeveloperApplication", description: p.description, url: `https://to-go.dev/plugins/${p.slug}` })),
         }}
       />
-      <div className="fixed inset-0 -z-10"><AuroraBackground intensity={0.6} /></div>
 
       <section className="mx-auto max-w-6xl px-6 pt-14 pb-20">
         <SectionHeading
