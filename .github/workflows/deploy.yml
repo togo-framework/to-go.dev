@@ -1,0 +1,25 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Push to main → SSH to the togo box → pull the repo on the LXC and refresh the
+# static container. The container mounts /opt/to-go.dev/public, so the pulled files
+# are served immediately.
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to to-go.dev
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            pct exec 201 -- bash -c '
+              if [ -d /opt/to-go.dev/.git ]; then git -C /opt/to-go.dev pull --ff-only; else git clone https://github.com/togo-framework/to-go.dev /opt/to-go.dev; fi
+              docker restart togo-web >/dev/null 2>&1 || true
+            '
+            echo "deployed $(pct exec 201 -- git -C /opt/to-go.dev rev-parse --short HEAD)"
