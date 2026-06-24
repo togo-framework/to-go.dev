@@ -1,0 +1,8 @@
+to-go.dev, www.to-go.dev {
+	root * /var/www/to-go.dev/public
+	encode gzip
+	@scripts path /install.sh /update.sh
+	header @scripts Content-Type "text/plain; charset=utf-8"
+	file_server
+	header -Server
+}
