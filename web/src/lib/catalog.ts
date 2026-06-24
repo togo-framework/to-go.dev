@@ -178,6 +178,9 @@ export const PLUGIN_META: Record<string, PluginVisual> = {
   "mail-sendgrid": { title: "SendGrid", color: "#1A82E2", icon: Mail, description: "SendGrid email driver." },
   "notifications-pusher": { title: "Pusher", color: PU.hex, brandIcon: PU, description: "Pusher Channels push driver." },
   "notifications-fcm": { title: "FCM", color: F.hex, brandIcon: F, description: "Firebase Cloud Messaging push driver." },
+  "notifications-webpush": { title: "Web Push", color: "#4285F4", icon: Bell, description: "Browser Web Push (VAPID) notifications driver." },
+  "notifications-discord": { title: "Discord", color: DC.hex, brandIcon: DC, description: "Discord notifications driver (webhook)." },
+  "notifications-slack": { title: "Slack", color: "#611F69", icon: Bell, description: "Slack notifications driver (webhook/Web API)." },
   "realtime-grpc": { title: "gRPC", color: "#2D8CE6", icon: Network, description: "gRPC streaming transport for realtime." },
   "realtime-nats": { title: "NATS", color: NA.hex, brandIcon: NA, description: "NATS broker transport for realtime." },
 
