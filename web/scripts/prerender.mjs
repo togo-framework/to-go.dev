@@ -54,9 +54,19 @@ let browser;
 try {
   await waitForServer();
   console.log("• launching headless chrome…");
-  browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox", "--disable-setuid-sandbox"] });
+  const launch = () => puppeteer.launch({
+    headless: "new",
+    protocolTimeout: 180000,
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+  });
+  browser = await launch();
 
+  let _i = 0;
   for (const route of routes) {
+    // Recycle Chrome periodically — one long-lived instance degrades over ~40 pages
+    // in CI (Network.enable timeouts). Relaunching keeps prerender reliable.
+    if (_i > 0 && _i % 12 === 0) { await browser.close(); browser = await launch(); }
+    _i++;
     const page = await browser.newPage();
     await page.goto(BASE + route, { waitUntil: "networkidle0", timeout: 45000 });
     // for README pages, wait until the README has rendered (client fetch of /docs/<slug>.md)
