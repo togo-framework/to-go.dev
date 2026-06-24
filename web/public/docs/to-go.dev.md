@@ -1,10 +1,3 @@
-<p align="center"><img src="web/public/togo-mark.svg" width="96" alt="togo"></p>
-<h1 align="center">to-go.dev</h1>
-<p align="center">The <a href="https://to-go.dev">to-go.dev</a> website — <strong>itself a togo app</strong> (TanStack + <code>@togo-framework/ui</code>), prerendered to static.</p>
-<p align="center"><sub>part of the <a href="https://github.com/togo-framework">togo-framework</a></sub></p>
-
----
-
 to-go.dev dogfoods the framework: it's a real togo project (Go microkernel + plugins +
 a TanStack React frontend in `web/`) whose marketing site, repo index, and per-repo docs
 are **prerendered to static HTML** for full SEO/AEO and served behind Caddy/NPM + Let's Encrypt.
@@ -44,13 +37,3 @@ web/                 TanStack React frontend (the site)
 deploy/nginx.conf    static serving: clean URLs + raw text/plain for .md/llms.txt
 cmd/ internal/ db/   the togo Go app (microkernel + plugins) — the dogfood backend
 ```
-
-## 💎 Premium sponsors
-
-togo is proudly sponsored by **ID8 Media** and **One Studio**.
-
-<p align="center">
-  <a href="https://id8media.com"><img src="web/public/sponsors/id8media.svg" height="44" alt="ID8 Media" /></a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://one-studio.co"><img src="web/public/sponsors/one-studio.jpeg" height="44" alt="One Studio" /></a>
-</p>

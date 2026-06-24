@@ -82,6 +82,7 @@ export function PluginDetail() {
           activeTab={tab}
           onTabChange={setTab}
           plugin={identity}
+          activity={{ activity_count: repo.downloads || 0, metric_label: "downloads", last_active_at: repo.updatedAt || null }}
           language="en"
         >
           {tab === "overview" && (

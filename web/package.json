@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@tanstack/react-router": "^1.95.0",
-    "@togo-framework/ui": "^0.1.0",
+    "@togo-framework/ui": "^0.1.1",
     "lucide-react": "^0.462.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
