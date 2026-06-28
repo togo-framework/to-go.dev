@@ -150,6 +150,12 @@ const llms = [
   `- [Plugins](${SITE}/plugins): the plugin marketplace`,
   `- [AI Stack](${SITE}/ai): agents, skills & tools for AI-driven togo development — \`togo install claude\``,
   `- [Submit a plugin](${SITE}/plugins/submit): propose a plugin (opens a GitHub issue)`,
+  `- [UI Kit](https://ui.to-go.dev): the @togo-framework/ui component library — Storybook docs for every component (cards, tables, charts, plugin cards, dashboards)`,
+  ``,
+  `## Community`,
+  `- [Discord](https://discord.gg/Rv9Y7tcBtN): the togo community — questions, help, and announcements`,
+  `- [UI Kit (ui.to-go.dev)](https://ui.to-go.dev): @togo-framework/ui Storybook — browse and copy components`,
+  `- [MCP server](https://mcp.to-go.dev): the public togo MCP endpoint for agents`,
   ``,
   `## AI Stack`,
   ...AI.agents.map((a) => `- [${a.name}](${SITE}/ai/agents/${a.slug}) (agent): ${a.description}`),
@@ -163,6 +169,8 @@ const llms = [
   `## Source`,
   `- GitHub org: https://github.com/togo-framework`,
   `- npm CLI: https://www.npmjs.com/package/@togo-framework/cli`,
+  `- UI Kit: https://ui.to-go.dev (@togo-framework/ui)`,
+  `- Discord: https://discord.gg/Rv9Y7tcBtN`,
   ``,
 ].join("\n");
 writeFileSync(join(ROOT, "public/llms.txt"), llms);
@@ -170,6 +178,7 @@ writeFileSync(join(ROOT, "public/llms.txt"), llms);
 // sitemap.xml — home, docs home, plugins marketplace + submit, every plugin + every doc
 const urls = [
   `${SITE}/`,
+  `https://ui.to-go.dev/`,
   `${SITE}/plugins`,
   `${SITE}/plugins/submit`,
   ...AI_ROUTES,
