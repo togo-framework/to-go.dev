@@ -1,8 +1,8 @@
 name: recover
 
-# Incident recovery + NPM 443 diagnostics. The box is up (SSH ok); the NPM
-# reverse proxy fronts every *.to-go.dev on 80/443. Restart it, then inspect why
-# the TLS (443) listener isn't accepting. Safe to re-run (workflow_dispatch).
+# Diagnose why external 80/443 are refused while NPM serves fine INSIDE LXC 201.
+# Likely the Proxmox host's NAT/DNAT (host public IP -> LXC 201) or a host
+# firewall got dropped. This step is READ-ONLY host networking diagnostics.
 on:
   workflow_dispatch:
   push:
@@ -13,22 +13,25 @@ jobs:
   recover:
     runs-on: ubuntu-latest
     steps:
-      - name: Restart NPM + diagnose the 443/TLS listener
+      - name: Diagnose host -> LXC 201 networking for 80/443
         env:
           DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
         run: |
           mkdir -p ~/.ssh && printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
           SSH="ssh -i $HOME/.ssh/deploy -o StrictHostKeyChecking=no -o ConnectTimeout=25"
-          $SSH "root@$DEPLOY_HOST" '
-            E="pct exec 201 --";
-            echo "=== restart npm + npm-db ==="; $E docker restart npm-db npm || true; sleep 12;
-            echo "=== npm status ==="; $E docker ps --format "{{.Names}}\t{{.Status}}\t{{.Ports}}" | grep -i npm;
-            echo "=== nginx -t inside npm ==="; $E docker exec npm nginx -t 2>&1 | tail -5 || echo "nginx-t-FAILED";
-            echo "=== listeners inside npm (80/443) ==="; $E docker exec npm sh -c "(netstat -tlnp 2>/dev/null || ss -tlnp 2>/dev/null) | grep -E \":80|:443\"" || echo "no-listener-tool";
-            echo "=== npm logs (tail) ==="; $E docker logs npm --tail 25 2>&1 | tail -25;
-            echo "=== default (fallback) cert present? ==="; $E docker exec npm sh -c "ls -la /data/nginx/default_host/ 2>/dev/null; ls /etc/letsencrypt/live 2>/dev/null | head" || true;
-            echo "=== local probe with SNI ==="; $E docker exec npm sh -c "curl -skS -o /dev/null -w \"443-sni=%{http_code}\\n\" --resolve to-go.dev:443:127.0.0.1 https://to-go.dev/ || echo 443-sni=down";
-            echo "=== host port published? ==="; $E ss -tlnp 2>/dev/null | grep -E \":80 |:443 \" || echo "host-ss-none";
-          '
+          $SSH "root@$DEPLOY_HOST" 'bash -s' <<"EOS"
+            echo "=== host public IPs ==="; ip -4 addr show | grep -E "inet " | grep -v 127.0.0.1
+            echo "=== LXC 201 net config ==="; pct config 201 | grep -iE "^net|hostname|onboot" || true
+            echo "=== LXC 201 IP ==="; pct exec 201 -- ip -4 addr show | grep -E "inet " | grep -v 127.0.0.1 || true
+            echo "=== host listeners 80/443 ==="; ss -tlnp 2>/dev/null | grep -E ":80 |:443 |:80$|:443$" || echo "HOST-NOT-LISTENING-80-443"
+            echo "=== NAT PREROUTING/DNAT for 80/443 ==="; iptables -t nat -S 2>/dev/null | grep -E "dport (80|443)|to-destination" || echo "NO-DNAT-RULES"
+            echo "=== filter REJECT/DROP touching 80/443 ==="; iptables -S 2>/dev/null | grep -E "(80|443)" | head || echo "no-filter-rules-80-443"
+            echo "=== host firewall services ==="; systemctl is-active nftables firewalld ufw 2>/dev/null | paste -sd, ; (nft list ruleset 2>/dev/null | grep -E "dport (80|443)|reject|drop" | head) || true
+            echo "=== from HOST -> LXC :80 / :443 ==="; LXCIP=$(pct exec 201 -- ip -4 addr show 2>/dev/null | grep -oE "inet [0-9.]+" | grep -v "127.0" | head -1 | awk "{print \$2}"); echo "LXCIP=$LXCIP"; \
+              curl -sS -o /dev/null -w "host->lxc:80=%{http_code}\n" --max-time 6 http://$LXCIP:80/ || echo "host->lxc:80=down"; \
+              curl -skS -o /dev/null -w "host->lxc:443=%{http_code}\n" --max-time 6 --resolve to-go.dev:443:$LXCIP https://to-go.dev/ || echo "host->lxc:443=down"
+            echo "=== does host itself answer 80/443 on public IP? ==="; PUB=$(ip -4 addr show | grep -E "inet " | grep -v 127.0.0.1 | grep -oE "[0-9.]+/[0-9]+" | head -1 | cut -d/ -f1); echo "PUB=$PUB"; \
+              curl -sS -o /dev/null -w "pub:80=%{http_code}\n" --max-time 6 http://$PUB:80/ || echo "pub:80=down"
+          EOS
           rm -f ~/.ssh/deploy
