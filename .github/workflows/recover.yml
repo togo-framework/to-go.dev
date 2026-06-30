@@ -1,0 +1,37 @@
+name: recover
+
+# One-shot incident recovery: the box is up (SSH ok) but the NPM reverse proxy
+# (ports 80/443, fronts every *.to-go.dev) is down. SSH to the Proxmox host →
+# pct exec into LXC 201 (the docker host) → start any stopped containers so the
+# proxy + upstreams come back. Safe to re-run (workflow_dispatch).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/recover.yml']
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restart stopped containers on the box (NPM proxy + upstreams)
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          SSH="ssh -i $HOME/.ssh/deploy -o StrictHostKeyChecking=no -o ConnectTimeout=25"
+          $SSH "root@$DEPLOY_HOST" '
+            echo "=== containers BEFORE ===";
+            pct exec 201 -- docker ps -a --format "{{.Names}}\t{{.Status}}";
+            echo "=== starting all stopped containers ===";
+            pct exec 201 -- bash -c "ids=\$(docker ps -aq -f status=exited -f status=created); [ -n \"\$ids\" ] && docker start \$ids || echo none-stopped";
+            echo "=== restarting the NPM proxy explicitly (by common names) ===";
+            pct exec 201 -- bash -c "for n in \$(docker ps -a --format \"{{.Names}}\" | grep -iE \"npm|proxy|nginx-proxy\"); do docker restart \"\$n\" || true; done";
+            sleep 5;
+            echo "=== containers AFTER ===";
+            pct exec 201 -- docker ps --format "{{.Names}}\t{{.Status}}\t{{.Ports}}";
+            echo "=== local proxy listening? ===";
+            pct exec 201 -- bash -c "(curl -sS -o /dev/null -w \"80=%{http_code}\\n\" http://127.0.0.1:80/ || echo 80=down); (curl -skS -o /dev/null -w \"443=%{http_code}\\n\" https://127.0.0.1:443/ || echo 443=down)";
+          '
+          rm -f ~/.ssh/deploy
