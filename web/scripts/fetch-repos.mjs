@@ -38,12 +38,14 @@ const CATS = {
   infra: { color: "#1659C8" },
   messaging: { color: "#5CDDEC" },
   ui: { color: "#1FC7DC" },
+  ai: { color: "#A855F7" },
   dev: { color: "#8B5CF6" },
   core: { color: "#1FC7DC" },
   other: { color: "#7C8B98" },
 };
 
 function categorize(name) {
+  if (/^autopilot$|^ai(-|$)|agent/.test(name)) return "ai";
   if (/^auth(-|$)/.test(name) || name === "plugin-auth-supabase") return "auth";
   if (/^db-|^storage|^search|^supabase$|^orm$/.test(name)) return "data";
   if (/^cache|^queue|^worker|^realtime|^log$/.test(name)) return "infra";
