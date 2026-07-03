@@ -249,6 +249,7 @@ export function Landing() {
               <a href="https://github.com/togo-framework">Get started <ArrowRight size={18} /></a>
             </Button>
             <Button asChild variant="outline" size="lg" className="h-[52px] w-full sm:w-auto"><Link to="/marketplace">Explore plugins</Link></Button>
+            <Button asChild variant="outline" size="lg" className="h-[52px] w-full sm:w-auto"><a href="https://demo.to-go.dev" target="_blank" rel="noreferrer">Live demo <ArrowRight size={16} /></a></Button>
           </div>
         </div>
       </section>
