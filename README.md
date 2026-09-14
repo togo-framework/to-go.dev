@@ -1,4 +1,4 @@
-<p align="center"><img src="web/public/togo-mark.svg" width="96" alt="togo"></p>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/togo-mark-dark.svg" /><img src=".github/assets/togo-mark.svg" alt="ToGO" width="96" /></picture></p>
 <h1 align="center">to-go.dev</h1>
 <p align="center">The <a href="https://to-go.dev">to-go.dev</a> website — <strong>itself a togo app</strong> (TanStack + <code>@togo-framework/ui</code>), prerendered to static.</p>
 <p align="center"><sub>part of the <a href="https://github.com/togo-framework">togo-framework</a></sub></p>
