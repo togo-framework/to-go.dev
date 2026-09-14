@@ -1,7 +1,7 @@
 The togo **design system** — a fully token-driven, runtime-themeable admin + auth component
 library. Framework-agnostic (no Next.js / data-fetching coupling), **RTL-ready**, and carrying
-the official **ToGO brand** (Gopher Cyan → Cobalt). Self-hosts the brand fonts (Sora / IBM Plex
-Sans / JetBrains Mono) + **Lusail** for Arabic.
+the **ToGO brand** (ink, paper and teal — https://to-go.dev/en/brand) laid out as fadymondy.com's grid:
+square surfaces, hairlines, no shadows. Self-hosts **Lusail** (Arabic + Latin) and JetBrains Mono.
 
 ```bash
 npm install @togo-framework/ui lucide-react

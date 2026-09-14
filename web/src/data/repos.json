@@ -9,7 +9,7 @@
     "updatedAt": "2026-06-24T13:38:15Z",
     "kind": "core",
     "category": "core",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": null,
     "hasReadme": true,
     "downloads": 0
@@ -24,7 +24,7 @@
     "updatedAt": "2026-06-24T13:36:55Z",
     "kind": "plugin",
     "category": "auth",
-    "navColor": "#2D8CE6",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/auth",
     "hasReadme": true,
     "downloads": 0
@@ -39,7 +39,7 @@
     "updatedAt": "2026-06-24T13:36:39Z",
     "kind": "plugin",
     "category": "auth",
-    "navColor": "#2D8CE6",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/auth-dev",
     "hasReadme": true,
     "downloads": 0
@@ -54,7 +54,7 @@
     "updatedAt": "2026-06-24T13:36:57Z",
     "kind": "plugin",
     "category": "auth",
-    "navColor": "#2D8CE6",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/auth-firebase",
     "hasReadme": true,
     "downloads": 0
@@ -69,7 +69,7 @@
     "updatedAt": "2026-06-24T13:36:48Z",
     "kind": "plugin",
     "category": "auth",
-    "navColor": "#2D8CE6",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/auth-oauth",
     "hasReadme": true,
     "downloads": 0
@@ -84,7 +84,7 @@
     "updatedAt": "2026-06-24T13:37:22Z",
     "kind": "plugin",
     "category": "auth",
-    "navColor": "#2D8CE6",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/auth-session-redis",
     "hasReadme": true,
     "downloads": 0
@@ -99,7 +99,7 @@
     "updatedAt": "2026-06-24T13:37:05Z",
     "kind": "plugin",
     "category": "auth",
-    "navColor": "#2D8CE6",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/auth-workos",
     "hasReadme": true,
     "downloads": 0
@@ -114,7 +114,7 @@
     "updatedAt": "2026-06-24T13:36:48Z",
     "kind": "plugin",
     "category": "infra",
-    "navColor": "#1659C8",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/cache",
     "hasReadme": true,
     "downloads": 0
@@ -129,7 +129,7 @@
     "updatedAt": "2026-06-24T13:37:29Z",
     "kind": "plugin",
     "category": "infra",
-    "navColor": "#1659C8",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/cache-redis",
     "hasReadme": true,
     "downloads": 0
@@ -159,7 +159,7 @@
     "updatedAt": "2026-06-24T19:14:33Z",
     "kind": "core",
     "category": "core",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": null,
     "hasReadme": true,
     "downloads": 124
@@ -174,7 +174,7 @@
     "updatedAt": "2026-06-24T19:11:53Z",
     "kind": "core",
     "category": "core",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": null,
     "hasReadme": true,
     "downloads": 0
@@ -189,7 +189,7 @@
     "updatedAt": "2026-06-24T13:37:18Z",
     "kind": "plugin",
     "category": "ui",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/dashboard",
     "hasReadme": true,
     "downloads": 0
@@ -204,7 +204,7 @@
     "updatedAt": "2026-06-24T13:37:06Z",
     "kind": "core",
     "category": "core",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": null,
     "hasReadme": true,
     "downloads": 0
@@ -294,7 +294,7 @@
     "updatedAt": "2026-06-24T13:37:44Z",
     "kind": "plugin",
     "category": "ui",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/i18n",
     "hasReadme": true,
     "downloads": 0
@@ -309,7 +309,7 @@
     "updatedAt": "2026-06-24T13:37:42Z",
     "kind": "plugin",
     "category": "infra",
-    "navColor": "#1659C8",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/log",
     "hasReadme": true,
     "downloads": 0
@@ -324,7 +324,7 @@
     "updatedAt": "2026-06-24T13:38:05Z",
     "kind": "plugin",
     "category": "messaging",
-    "navColor": "#5CDDEC",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/mail",
     "hasReadme": true,
     "downloads": 0
@@ -339,7 +339,7 @@
     "updatedAt": "2026-06-24T13:38:08Z",
     "kind": "plugin",
     "category": "messaging",
-    "navColor": "#5CDDEC",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/mail-resend",
     "hasReadme": true,
     "downloads": 0
@@ -354,7 +354,7 @@
     "updatedAt": "2026-06-24T17:53:46Z",
     "kind": "core",
     "category": "core",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": null,
     "hasReadme": true,
     "downloads": 0
@@ -384,7 +384,7 @@
     "updatedAt": "2026-06-24T13:37:44Z",
     "kind": "plugin",
     "category": "messaging",
-    "navColor": "#5CDDEC",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/notifications",
     "hasReadme": true,
     "downloads": 0
@@ -399,7 +399,7 @@
     "updatedAt": "2026-06-24T13:37:38Z",
     "kind": "plugin",
     "category": "messaging",
-    "navColor": "#5CDDEC",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/notifications-onesignal",
     "hasReadme": true,
     "downloads": 0
@@ -429,7 +429,7 @@
     "updatedAt": "2026-06-24T13:37:56Z",
     "kind": "plugin",
     "category": "auth",
-    "navColor": "#2D8CE6",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/plugin-auth-supabase",
     "hasReadme": true,
     "downloads": 0
@@ -444,7 +444,7 @@
     "updatedAt": "2026-06-24T13:37:54Z",
     "kind": "core",
     "category": "core",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": null,
     "hasReadme": true,
     "downloads": 0
@@ -459,7 +459,7 @@
     "updatedAt": "2026-06-24T13:38:08Z",
     "kind": "plugin",
     "category": "infra",
-    "navColor": "#1659C8",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/queue",
     "hasReadme": true,
     "downloads": 0
@@ -474,7 +474,7 @@
     "updatedAt": "2026-06-24T13:37:49Z",
     "kind": "plugin",
     "category": "infra",
-    "navColor": "#1659C8",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/realtime",
     "hasReadme": true,
     "downloads": 0
@@ -489,7 +489,7 @@
     "updatedAt": "2026-06-24T13:38:16Z",
     "kind": "plugin",
     "category": "infra",
-    "navColor": "#1659C8",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/realtime-ws",
     "hasReadme": true,
     "downloads": 0
@@ -609,7 +609,7 @@
     "updatedAt": "2026-06-24T19:23:06Z",
     "kind": "core",
     "category": "core",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": null,
     "hasReadme": true,
     "downloads": 0
@@ -624,7 +624,7 @@
     "updatedAt": "2026-06-24T18:21:48Z",
     "kind": "core",
     "category": "core",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": null,
     "hasReadme": true,
     "downloads": 0
@@ -639,7 +639,7 @@
     "updatedAt": "2026-06-24T18:31:09Z",
     "kind": "core",
     "category": "core",
-    "navColor": "#1FC7DC",
+    "navColor": "#1F8A99",
     "install": null,
     "hasReadme": true,
     "downloads": 0
@@ -669,7 +669,7 @@
     "updatedAt": "2026-06-24T13:38:36Z",
     "kind": "plugin",
     "category": "infra",
-    "navColor": "#1659C8",
+    "navColor": "#1F8A99",
     "install": "togo install togo-framework/worker",
     "hasReadme": true,
     "downloads": 0

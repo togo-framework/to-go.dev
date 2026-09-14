@@ -1,5 +1,5 @@
 // ToGO PWA service worker — offline shell + cache-first static assets.
-const CACHE = "togo-v1";
+const CACHE = "togo-v3";
 const SHELL = ["/", "/index.html", "/togo-mark.svg", "/manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {

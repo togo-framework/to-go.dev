@@ -15,7 +15,7 @@ body { margin: 0; font-family: var(--tg-font); }
 .tg-readme p, .tg-readme ul, .tg-readme ol, .tg-readme blockquote, .tg-readme table { margin: .8em 0; }
 .tg-readme ul, .tg-readme ol { padding-inline-start: 1.4em; }
 .tg-readme li { margin: .3em 0; }
-.tg-readme a { color: var(--togo-cyan, #1FC7DC); text-decoration: none; }
+.tg-readme a { color: var(--togo-cyan, #1F8A99); text-decoration: none; }
 .tg-readme a:hover { text-decoration: underline; }
 .tg-readme code { font-family: "JetBrains Mono", monospace; font-size: .85em; background: var(--muted); padding: .15em .4em; border-radius: 4px; }
 .tg-readme pre { background: #080b0f; border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.2rem; overflow: auto; }

@@ -33,14 +33,14 @@ const CORE = new Set(["togo", "cli", "create-togo-app", "ui", "mcp", "db", "plug
 
 // category → { color } ; the lucide icon is mapped on the client from the category.
 const CATS = {
-  auth: { color: "#2D8CE6" },
+  auth: { color: "#1F8A99" },
   data: { color: "#00ADD8" },
-  infra: { color: "#1659C8" },
-  messaging: { color: "#5CDDEC" },
-  ui: { color: "#1FC7DC" },
+  infra: { color: "#1F8A99" },
+  messaging: { color: "#1F8A99" },
+  ui: { color: "#1F8A99" },
   ai: { color: "#A855F7" },
   dev: { color: "#8B5CF6" },
-  core: { color: "#1FC7DC" },
+  core: { color: "#1F8A99" },
   other: { color: "#7C8B98" },
 };
 

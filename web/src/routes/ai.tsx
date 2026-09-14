@@ -68,18 +68,18 @@ export function Ai() {
         <div className="mx-auto max-w-6xl px-6 pt-12 pb-10 text-center">
           <div className="flex justify-center gap-3 mb-8">
             {HERO_ICONS.map((Icon, i) => (
-              <div key={i} className="grid place-items-center w-12 h-12 rounded-2xl border border-border bg-card shadow-sm text-[#5CDDEC]"
+              <div key={i} className="grid place-items-center w-12 h-12 rounded-2xl border border-border bg-card shadow-sm text-[#1F8A99]"
                 style={{ animation: `aiFloat 6s ease-in-out ${i * 0.4}s infinite` }}><Icon size={20} /></div>
             ))}
           </div>
           <style>{`@keyframes aiFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@media(prefers-reduced-motion:reduce){[style*=aiFloat]{animation:none!important}}`}</style>
-          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#5CDDEC] mb-3">AI-native</div>
+          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#1F8A99] mb-3">AI-native</div>
           <h1 className="font-[Sora] text-4xl sm:text-5xl font-extrabold tracking-tight">AI that works with your stack</h1>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
             Every togo app is born agent-ready — a Claude Code plugin and a local + web MCP, so Claude can scaffold and drive it end to end.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", color: "#fff", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
+            <Button asChild size="lg" style={{ background: "#1F8A99", color: "#F0EBE1" }}>
               <a href="https://github.com/togo-framework/claude-togo">Get the Claude plugin →</a>
             </Button>
             <Button asChild variant="outline" size="lg"><Link to="/marketplace/agents">Browse agents</Link></Button>
@@ -94,7 +94,7 @@ export function Ai() {
         {/* Claude Code integration */}
         <div className="mt-6">
           <SectionHeading align="center" eyebrow="Claude Code plugin" eyebrowIcon={Sparkles}
-            title={<>Drive togo with <span className="text-[#1FC7DC]">Claude Code</span></>}
+            title={<>Drive togo with <span className="text-[#1F8A99]">Claude Code</span></>}
             subtitle="togo's agents, slash commands, rules and hooks — with the MCP auto-connected. One command to install." />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <Card className="p-6">
@@ -111,7 +111,7 @@ export function Ai() {
               <div className="divide-y divide-border">
                 {COMMANDS.map((c) => (
                   <div key={c.cmd} className="flex items-center gap-3 px-5 py-2.5">
-                    <code className="font-mono text-[12.5px] text-[#5CDDEC] w-36 shrink-0">{c.cmd}</code>
+                    <code className="font-mono text-[12.5px] text-[#1F8A99] w-36 shrink-0">{c.cmd}</code>
                     <span className="text-[13px] text-muted-foreground truncate">{c.desc}</span>
                   </div>
                 ))}
@@ -128,7 +128,7 @@ export function Ai() {
         {/* MCP */}
         <div className="mt-20">
           <SectionHeading align="center" eyebrow="Model Context Protocol" eyebrowIcon={Boxes}
-            title={<>The togo <span className="text-[#1FC7DC]">MCP</span></>}
+            title={<>The togo <span className="text-[#1F8A99]">MCP</span></>}
             subtitle="Every app ships a local MCP (resources, generators, DB) and connects to the public web MCP — live framework docs + the marketplace." />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <Card className="p-6">
@@ -143,7 +143,7 @@ export function Ai() {
             <div className="grid gap-3 sm:grid-cols-2 content-start">
               {TOOLS.map((t) => (
                 <div key={t.name} className="rounded-xl border border-border bg-card p-4">
-                  <t.icon size={16} className="text-[#5CDDEC] mb-2" />
+                  <t.icon size={16} className="text-[#1F8A99] mb-2" />
                   <div className="font-mono text-[12.5px] text-foreground">{t.name}</div>
                   <div className="text-[12px] text-muted-foreground mt-0.5">{t.desc}</div>
                 </div>
@@ -154,7 +154,7 @@ export function Ai() {
 
         <div className="mt-16 text-center">
           <Button asChild size="lg" className="text-base"
-            style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", color: "#fff", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
+            style={{ background: "#1F8A99", color: "#F0EBE1" }}>
             <Link to="/marketplace">Explore the marketplace →</Link>
           </Button>
         </div>

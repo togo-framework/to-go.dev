@@ -6,7 +6,7 @@ import { Seo } from "../components/seo";
 
 const OPTIONS = [
   {
-    icon: Blocks, color: "#1FC7DC", title: "Submit a plugin",
+    icon: Blocks, color: "#1F8A99", title: "Submit a plugin",
     desc: "A Go capability (auth provider, DB driver, cache, queue…). Ships a togo.plugin.yaml and installs with togo install owner/repo.",
     href: "https://github.com/togo-framework/.github/issues/new?title=Plugin%20submission%3A%20&labels=plugin-submission&body=Repo%3A%20%0AWhat%20it%20does%3A%20%0Atogo.plugin.yaml%3A%20yes%2Fno",
     cta: "Open plugin submission",

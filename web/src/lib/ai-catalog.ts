@@ -17,7 +17,7 @@ export const agents = (aiData.agents as AiAgent[]);
 export const skills = (aiData.skills as AiSkill[]);
 export const tools = (aiData.tools as AiTool[]);
 
-const CY = "#1FC7DC", CO = "#2D8CE6", BL = "#1659C8", VI = "#8B5CF6", AM = "#F59E0B", GR = "#22C55E", RO = "#F43F5E", SL = "#64748B", SK = "#0EA5E9";
+const CY = "#1F8A99", CO = "#1F8A99", BL = "#1F8A99", VI = "#8B5CF6", AM = "#F59E0B", GR = "#22C55E", RO = "#F43F5E", SL = "#64748B", SK = "#0EA5E9";
 
 export type Glyph = { icon?: LucideIcon; brandIcon?: BrandGlyph; color: string };
 

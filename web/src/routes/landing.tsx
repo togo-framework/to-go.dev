@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import {
   Button, Badge, CodeBlock, AuroraBackground,
   SectionHeading, FeatureCard, CodeShowcase, Eyebrow,
-  TypingTerminal, MascotMark, ClaudeSession, BrowserFrame,
+  TypingTerminal, ClaudeSession, BrowserFrame,
 } from "@togo-framework/ui";
 import type { TerminalStep, ClaudeStep } from "@togo-framework/ui";
 import type { CodeShowcaseTab } from "@togo-framework/ui";
@@ -78,12 +78,12 @@ function InstallBar() {
   const [ok, setOk] = useState(false);
   return (
     <div className="flex items-center gap-2 h-[52px] ps-4 pe-2 rounded-xl border border-border bg-card font-mono text-sm w-full sm:w-auto max-w-full min-w-0">
-      <span className="text-[var(--togo-cyan,#1FC7DC)] select-none shrink-0">$</span>
+      <span className="text-[var(--togo-cyan,#1F8A99)] select-none shrink-0">$</span>
       <code className="text-foreground/90 whitespace-nowrap overflow-x-auto min-w-0 flex-1">{INSTALL}</code>
       <button aria-label="Copy install command"
         onClick={() => { navigator.clipboard?.writeText(INSTALL); setOk(true); setTimeout(() => setOk(false), 1600); }}
         className="grid place-items-center w-9 h-9 rounded-lg bg-muted text-muted-foreground hover:text-foreground transition-colors shrink-0">
-        {ok ? <Check size={16} className="text-[var(--togo-cyan,#1FC7DC)]" /> : <Copy size={16} />}
+        {ok ? <Check size={16} className="text-[var(--togo-cyan,#1F8A99)]" /> : <Copy size={16} />}
       </button>
     </div>
   );
@@ -117,13 +117,13 @@ function AppPreview() {
   return (
     <div className="bg-[#0b0f13] p-4">
       <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2"><img src="/togo-mark.svg?v=2" alt="" className="h-5 w-auto" /><span className="font-[Sora] text-sm font-semibold text-foreground">fort · Posts</span></div>
-        <span className="rounded-md px-2 py-1 text-[11px] font-semibold text-white" style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 60%,#1659C8)" }}>New Post</span>
+        <div className="flex items-center gap-2"><img src="/togo-mark.svg?v=3" alt="" className="h-5 w-auto" /><span className="font-[Sora] text-sm font-semibold text-foreground">fort · Posts</span></div>
+        <span className="rounded-md px-2 py-1 text-[11px] font-semibold text-white" style={{ background: "linear-gradient(110deg,#1F8A99,#1F8A99 60%,#1F8A99)" }}>New Post</span>
       </div>
       <div className="overflow-hidden rounded-lg border border-white/10 text-[12px]">
         <div className="grid grid-cols-[1fr,2fr,auto] gap-2 px-3 py-2 bg-white/[0.04] font-mono text-[10px] uppercase tracking-wider text-muted-foreground"><span>Title</span><span>Body</span><span>API</span></div>
         {[["Hello ToGO", "First post from the generator", "REST · GraphQL"], ["One binary", "Backend + frontend shipped together", "REST · GraphQL"], ["Zero glue", "Manifest is the source of truth", "REST · GraphQL"]].map((r, i) => (
-          <div key={i} className="grid grid-cols-[1fr,2fr,auto] gap-2 px-3 py-2 border-t border-white/5 text-foreground/90"><span className="truncate font-medium">{r[0]}</span><span className="truncate text-muted-foreground">{r[1]}</span><span className="text-[10px] text-[var(--togo-cyan,#5CDDEC)] font-mono">{r[2]}</span></div>
+          <div key={i} className="grid grid-cols-[1fr,2fr,auto] gap-2 px-3 py-2 border-t border-white/5 text-foreground/90"><span className="truncate font-medium">{r[0]}</span><span className="truncate text-muted-foreground">{r[1]}</span><span className="text-[10px] text-[var(--togo-cyan,#1F8A99)] font-mono">{r[2]}</span></div>
         ))}
       </div>
     </div>
@@ -148,8 +148,8 @@ function CopyCmd({ cmd, sigil = "$" }: { cmd: string; sigil?: string }) {
   const [ok, setOk] = useState(false);
   return (
     <button onClick={() => { navigator.clipboard?.writeText(cmd); setOk(true); setTimeout(() => setOk(false), 1500); }}
-      className="group flex w-full items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 font-mono text-[12.5px] text-foreground/90 hover:border-[color:rgba(31,199,220,.4)] transition-colors">
-      <span className="shrink-0 text-[var(--togo-cyan,#1FC7DC)]">{sigil}</span>
+      className="group flex w-full items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 font-mono text-[12.5px] text-foreground/90 hover:border-[color:rgba(31,138,153,.4)] transition-colors">
+      <span className="shrink-0 text-[var(--togo-cyan,#1F8A99)]">{sigil}</span>
       <code className="truncate">{cmd}</code>
       <span className="ms-auto shrink-0 text-muted-foreground group-hover:text-foreground">{ok ? <Check size={14} /> : <Copy size={14} />}</span>
     </button>
@@ -172,7 +172,7 @@ function HeroDemo() {
           {([["cli", "CLI"], ["ai", "✻ AI · Claude Code"]] as const).map(([m, label]) => (
             <button key={m} onClick={() => select(m)}
               className={`rounded-full px-4 py-1.5 transition-colors ${mode === m ? "text-white" : "text-muted-foreground hover:text-foreground"}`}
-              style={mode === m ? { background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 60%,#1659C8)" } : undefined}>
+              style={mode === m ? { background: "linear-gradient(110deg,#1F8A99,#1F8A99 60%,#1F8A99)" } : undefined}>
               {label}
             </button>
           ))}
@@ -223,10 +223,10 @@ export function Landing() {
           style={{ backgroundImage: "linear-gradient(rgba(120,140,160,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(120,140,160,.12) 1px,transparent 1px)", backgroundSize: "56px 56px", maskImage: "radial-gradient(680px 420px at 50% 4%,#000,transparent 78%)", WebkitMaskImage: "radial-gradient(680px 420px at 50% 4%,#000,transparent 78%)" }} />
         <div className="mx-auto max-w-6xl px-6 pt-20 pb-12 text-center">
           <div className="flex justify-center mb-6" style={{ filter: "drop-shadow(0 20px 55px rgba(45,140,230,.45))" }}>
-            <MascotMark src="/togo-mark.svg?v=2" className="h-32 sm:h-44 w-auto" />
+            <img src="/togo-mark.svg?v=3" alt="ToGO" className="h-32 sm:h-44 w-auto" />
           </div>
           <div className="flex justify-center mb-7">
-            <Badge variant="outline" className="font-mono text-[11px] tracking-[0.18em] uppercase border-[color:rgba(31,199,220,.28)] text-[var(--togo-cyan,#5CDDEC)] bg-[color:rgba(31,199,220,.06)]">
+            <Badge variant="outline" className="font-mono text-[11px] tracking-[0.18em] uppercase border-[color:rgba(31,138,153,.28)] text-[var(--togo-cyan,#1F8A99)] bg-[color:rgba(31,138,153,.06)]">
               Open-source · Full-stack · One binary
             </Badge>
           </div>
@@ -236,7 +236,7 @@ export function Landing() {
           {/* Raycast-style command bar — opens the global ⌘K palette over the whole ecosystem */}
           <div className="mt-8 flex justify-center">
             <button onClick={openCommandPalette}
-              className="group flex items-center gap-3 w-full max-w-md h-12 ps-4 pe-2 rounded-full border border-border bg-card hover:border-[color:rgba(31,199,220,.45)] transition-colors text-start">
+              className="group flex items-center gap-3 w-full max-w-md h-12 ps-4 pe-2 rounded-full border border-border bg-card hover:border-[color:rgba(31,138,153,.45)] transition-colors text-start">
               <Search size={16} className="text-muted-foreground shrink-0" />
               <span className="text-sm text-muted-foreground flex-1 truncate group-hover:text-foreground transition-colors">Search plugins, agents, skills…</span>
               <kbd className="font-mono text-[10px] text-muted-foreground border border-border rounded px-1.5 py-1 shrink-0">⌘K</kbd>
@@ -245,7 +245,7 @@ export function Landing() {
           <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 max-w-md sm:max-w-none mx-auto">
             <InstallBar />
             <Button asChild size="lg" className="h-[52px] text-base w-full sm:w-auto"
-              style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", color: "#fff", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
+              style={{ background: "#1F8A99", color: "#F0EBE1" }}>
               <a href="https://github.com/togo-framework">Get started <ArrowRight size={18} /></a>
             </Button>
             <Button asChild variant="outline" size="lg" className="h-[52px] w-full sm:w-auto"><Link to="/marketplace">Explore plugins</Link></Button>
@@ -317,8 +317,8 @@ export function Landing() {
           <div className="flex flex-wrap gap-2.5">
             {DBS.map((d) => (
               <span key={d.label} className="font-mono text-[13px] px-3.5 py-2 rounded-lg border"
-                style={d.accent ? { borderColor: "rgba(31,199,220,.4)", color: "#5CDDEC", background: "rgba(31,199,220,.07)" }
-                  : d.primary ? { border: 0, background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 60%,#1659C8)", color: "#fff" }
+                style={d.accent ? { borderColor: "rgba(31,138,153,.4)", color: "#1F8A99", background: "rgba(31,138,153,.07)" }
+                  : d.primary ? { border: 0, background: "linear-gradient(110deg,#1F8A99,#1F8A99 60%,#1F8A99)", color: "#fff" }
                   : { borderColor: "var(--border)", color: "var(--foreground)", background: "rgba(255,255,255,.02)" }}>
                 {d.label}
               </span>
@@ -333,7 +333,7 @@ export function Landing() {
           style={{ background: "radial-gradient(700px 240px at 100% 0%, rgba(45,140,230,.12), transparent 60%), var(--card)" }}>
           <div className="p-8 sm:p-10 flex flex-col md:flex-row md:items-center gap-6 justify-between">
             <div className="max-w-xl">
-              <div className="w-11 h-11 rounded-xl grid place-items-center mb-4 border border-[color:rgba(31,199,220,.18)] bg-[color:rgba(31,199,220,.1)] text-[var(--togo-cyan,#1FC7DC)]"><Blocks size={21} /></div>
+              <div className="w-11 h-11 rounded-xl grid place-items-center mb-4 border border-[color:rgba(31,138,153,.18)] bg-[color:rgba(31,138,153,.1)] text-[var(--togo-cyan,#1F8A99)]"><Blocks size={21} /></div>
               <h2 style={DISPLAY} className="text-2xl sm:text-3xl font-bold tracking-tight">A plugin for every capability.</h2>
               <p className="text-muted-foreground mt-2">Auth, dashboard, cache, queue, storage, realtime, search, mail, notifications, database drivers — install any with a single command, or publish your own.</p>
               <div className="mt-5 flex flex-wrap gap-3">
@@ -342,8 +342,8 @@ export function Landing() {
               </div>
             </div>
             <div className="font-mono text-[13px] text-muted-foreground bg-background/50 border border-border rounded-xl p-4 w-full md:w-auto">
-              <div><span className="text-[var(--togo-cyan,#1FC7DC)]">$</span> togo install togo-framework/auth</div>
-              <div><span className="text-[var(--togo-cyan,#1FC7DC)]">$</span> togo install togo-framework/dashboard</div>
+              <div><span className="text-[var(--togo-cyan,#1F8A99)]">$</span> togo install togo-framework/auth</div>
+              <div><span className="text-[var(--togo-cyan,#1F8A99)]">$</span> togo install togo-framework/dashboard</div>
               <div className="opacity-60 mt-1">✓ auto-registers with the kernel</div>
             </div>
           </div>
@@ -370,12 +370,12 @@ export function Landing() {
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-8">
         <div className="rounded-3xl border border-border bg-card p-8 sm:p-10 flex flex-col sm:flex-row sm:items-center gap-6">
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 text-[#1FC7DC] text-xs font-mono uppercase tracking-[0.18em] mb-3"><Boxes size={14} /> Marketplace</div>
+            <div className="flex items-center gap-2 text-[#1F8A99] text-xs font-mono uppercase tracking-[0.18em] mb-3"><Boxes size={14} /> Marketplace</div>
             <h2 style={DISPLAY} className="text-2xl sm:text-3xl font-bold tracking-tight">Everything the togo ecosystem ships — in one place.</h2>
             <p className="text-muted-foreground mt-2.5 max-w-xl">Plugins, AI agents, skills, MCP tools, and UI components — browse and install any of them with one command.</p>
           </div>
           <Link to="/marketplace" className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-6 h-[52px] text-base font-semibold text-white"
-            style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
+            style={{ background: "#1F8A99", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
             Explore the marketplace <ArrowRight size={18} />
           </Link>
         </div>
@@ -383,13 +383,13 @@ export function Landing() {
 
       {/* closing CTA */}
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-20 text-center">
-        <div className="flex justify-center mb-5"><img src="/togo-mark.svg?v=2" alt="ToGO" className="h-16 w-auto" /></div>
+        <div className="flex justify-center mb-5"><img src="/togo-mark.svg?v=3" alt="ToGO" className="h-16 w-auto" /></div>
         <h2 style={DISPLAY} className="text-3xl sm:text-4xl font-bold tracking-tight">Ship your next app the artisan way.</h2>
         <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Open-source, MIT-licensed, and built to dogfood itself — this very site is a togo app.</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
           <InstallBar />
           <Button asChild size="lg" className="h-[52px] text-base"
-            style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", color: "#fff", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
+            style={{ background: "#1F8A99", color: "#F0EBE1" }}>
             <a href="https://github.com/togo-framework">Star on GitHub <ArrowRight size={18} /></a>
           </Button>
         </div>

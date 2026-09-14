@@ -80,7 +80,7 @@ export function Doc() {
         {state === "loading" && <p className="text-muted-foreground">Loading…</p>}
         {state === "missing" && (
           <p className="text-muted-foreground">
-            No README found. <a className="text-[var(--togo-cyan,#1FC7DC)]" href={`https://github.com/togo-framework/${slug}`}>View on GitHub →</a>
+            No README found. <a className="text-[var(--togo-cyan,#1F8A99)]" href={`https://github.com/togo-framework/${slug}`}>View on GitHub →</a>
           </p>
         )}
         {state === "ok" && (

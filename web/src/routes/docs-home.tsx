@@ -50,11 +50,11 @@ export function DocsHome() {
             <Link key={slug} to="/docs/$slug" params={{ slug }} className="group">
               <Card className="h-full bg-card/60 border-border hover:-translate-y-0.5 hover:border-border/80 transition-all p-5">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-9 h-9 rounded-lg grid place-items-center border border-[color:rgba(31,199,220,.18)] bg-[color:rgba(31,199,220,.1)] text-[var(--togo-cyan,#1FC7DC)]">
+                  <div className="w-9 h-9 rounded-lg grid place-items-center border border-[color:rgba(31,138,153,.18)] bg-[color:rgba(31,138,153,.1)] text-[var(--togo-cyan,#1F8A99)]">
                     <Icon size={17} />
                   </div>
-                  <span className="font-[Sora] font-semibold group-hover:text-[var(--togo-cyan,#1FC7DC)] transition-colors">{title}</span>
-                  <ArrowRight size={15} className="ms-auto text-muted-foreground/50 group-hover:text-[var(--togo-cyan,#1FC7DC)] group-hover:translate-x-0.5 transition-all" />
+                  <span className="font-[Sora] font-semibold group-hover:text-[var(--togo-cyan,#1F8A99)] transition-colors">{title}</span>
+                  <ArrowRight size={15} className="ms-auto text-muted-foreground/50 group-hover:text-[var(--togo-cyan,#1F8A99)] group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <p className="text-[13.5px] text-muted-foreground">{body}</p>
               </Card>
@@ -66,7 +66,7 @@ export function DocsHome() {
           <p className="text-sm text-muted-foreground">
             Looking for a capability? <b className="text-foreground">{plugins.length} plugins</b> in the marketplace.
           </p>
-          <Link to="/plugins" className="text-sm text-[var(--togo-cyan,#1FC7DC)] hover:underline flex items-center gap-1">
+          <Link to="/plugins" className="text-sm text-[var(--togo-cyan,#1F8A99)] hover:underline flex items-center gap-1">
             Browse plugins <ArrowRight size={14} />
           </Link>
         </div>

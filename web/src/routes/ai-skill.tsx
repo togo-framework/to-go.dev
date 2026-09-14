@@ -18,7 +18,7 @@ export function AiSkill() {
         <Seo title="Skill not found" path={`/ai/skills/${slug}`} />
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
           <h1 className="font-[Sora] text-2xl font-bold">Skill not found</h1>
-          <Link to="/ai" className="text-[#1FC7DC] mt-3 inline-block">← Back to the AI Stack</Link>
+          <Link to="/ai" className="text-[#1F8A99] mt-3 inline-block">← Back to the AI Stack</Link>
         </div>
       </Page>
     );

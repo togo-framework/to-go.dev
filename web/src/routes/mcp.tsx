@@ -40,7 +40,7 @@ export function Mcp() {
           align="center"
           eyebrow="Model Context Protocol"
           eyebrowIcon={Boxes}
-          title={<>Connect agents to <span className="text-[var(--togo-cyan,#1FC7DC)]">togo</span></>}
+          title={<>Connect agents to <span className="text-[var(--togo-cyan,#1F8A99)]">togo</span></>}
           subtitle="A public MCP server so Claude — and any MCP client — can explore the framework, browse plugins, and submit new ones, live."
         />
 
@@ -74,7 +74,7 @@ export function Mcp() {
 
         <div className="mt-14 text-center">
           <Button asChild size="lg" className="text-base"
-            style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", color: "#fff", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
+            style={{ background: "#1F8A99", color: "#F0EBE1" }}>
             <Link to="/plugins">Browse the plugin marketplace →</Link>
           </Button>
         </div>

@@ -50,7 +50,7 @@ export function Claude() {
           align="center"
           eyebrow="AI-native development"
           eyebrowIcon={Sparkles}
-          title={<>Drive togo with <span className="text-[var(--togo-cyan,#1FC7DC)]">Claude Code</span></>}
+          title={<>Drive togo with <span className="text-[var(--togo-cyan,#1F8A99)]">Claude Code</span></>}
           subtitle="A native Claude Code plugin — togo's agents, slash commands, rules and hooks, with the togo MCP auto-connected. Scaffold an app and build it end to end, with AI."
         />
 
@@ -77,7 +77,7 @@ export function Claude() {
             <div className="divide-y divide-border">
               {COMMANDS.map((c) => (
                 <div key={c.cmd} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 px-5 py-3.5">
-                  <code className="font-mono text-[13px] text-[var(--togo-cyan,#5CDDEC)] sm:w-44 shrink-0">{c.cmd}</code>
+                  <code className="font-mono text-[13px] text-[var(--togo-cyan,#1F8A99)] sm:w-44 shrink-0">{c.cmd}</code>
                   <span className="text-sm text-muted-foreground">{c.desc}</span>
                 </div>
               ))}
@@ -118,7 +118,7 @@ export function Claude() {
 
         <div className="mt-14 text-center">
           <Button asChild size="lg" className="text-base"
-            style={{ background: "linear-gradient(110deg,#1FC7DC,#2D8CE6 50%,#1659C8)", color: "#fff", boxShadow: "0 12px 32px -10px rgba(22,89,200,.6)" }}>
+            style={{ background: "#1F8A99", color: "#F0EBE1" }}>
             <a href="https://github.com/togo-framework/claude-togo">Get the plugin →</a>
           </Button>
         </div>

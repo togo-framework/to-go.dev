@@ -34,8 +34,7 @@ const UI_ITEMS = [
   { slug: "datatable", name: "DataTable", desc: "Sortable, paginated table for resource lists.", story: "components-datatable--default" },
   { slug: "authcard", name: "AuthCard", desc: "Split/centered auth-screen shell — brand panel + form.", story: "pages-auth-flow--default" },
   { slug: "marketplacecard", name: "MarketplaceCard", desc: "Branded plugin/agent card with providers + brand icons.", story: "marketplace-marketplacecard--default" },
-  { slug: "typingterminal", name: "TypingTerminal", desc: "Live CLI playback for heroes — types + streams + replay.", story: "marketing-typingterminal--default" },
-  { slug: "mascotmark", name: "MascotMark", desc: "The togo mascot — eyes follow the cursor.", story: "marketing-mascotmark--default" },
+  { slug: "typingterminal", name: "TypingTerminal", desc: "Live CLI playback for heroes — types + streams + replay.", story: "marketing-typingterminal--default" },
   { slug: "docslayout", name: "DocsLayout", desc: "Sidebar + scroll-spy TOC + ⌘K docs shell.", story: "docs-docslayout--default" },
   { slug: "callout", name: "Callout", desc: "Info / warn / tip / danger admonition blocks.", story: "docs-callout--default" },
   { slug: "commandpalette", name: "CommandPalette", desc: "⌘K palette over docs + items.", story: "docs-commandpalette--default" },
@@ -118,7 +117,7 @@ export function Marketplace() {
           <div className="mt-8 mx-auto max-w-xl relative">
             <Search size={18} className="absolute start-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${cat}…`}
-              className="w-full rounded-2xl border border-border bg-card ps-12 pe-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none focus:border-[#1FC7DC]/50 shadow-sm" />
+              className="w-full rounded-2xl border border-border bg-card ps-12 pe-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none focus:border-[#1F8A99]/50 shadow-sm" />
           </div>
         </div>
       </section>
@@ -142,7 +141,7 @@ export function Marketplace() {
             return (
               <Link key={key} to="/marketplace/$category" params={{ category: key }}
                 className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors border ${
-                  on ? "bg-[#1FC7DC] text-[#06181c] border-transparent" : "border-border bg-card text-muted-foreground hover:text-foreground"
+                  on ? "bg-[#1F8A99] text-[#06181c] border-transparent" : "border-border bg-card text-muted-foreground hover:text-foreground"
                 }`}>
                 <Icon size={15} /> {label}
                 <span className={`ms-0.5 text-[11px] ${on ? "text-[#06181c]/70" : "text-muted-foreground/70"}`}>{count[key]}</span>

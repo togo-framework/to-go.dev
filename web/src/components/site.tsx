@@ -21,7 +21,7 @@ export function SiteHeader() {
       <div className="mx-auto max-w-6xl">
         <div className="pointer-events-auto flex items-center justify-between gap-2 h-14 ps-4 pe-2.5 rounded-2xl border border-border bg-card shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]">
           <Link to="/" className="flex items-center gap-2.5 shrink-0" onClick={() => setOpen(false)}>
-            <img src="/togo-mark.svg?v=2" alt="togo" className="h-7 w-auto" />
+            <img src="/togo-mark.svg?v=3" alt="togo" className="h-7 w-auto" />
             <span className="font-[Sora] text-base font-bold tracking-tight">togo</span>
           </Link>
           <div className="flex items-center gap-2">
@@ -89,7 +89,7 @@ export function SiteFooter() {
     <footer className="border-t border-border mt-20">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-wrap items-center justify-between gap-6">
-          <Link to="/" className="flex items-center gap-2.5"><img src="/togo-mark.svg?v=2" alt="ToGO" className="h-7 w-auto" /><span className="font-[Sora] text-base font-bold tracking-tight">togo</span></Link>
+          <Link to="/" className="flex items-center gap-2.5"><img src="/togo-mark.svg?v=3" alt="ToGO" className="h-7 w-auto" /><span className="font-[Sora] text-base font-bold tracking-tight">togo</span></Link>
           <div className="flex gap-6 text-sm text-muted-foreground flex-wrap">
             <Link to="/marketplace" className="hover:text-foreground">Marketplace</Link>
             <a href="https://github.com/togo-framework" className="hover:text-foreground">GitHub</a>

@@ -41,8 +41,8 @@ export function Repos() {
             <Link key={r.slug} to="/docs/$slug" params={{ slug: r.slug }} className="group">
               <Card className="h-full bg-card/60 border-border hover:-translate-y-1 hover:border-border/80 transition-all duration-200 p-5">
                 <div className="flex items-center justify-between">
-                  <span className="font-[Sora] font-semibold text-[16px] text-foreground group-hover:text-[var(--togo-cyan,#1FC7DC)] transition-colors">{r.name}</span>
-                  <ArrowRight size={16} className="text-muted-foreground/50 group-hover:text-[var(--togo-cyan,#1FC7DC)] group-hover:translate-x-0.5 transition-all" />
+                  <span className="font-[Sora] font-semibold text-[16px] text-foreground group-hover:text-[var(--togo-cyan,#1F8A99)] transition-colors">{r.name}</span>
+                  <ArrowRight size={16} className="text-muted-foreground/50 group-hover:text-[var(--togo-cyan,#1F8A99)] group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <p className="text-[13.5px] text-muted-foreground mt-2 line-clamp-2 min-h-[40px]">{r.description || "—"}</p>
                 <div className="flex items-center gap-4 mt-4 text-[12px] text-muted-foreground/80">

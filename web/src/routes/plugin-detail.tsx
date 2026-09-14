@@ -36,7 +36,7 @@ export function PluginDetail() {
         <Seo title="Plugin not found" path={`/plugins/${slug}`} />
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
           <h1 className="font-[Sora] text-2xl font-bold">Plugin not found</h1>
-          <Link to="/marketplace" className="text-[#1FC7DC] mt-3 inline-block">← Back to the marketplace</Link>
+          <Link to="/marketplace" className="text-[#1F8A99] mt-3 inline-block">← Back to the marketplace</Link>
         </div>
       </Page>
     );
@@ -88,7 +88,7 @@ export function PluginDetail() {
               <CodeBlock lang="bash">{install}</CodeBlock>
             </div>
             {state === "loading" ? <p className="text-muted-foreground">Loading…</p>
-              : state === "missing" ? <p className="text-muted-foreground">No README yet. <a className="text-[#1FC7DC]" href={source}>View on GitHub →</a></p>
+              : state === "missing" ? <p className="text-muted-foreground">No README yet. <a className="text-[#1F8A99]" href={source}>View on GitHub →</a></p>
               : <div className="tg-readme max-w-none"><MarkdownRenderer content={md} /></div>}
           </>
         )}

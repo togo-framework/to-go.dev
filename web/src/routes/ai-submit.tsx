@@ -50,7 +50,7 @@ export function AiSubmit() {
         </Link>
         <Card>
           <CardHeader>
-            <div className="w-11 h-11 rounded-xl grid place-items-center mb-1 border border-[color:rgba(31,199,220,.18)] bg-[color:rgba(31,199,220,.1)] text-[var(--togo-cyan,#1FC7DC)]">
+            <div className="w-11 h-11 rounded-xl grid place-items-center mb-1 border border-[color:rgba(31,138,153,.18)] bg-[color:rgba(31,138,153,.1)] text-[var(--togo-cyan,#1F8A99)]">
               <Sparkles size={21} />
             </div>
             <CardTitle className="font-[Sora] text-2xl">Submit to the AI Stack</CardTitle>

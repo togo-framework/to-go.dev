@@ -87,7 +87,7 @@ const TG = brand(siTelegram), DC = brand(siDiscord), DK = brand(siDocker), K8 = 
 const NG = brand(siNgrok), TS = brand(siTailscale);
 
 export const PLUGIN_META: Record<string, PluginVisual> = {
-  auth: { title: "Auth", color: "#1FC7DC", icon: ShieldCheck, description: "JWT + RBAC + multi-guard sessions — the base auth kernel." },
+  auth: { title: "Auth", color: "#1F8A99", icon: ShieldCheck, description: "JWT + RBAC + multi-guard sessions — the base auth kernel." },
   "auth-dev": { title: "Dev Login", color: "#64748B", icon: TerminalSquare, description: "One-click developer login for local dev (never in prod)." },
   "auth-firebase": { title: "Firebase Auth", color: F.hex, brandIcon: F, description: "Firebase Authentication driver for togo auth." },
   "auth-oauth": { title: "OAuth2", color: "#6366F1", icon: KeyRound, description: "OAuth2 / social login providers for togo auth." },
@@ -138,7 +138,7 @@ export const PLUGIN_META: Record<string, PluginVisual> = {
   billing: { title: "Billing", color: "#22C55E", icon: Receipt, description: "API keys + token-usage metering, quotas & consumption reports." },
 
   // ── AI kit ──
-  ai: { title: "AI", color: "#1FC7DC", icon: Sparkles, description: "Unified LLM interface — chat, embeddings, tools, streaming." },
+  ai: { title: "AI", color: "#1F8A99", icon: Sparkles, description: "Unified LLM interface — chat, embeddings, tools, streaming." },
   "ai-openai": { title: "OpenAI", color: "#10A37F", icon: Brain, description: "OpenAI chat + embeddings driver." },
   "ai-anthropic": { title: "Anthropic", color: AN.hex, brandIcon: AN, description: "Anthropic Claude (Messages API) driver." },
   "ai-gemini": { title: "Gemini", color: GG.hex, brandIcon: GG, description: "Google Gemini driver." },
@@ -181,7 +181,7 @@ export const PLUGIN_META: Record<string, PluginVisual> = {
   "notifications-webpush": { title: "Web Push", color: "#4285F4", icon: Bell, description: "Browser Web Push (VAPID) notifications driver." },
   "notifications-discord": { title: "Discord", color: DC.hex, brandIcon: DC, description: "Discord notifications driver (webhook)." },
   "notifications-slack": { title: "Slack", color: "#611F69", icon: Bell, description: "Slack notifications driver (webhook/Web API)." },
-  "realtime-grpc": { title: "gRPC", color: "#2D8CE6", icon: Network, description: "gRPC streaming transport for realtime." },
+  "realtime-grpc": { title: "gRPC", color: "#1F8A99", icon: Network, description: "gRPC streaming transport for realtime." },
   "realtime-nats": { title: "NATS", color: NA.hex, brandIcon: NA, description: "NATS broker transport for realtime." },
 
   // ── Contacts / workflow / platform ──
@@ -233,7 +233,7 @@ export const PLUGIN_META: Record<string, PluginVisual> = {
   "tunnel-frp": { title: "frp", color: "#0075FF", icon: Network, description: "frp self-hosted reverse-proxy tunnel driver." },
 };
 
-const DEFAULT_VISUAL: PluginVisual = { title: "", color: "#2D8CE6", icon: Boxes };
+const DEFAULT_VISUAL: PluginVisual = { title: "", color: "#1F8A99", icon: Boxes };
 
 export function pluginVisual(slug: string): PluginVisual {
   const m = PLUGIN_META[slug];

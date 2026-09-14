@@ -11,7 +11,7 @@ function CopyBtn({ text, label }: { text: string; label: string }) {
     <button
       onClick={() => { navigator.clipboard?.writeText(text); setOk(true); setTimeout(() => setOk(false), 1500); }}
       className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-card transition-colors">
-      {ok ? <Check size={14} className="text-[#1FC7DC]" /> : <Copy size={14} />} {label}
+      {ok ? <Check size={14} className="text-[#1F8A99]" /> : <Copy size={14} />} {label}
     </button>
   );
 }
@@ -92,7 +92,7 @@ export function ExtensionDetailLayout({
           {compatibility && compatibility.length > 0 && (
             <div>
               <h3 className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">Compatibility</h3>
-              <ul className="space-y-1.5 text-sm text-foreground/90">{compatibility.map((c) => <li key={c} className="flex items-center gap-2"><Check size={14} className="text-[#1FC7DC]" />{c}</li>)}</ul>
+              <ul className="space-y-1.5 text-sm text-foreground/90">{compatibility.map((c) => <li key={c} className="flex items-center gap-2"><Check size={14} className="text-[#1F8A99]" />{c}</li>)}</ul>
             </div>
           )}
           {categories && categories.length > 0 && (
