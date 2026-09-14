@@ -51,11 +51,11 @@ export function ExtensionDetailLayout({
       {/* install header */}
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-start gap-4 min-w-0">
-          <div className="w-16 h-16 rounded-2xl grid place-items-center shrink-0 shadow-lg"
-            style={{ background: `linear-gradient(140deg, ${color}, ${color}cc)` }}>{icon}</div>
+          <div className="w-16 h-16 grid place-items-center shrink-0"
+            style={{ background: color }}>{icon}</div>
           <div className="min-w-0">
             <div className="flex items-center gap-2.5 flex-wrap">
-              <h1 className="font-[Sora] text-2xl sm:text-[28px] font-bold leading-tight">{title}</h1>
+              <h1 className="font-display text-2xl sm:text-[28px] font-bold leading-tight">{title}</h1>
               {kindLabel && <span className="rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">{kindLabel}</span>}
               {badges}
             </div>
@@ -70,10 +70,10 @@ export function ExtensionDetailLayout({
       </div>
 
       {/* tabs */}
-      <div className="mt-7 inline-flex gap-1 rounded-xl border border-border bg-card/40 p-1">
+      <div className="mt-7 inline-flex gap-1 rounded-md border border-border bg-card/40 p-1">
         {tabs.map((t) => (
           <button key={t.key} onClick={() => onTab(t.key)}
-            className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${activeTab === t.key ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
+            className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${activeTab === t.key ? "bg-card text-foreground" : "text-muted-foreground hover:text-foreground"}`}>
             {t.icon}{t.label}
           </button>
         ))}

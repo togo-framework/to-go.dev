@@ -35,7 +35,7 @@ export function PluginDetail() {
       <Page>
         <Seo title="Plugin not found" path={`/plugins/${slug}`} />
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
-          <h1 className="font-[Sora] text-2xl font-bold">Plugin not found</h1>
+          <h1 className="font-display text-2xl font-bold">Plugin not found</h1>
           <Link to="/marketplace" className="text-[#1F8A99] mt-3 inline-block">← Back to the marketplace</Link>
         </div>
       </Page>
@@ -84,7 +84,7 @@ export function PluginDetail() {
       >
         {tab === "overview" && (
           <>
-            <div className="rounded-xl border border-border bg-card p-1.5 mb-6">
+            <div className="border border-border bg-card p-1.5 mb-6">
               <CodeBlock lang="bash">{install}</CodeBlock>
             </div>
             {state === "loading" ? <p className="text-muted-foreground">Loading…</p>
@@ -96,12 +96,12 @@ export function PluginDetail() {
         {tab === "install" && (
           <div className="space-y-6 max-w-2xl">
             <div>
-              <h3 className="font-[Sora] text-base font-semibold mb-2">Install with the CLI</h3>
+              <h3 className="font-display text-base font-semibold mb-2">Install with the CLI</h3>
               <p className="text-muted-foreground text-sm mb-3">Adds the plugin and auto-registers it with the kernel on the next <code className="font-mono text-[13px]">togo serve</code>.</p>
               <CodeBlock lang="bash">{install}</CodeBlock>
             </div>
             <div>
-              <h3 className="font-[Sora] text-base font-semibold mb-2">Or with Go</h3>
+              <h3 className="font-display text-base font-semibold mb-2">Or with Go</h3>
               <CodeBlock lang="bash">{`go get github.com/togo-framework/${slug}`}</CodeBlock>
             </div>
           </div>
@@ -113,8 +113,8 @@ export function PluginDetail() {
               const pv = pluginVisual(p.slug);
               return (
                 <Link key={p.slug} to="/plugins/$slug" params={{ slug: p.slug }}
-                  className="flex items-center gap-3 rounded-xl border border-border bg-card p-4 hover:border-foreground/25 transition-colors">
-                  <span className="w-10 h-10 rounded-xl grid place-items-center shrink-0" style={{ background: pv.color }}><Mark slug={p.slug} size={20} /></span>
+                  className="flex items-center gap-3 border border-border bg-card p-4 hover:border-foreground/25 transition-colors">
+                  <span className="w-10 h-10 grid place-items-center shrink-0" style={{ background: pv.color }}><Mark slug={p.slug} size={20} /></span>
                   <div className="min-w-0"><div className="font-medium">{pv.title}</div><div className="text-sm text-muted-foreground truncate">{pv.description}</div></div>
                 </Link>
               );

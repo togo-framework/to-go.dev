@@ -63,18 +63,15 @@ export function Ai() {
       />
       {/* hero */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] -z-10"
-          style={{ background: "radial-gradient(620px 320px at 50% -40px, rgba(45,140,230,.18), transparent 70%)" }} />
         <div className="mx-auto max-w-6xl px-6 pt-12 pb-10 text-center">
           <div className="flex justify-center gap-3 mb-8">
             {HERO_ICONS.map((Icon, i) => (
-              <div key={i} className="grid place-items-center w-12 h-12 rounded-2xl border border-border bg-card shadow-sm text-[#1F8A99]"
-                style={{ animation: `aiFloat 6s ease-in-out ${i * 0.4}s infinite` }}><Icon size={20} /></div>
+              <div key={i} className="grid place-items-center w-12 h-12 border border-border bg-card text-[#1F8A99]"><Icon size={20} /></div>
             ))}
           </div>
           <style>{`@keyframes aiFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@media(prefers-reduced-motion:reduce){[style*=aiFloat]{animation:none!important}}`}</style>
           <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#1F8A99] mb-3">AI-native</div>
-          <h1 className="font-[Sora] text-4xl sm:text-5xl font-extrabold tracking-tight">AI that works with your stack</h1>
+          <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">AI that works with your stack</h1>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
             Every togo app is born agent-ready — a Claude Code plugin and a local + web MCP, so Claude can scaffold and drive it end to end.
           </p>
@@ -142,7 +139,7 @@ export function Ai() {
             </Card>
             <div className="grid gap-3 sm:grid-cols-2 content-start">
               {TOOLS.map((t) => (
-                <div key={t.name} className="rounded-xl border border-border bg-card p-4">
+                <div key={t.name} className="border border-border bg-card p-4">
                   <t.icon size={16} className="text-[#1F8A99] mb-2" />
                   <div className="font-mono text-[12.5px] text-foreground">{t.name}</div>
                   <div className="text-[12px] text-muted-foreground mt-0.5">{t.desc}</div>

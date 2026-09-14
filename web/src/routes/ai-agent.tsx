@@ -17,7 +17,7 @@ export function AiAgent() {
       <Page>
         <Seo title="Agent not found" path={`/ai/agents/${slug}`} />
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
-          <h1 className="font-[Sora] text-2xl font-bold">Agent not found</h1>
+          <h1 className="font-display text-2xl font-bold">Agent not found</h1>
           <Link to="/ai" className="text-[#1F8A99] mt-3 inline-block">← Back to the AI Stack</Link>
         </div>
       </Page>
@@ -64,12 +64,12 @@ export function AiAgent() {
         {tab === "install" && (
           <div className="space-y-6 max-w-2xl">
             <div>
-              <h3 className="font-[Sora] text-base font-semibold mb-2">Install this agent</h3>
+              <h3 className="font-display text-base font-semibold mb-2">Install this agent</h3>
               <p className="text-muted-foreground text-sm mb-3">Drops it into your project's <code className="font-mono text-[13px]">.claude/agents/</code> so Claude Code picks it up.</p>
               <CodeBlock lang="bash">{install}</CodeBlock>
             </div>
             <div>
-              <h3 className="font-[Sora] text-base font-semibold mb-2">Or get the whole team</h3>
+              <h3 className="font-display text-base font-semibold mb-2">Or get the whole team</h3>
               <CodeBlock lang="bash">togo install claude</CodeBlock>
             </div>
           </div>

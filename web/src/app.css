@@ -8,7 +8,7 @@ body { margin: 0; font-family: var(--tg-font); }
 
 /* README rendering fallback (in case the kit MarkdownRenderer leaves base elements unstyled) */
 .tg-readme { line-height: 1.7; color: var(--foreground); }
-.tg-readme h1, .tg-readme h2, .tg-readme h3 { font-family: Sora, var(--tg-font); font-weight: 700; line-height: 1.25; margin: 1.6em 0 .6em; }
+.tg-readme h1, .tg-readme h2, .tg-readme h3 { font-family: var(--tg-font); font-weight: 700; line-height: 1.25; margin: 1.6em 0 .6em; }
 .tg-readme h1 { font-size: 1.9rem; }
 .tg-readme h2 { font-size: 1.45rem; padding-bottom: .3em; border-bottom: 1px solid var(--border); }
 .tg-readme h3 { font-size: 1.15rem; }

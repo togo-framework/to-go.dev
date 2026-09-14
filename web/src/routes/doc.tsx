@@ -69,7 +69,7 @@ export function Doc() {
             <div className="font-mono text-[11px] tracking-[0.16em] uppercase text-muted-foreground/60 mb-1.5">
               togo-framework/{slug}
             </div>
-            <h1 className="font-[Sora] text-3xl font-bold tracking-tight">{repo?.name ?? slug}</h1>
+            <h1 className="font-display text-3xl font-bold tracking-tight">{repo?.name ?? slug}</h1>
             {repo?.description && <p className="text-muted-foreground mt-2 max-w-2xl">{repo.description}</p>}
           </div>
           <div className="flex items-center gap-2">

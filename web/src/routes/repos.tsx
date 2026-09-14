@@ -30,7 +30,7 @@ export function Repos() {
       />
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-10">
         <div className="mb-10">
-          <h1 className="font-[Sora] text-4xl font-bold tracking-tight">Repositories</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight">Repositories</h1>
           <p className="text-muted-foreground mt-3 max-w-2xl">
             The whole togo-framework — {list.length} open-source repositories. The microkernel, the CLI, the UI kit,
             database stacks, and capability plugins. Click any repo to read its docs.
@@ -41,7 +41,7 @@ export function Repos() {
             <Link key={r.slug} to="/docs/$slug" params={{ slug: r.slug }} className="group">
               <Card className="h-full bg-card/60 border-border hover:-translate-y-1 hover:border-border/80 transition-all duration-200 p-5">
                 <div className="flex items-center justify-between">
-                  <span className="font-[Sora] font-semibold text-[16px] text-foreground group-hover:text-[var(--togo-cyan,#1F8A99)] transition-colors">{r.name}</span>
+                  <span className="font-display font-semibold text-[16px] text-foreground group-hover:text-[var(--togo-cyan,#1F8A99)] transition-colors">{r.name}</span>
                   <ArrowRight size={16} className="text-muted-foreground/50 group-hover:text-[var(--togo-cyan,#1F8A99)] group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <p className="text-[13.5px] text-muted-foreground mt-2 line-clamp-2 min-h-[40px]">{r.description || "—"}</p>

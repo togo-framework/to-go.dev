@@ -56,10 +56,10 @@ export function PluginSubmit() {
         </Link>
         <Card>
           <CardHeader>
-            <div className="w-11 h-11 rounded-xl grid place-items-center mb-1 border border-[color:rgba(31,138,153,.18)] bg-[color:rgba(31,138,153,.1)] text-[var(--togo-cyan,#1F8A99)]">
+            <div className="w-11 h-11 grid place-items-center mb-1 border border-[color:rgba(31,138,153,.18)] bg-[color:rgba(31,138,153,.1)] text-[var(--togo-cyan,#1F8A99)]">
               <Blocks size={21} />
             </div>
-            <CardTitle className="font-[Sora] text-2xl">Submit a plugin</CardTitle>
+            <CardTitle className="font-display text-2xl">Submit a plugin</CardTitle>
             <CardDescription>
               Built something for togo? Propose it for the marketplace. Submitting opens a
               pre-filled issue on <code className="font-mono">togo-framework/togo</code> — review happens there.

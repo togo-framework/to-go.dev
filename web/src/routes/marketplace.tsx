@@ -49,8 +49,7 @@ function BrandTile({ slug, i }: { slug: string; i: number }) {
   const v = pluginVisual(slug);
   return (
     <div
-      className="grid place-items-center w-14 h-14 rounded-2xl border border-border bg-card shadow-sm"
-      style={{ animation: `tileFloat 6s ease-in-out ${i * 0.4}s infinite` }}
+      className="grid place-items-center w-14 h-14 border border-border bg-card"
     >
       {v.brandIcon
         ? <svg viewBox="0 0 24 24" width={26} height={26} fill={v.color}><path d={v.brandIcon.path} /></svg>
@@ -104,20 +103,18 @@ export function Marketplace() {
 
       {/* ── Raycast-store-style hero ── */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] -z-10"
-          style={{ background: "radial-gradient(600px 300px at 50% -40px, rgba(45,140,230,.18), transparent 70%)" }} />
         <div className="mx-auto max-w-6xl px-6 pt-12 pb-8 text-center">
           <div className="flex justify-center gap-3 flex-wrap mb-9 max-w-xl mx-auto">
             {HERO_ICONS.map((s, i) => <BrandTile key={s} slug={s} i={i} />)}
           </div>
-          <h1 className="font-[Sora] text-4xl sm:text-5xl font-extrabold tracking-tight">Marketplace</h1>
+          <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">Marketplace</h1>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
             Everything the togo ecosystem ships — plugins, AI agents, skills, MCP tools and UI components. One search, one command.
           </p>
           <div className="mt-8 mx-auto max-w-xl relative">
             <Search size={18} className="absolute start-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${cat}…`}
-              className="w-full rounded-2xl border border-border bg-card ps-12 pe-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none focus:border-[#1F8A99]/50 shadow-sm" />
+              className="w-full rounded-md border border-border bg-card ps-12 pe-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none focus:border-[#1F8A99]/50" />
           </div>
         </div>
       </section>
@@ -127,7 +124,7 @@ export function Marketplace() {
         {cat === "plugins" && !query && (
           <div className="mb-12">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="font-[Sora] text-lg font-bold">Featured</h2>
+              <h2 className="font-display text-lg font-bold">Featured</h2>
               <span className="text-xs text-muted-foreground">Our picks to get you started</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">{featured.map(pluginCard)}</div>
@@ -152,7 +149,7 @@ export function Marketplace() {
         </div>
 
         <div className="border-t border-border pt-8">
-          <h2 className="font-[Sora] text-lg font-bold mb-1">{CATS.find((c) => c.key === cat)!.label}</h2>
+          <h2 className="font-display text-lg font-bold mb-1">{CATS.find((c) => c.key === cat)!.label}</h2>
           <p className="text-sm text-muted-foreground mb-5">Browse and install — built for the togo stack.</p>
 
           {cat === "plugins" && (

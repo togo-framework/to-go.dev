@@ -31,7 +31,7 @@ export function DocsHome() {
       <DocsShell activeSlug="">
         <div className="mb-8 pb-6 border-b border-border">
           <div className="font-mono text-[11px] tracking-[0.16em] uppercase text-muted-foreground/60 mb-1.5">Documentation</div>
-          <h1 className="font-[Sora] text-4xl font-bold tracking-tight">Build full-stack apps in Go, the artisan way.</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight">Build full-stack apps in Go, the artisan way.</h1>
           <p className="text-muted-foreground mt-3 max-w-2xl text-[15px]">
             ToGO ships your Go backend and React frontend as a single deployable app. Start here, then dive into
             any of the {repos.length} repositories — each page is rendered from its README, and available as raw
@@ -39,12 +39,12 @@ export function DocsHome() {
           </p>
         </div>
 
-        <h2 className="font-[Sora] text-lg font-semibold mb-3">Install</h2>
+        <h2 className="font-display text-lg font-semibold mb-3">Install</h2>
         <div className="mb-8 max-w-2xl">
           <CodeBlock lang="bash">{`npm install -g @togo-framework/cli\ntogo new myapp        # pick a frontend + database\ncd myapp && togo serve`}</CodeBlock>
         </div>
 
-        <h2 className="font-[Sora] text-lg font-semibold mb-4">Start here</h2>
+        <h2 className="font-display text-lg font-semibold mb-4">Start here</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {CARDS.map(({ icon: Icon, slug, title, body }) => (
             <Link key={slug} to="/docs/$slug" params={{ slug }} className="group">
@@ -53,7 +53,7 @@ export function DocsHome() {
                   <div className="w-9 h-9 rounded-lg grid place-items-center border border-[color:rgba(31,138,153,.18)] bg-[color:rgba(31,138,153,.1)] text-[var(--togo-cyan,#1F8A99)]">
                     <Icon size={17} />
                   </div>
-                  <span className="font-[Sora] font-semibold group-hover:text-[var(--togo-cyan,#1F8A99)] transition-colors">{title}</span>
+                  <span className="font-display font-semibold group-hover:text-[var(--togo-cyan,#1F8A99)] transition-colors">{title}</span>
                   <ArrowRight size={15} className="ms-auto text-muted-foreground/50 group-hover:text-[var(--togo-cyan,#1F8A99)] group-hover:translate-x-0.5 transition-all" />
                 </div>
                 <p className="text-[13.5px] text-muted-foreground">{body}</p>
@@ -62,7 +62,7 @@ export function DocsHome() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-xl border border-border bg-card/40 p-5 flex items-center justify-between flex-wrap gap-3">
+        <div className="mt-8 border border-border bg-card/40 p-5 flex items-center justify-between flex-wrap gap-3">
           <p className="text-sm text-muted-foreground">
             Looking for a capability? <b className="text-foreground">{plugins.length} plugins</b> in the marketplace.
           </p>

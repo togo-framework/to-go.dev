@@ -39,11 +39,11 @@ export function MarketplaceSubmit() {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {OPTIONS.map((o) => (
             <a key={o.title} href={o.href} target="_blank" rel="noopener noreferrer" className="group block h-full">
-              <div className="h-full p-6 flex flex-col rounded-2xl border border-border bg-card transition-colors group-hover:border-foreground/25">
-                <div className="w-12 h-12 rounded-xl grid place-items-center mb-4 shadow-sm" style={{ background: `linear-gradient(140deg, ${o.color}, ${o.color}cc)` }}>
+              <div className="h-full p-6 flex flex-col border border-border bg-card transition-colors group-hover:border-foreground/25">
+                <div className="w-12 h-12 grid place-items-center mb-4" style={{ background: o.color }}>
                   <o.icon size={22} color="#fff" />
                 </div>
-                <h3 className="font-[Sora] text-lg font-semibold">{o.title}</h3>
+                <h3 className="font-display text-lg font-semibold">{o.title}</h3>
                 <p className="text-sm text-muted-foreground mt-1.5 flex-1">{o.desc}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: o.color }}>
                   <Github size={15} /> {o.cta} <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
