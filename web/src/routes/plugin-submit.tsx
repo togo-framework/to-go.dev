@@ -4,8 +4,8 @@ import {
   Card, CardHeader, CardTitle, CardDescription, CardContent,
   Input, Textarea, Label, Button,
   Select, SelectTrigger, SelectValue, SelectContent, SelectItem,
-} from "@togo-framework/ui";
-import { Blocks, ArrowLeft, Github, ExternalLink } from "lucide-react";
+} from "../components/kit";
+import { Blocks, ArrowLeft, GitBranch as Github, ExternalLink } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
 import { CATEGORY_META } from "../lib/catalog";
@@ -77,7 +77,7 @@ export function PluginSubmit() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="category">Category</Label>
-                <Select value={category} onValueChange={setCategory}>
+                <Select items={CATS.map((c) => ({ value: c, label: CATEGORY_META[c]?.label || c }))} value={category} onValueChange={(v) => setCategory(v ?? "")}>
                   <SelectTrigger id="category"><SelectValue /></SelectTrigger>
                   <SelectContent>
                     {CATS.map((c) => (

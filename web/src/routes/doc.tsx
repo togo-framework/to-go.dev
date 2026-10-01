@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "@tanstack/react-router";
-import { MarkdownRenderer, Button } from "@togo-framework/ui";
-import { FileText, Github } from "lucide-react";
+import { MarkdownRenderer, Button } from "../components/kit";
+import { FileText, GitBranch as Github } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
 import { DocsShell, type TocItem } from "../components/docs-shell";

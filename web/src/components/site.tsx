@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Button, CommandPalette } from "@togo-framework/ui";
-import { Github, Menu, X, MessageCircle, Palette } from "lucide-react";
+import { Button, CommandPalette } from "./kit";
+import { GitBranch as Github, Menu, X, MessageCircle, Palette } from "lucide-react";
 import searchIndex from "../data/search-index.json";
 
 const NAV = [
@@ -35,7 +35,7 @@ export function SiteHeader() {
                   {n.label}
                 </Link>
               ))}
-              <a href="https://ui.to-go.dev" target="_blank" rel="noopener noreferrer"
+              <a href="https://nasaq.fadymondy.com" target="_blank" rel="noopener noreferrer"
                 className="px-3 py-1.5 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors inline-flex items-center gap-1.5">
                 <Palette size={16} /> UI Kit
               </a>
@@ -65,7 +65,7 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
-            <a href="https://ui.to-go.dev" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
+            <a href="https://nasaq.fadymondy.com" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
               className="flex items-center gap-2 px-4 py-3 rounded-md font-medium text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors">
               <Palette size={16} /> UI Kit
             </a>
@@ -95,7 +95,7 @@ export function SiteFooter() {
             <a href="https://github.com/togo-framework" className="hover:text-foreground">GitHub</a>
             <a href="https://www.npmjs.com/package/@togo-framework/cli" className="hover:text-foreground">npm</a>
             <a href="https://pkg.go.dev/search?q=togo-framework&m=package" className="hover:text-foreground">Packages</a>
-            <a href="https://ui.to-go.dev" className="hover:text-foreground">UI kit</a>
+            <a href="https://nasaq.fadymondy.com" className="hover:text-foreground">UI kit</a>
             <a href="https://discord.gg/Rv9Y7tcBtN" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Discord</a>
             <a href="/llms.txt" className="hover:text-foreground">llms.txt</a>
           </div>

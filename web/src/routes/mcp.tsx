@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { SectionHeading, FeatureCard, CodeBlock, Button, Card } from "@togo-framework/ui";
-import { Boxes, Search, FileText, Package, Send, Info, Plug, ExternalLink, Github } from "lucide-react";
+import { SectionHeading, FeatureCard, CodeBlock, Button, Card } from "../components/kit";
+import { Boxes, Search, FileText, Package, Send, Info, Plug, ExternalLink, GitBranch as Github } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
 

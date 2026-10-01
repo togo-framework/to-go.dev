@@ -1,6 +1,6 @@
-import { Blocks, Bot, TerminalSquare, ArrowLeft, Github, ArrowRight } from "lucide-react";
+import { Blocks, Bot, TerminalSquare, ArrowLeft, GitBranch as Github, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { SectionHeading, AuroraBackground } from "@togo-framework/ui";
+import { SectionHeading, AuroraBackground } from "../components/kit";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
 

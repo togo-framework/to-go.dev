@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useParams } from "@tanstack/react-router";
-import { MarkdownRenderer, CodeBlock } from "@togo-framework/ui";
+import { MarkdownRenderer, CodeBlock } from "../components/kit";
 import { BookOpen, Download, Terminal } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";

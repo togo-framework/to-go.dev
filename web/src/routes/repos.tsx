@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Card } from "@togo-framework/ui";
+import { Card } from "../components/kit";
 import { Star, ArrowRight } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";

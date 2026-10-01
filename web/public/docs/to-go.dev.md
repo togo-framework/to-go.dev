@@ -6,7 +6,7 @@ are **prerendered to static HTML** for full SEO/AEO and served behind Caddy/NPM 
 
 | Route | What |
 |---|---|
-| `/` | Landing — built with the `@togo-framework/ui` kit (Logo, Wordmark, Button, Card) |
+| `/` | Landing — built with the Nasaq UI kit (`@fadymondy/nasaq`) |
 | `/repos` | Every `togo-framework` repository (live from the GitHub API at build time) |
 | `/docs/<repo>` | That repo's README, rendered via the kit's `MarkdownRenderer` |
 | `/docs/<repo>.md` | The **raw Markdown** (agents / AEO) |

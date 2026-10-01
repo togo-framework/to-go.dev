@@ -4,8 +4,8 @@ import {
   Card, CardHeader, CardTitle, CardDescription, CardContent,
   Input, Textarea, Label, Button,
   Select, SelectTrigger, SelectValue, SelectContent, SelectItem,
-} from "@togo-framework/ui";
-import { Sparkles, ArrowLeft, Github, ExternalLink } from "lucide-react";
+} from "../components/kit";
+import { Sparkles, ArrowLeft, GitBranch as Github, ExternalLink } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
 
@@ -67,7 +67,7 @@ export function AiSubmit() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="type">Type</Label>
-                <Select value={type} onValueChange={setType}>
+                <Select items={TYPES} value={type} onValueChange={(v) => setType(v ?? "")}>
                   <SelectTrigger id="type"><SelectValue /></SelectTrigger>
                   <SelectContent>
                     {TYPES.map((t) => <SelectItem key={t.value} value={t.value}>{t.label}</SelectItem>)}

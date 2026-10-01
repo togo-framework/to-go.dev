@@ -1,9 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { SectionHeading, FeatureCard, CodeBlock, Button, Card, ClaudeSession } from "@togo-framework/ui";
-import {
-  Sparkles, Bot, Plug, Rocket, Boxes, TerminalSquare, Github, ExternalLink,
-  Info, Package, Search, FileText, Send,
-} from "lucide-react";
+import { SectionHeading, FeatureCard, CodeBlock, Button, Card, ClaudeSession } from "../components/kit";
+import { Sparkles, Bot, Plug, Rocket, Boxes, TerminalSquare, GitBranch as Github, ExternalLink, Info, Package, Search, FileText, Send } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
 
@@ -79,7 +76,7 @@ export function Ai() {
             <Button asChild size="lg" style={{ background: "#1F8A99", color: "#F0EBE1" }}>
               <a href="https://github.com/togo-framework/claude-togo">Get the Claude plugin →</a>
             </Button>
-            <Button asChild variant="outline" size="lg"><Link to="/marketplace/agents">Browse agents</Link></Button>
+            <Button asChild variant="outline" size="lg"><Link to="/marketplace/$category" params={{ category: "agents" }}>Browse agents</Link></Button>
           </div>
           <div className="mt-12 mx-auto max-w-3xl text-start">
             <ClaudeSession steps={SESSION} height={300} />

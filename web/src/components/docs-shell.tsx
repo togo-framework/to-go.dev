@@ -1,5 +1,5 @@
 import { useMemo, type ReactNode } from "react";
-import { DocsLayout, DocsSidebar, DocsTOC, CommandPalette, type DocsNavGroup, type TocItem, type PaletteItem } from "@togo-framework/ui";
+import { DocsLayout, DocsSidebar, DocsTOC, CommandPalette, type DocsNavGroup, type TocItem, type PaletteItem } from "./kit";
 import { repos, plugins, CATEGORY_META } from "../lib/catalog";
 
 export type { TocItem };

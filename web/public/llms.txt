@@ -26,7 +26,7 @@ Install: `curl -fsSL https://to-go.dev/install.sh | sh`  ·  `npm i -g @togo-fra
 - [togo-release-manager](https://to-go.dev/ai/agents/togo-release-manager) (agent): Release manager for togo packages — semver, CHANGELOG, goreleaser tags, npm wrapper publishing, and pkg.go.dev. Use for cutting releases and promotion governance.
 - [togo-security](https://to-go.dev/ai/agents/togo-security) (agent): Security for a togo app — auth/RBAC (JWT, OTP/2FA, sessions), secrets handling, dependency/VAPT audit, and safe plugin installation. Use for threat review, auth flows, and hardening.
 - [togo-technical-writer](https://to-go.dev/ai/agents/togo-technical-writer) (agent): Technical writer for togo — READMEs, docs pages, llms.txt, command/agent reference, and the plugin marketplace copy. Use for clear, accurate, example-first documentation.
-- [togo-ui-designer](https://to-go.dev/ai/agents/togo-ui-designer) (agent): UI/design for togo apps — the @togo-framework/ui kit, semantic theme tokens, dark/light + RTL, and component composition. Use for building/adjusting UI with the kit instead of raw CSS.
+- [togo-ui-designer](https://to-go.dev/ai/agents/togo-ui-designer) (agent): UI/design for togo apps — the Nasaq kit (@fadymondy/nasaq), semantic theme tokens, dark/light + RTL, and component composition. Use for building/adjusting UI with the kit instead of raw CSS.
 - [/togo:deploy](https://to-go.dev/ai/skills/deploy) (skill): Provision infra and deploy the togo app (Terraform).
 - [/togo:doctor](https://to-go.dev/ai/skills/doctor) (skill): Check the togo toolchain (Go, Node/npm, sqlc, Atlas) and auto-install what's missing.
 - [/togo:generate](https://to-go.dev/ai/skills/generate) (skill): Run the togo codegen pipeline (sqlc → gqlgen → Atlas → OpenAPI).

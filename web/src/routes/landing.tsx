@@ -4,9 +4,9 @@ import {
   Button, Badge, CodeBlock, AuroraBackground,
   SectionHeading, FeatureCard, CodeShowcase, Eyebrow,
   TypingTerminal, ClaudeSession, BrowserFrame,
-} from "@togo-framework/ui";
-import type { TerminalStep, ClaudeStep } from "@togo-framework/ui";
-import type { CodeShowcaseTab } from "@togo-framework/ui";
+} from "../components/kit";
+import type { TerminalStep, ClaudeStep } from "../components/kit";
+import type { CodeShowcaseTab } from "../components/kit";
 import {
   Boxes, TerminalSquare, Blocks, Database, Globe, Sparkles, Copy, Check, ArrowRight,
   Package, GitBranch, Rocket, Bot, Layers, Workflow, RotateCcw, Search,

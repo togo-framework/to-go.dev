@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import type { BrandGlyph } from "@togo-framework/ui";
+import type { BrandGlyph } from "../components/kit";
 import {
   Network, Server, LayoutPanelLeft, Database, ShieldCheck, Cloud, Rocket,
   FileText, Palette, Sparkles, BarChart3, Blocks, Compass, Package, FlaskConical,

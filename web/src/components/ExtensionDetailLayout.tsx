@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, Download, Github, Flag, Sparkles, Link2, Check, Copy } from "lucide-react";
+import { ArrowLeft, Download, GitBranch as Github, Flag, Sparkles, Link2, Check, Copy } from "lucide-react";
 import { useState } from "react";
 
 export type DetailTab = { key: string; label: string; icon?: ReactNode };

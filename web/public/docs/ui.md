@@ -1,58 +1,53 @@
-The togo **design system** — a fully token-driven, runtime-themeable admin + auth component
-library. Framework-agnostic (no Next.js / data-fetching coupling), **RTL-ready**, and carrying
-the **ToGO brand** (ink, paper and teal — https://to-go.dev/en/brand) laid out as fadymondy.com's grid:
-square surfaces, hairlines, no shadows. Self-hosts **Lusail** (Arabic + Latin) and JetBrains Mono.
+# UI kit — Nasaq
+
+The togo UI kit is now **Nasaq** — `@fadymondy/nasaq`. It is a token-driven, RTL-ready design
+system for React with a built-in **ToGO brand** (`brand="togo"`), light/dark themes and EN/AR locales.
+Browse every component in Storybook: https://nasaq.fadymondy.com
+
+> **Deprecated:** `@togo-framework/ui` and the `ui-*` packages are deprecated and no longer
+> maintained. Migrate to `@fadymondy/nasaq`.
 
 ```bash
-npm install @togo-framework/ui lucide-react
+npm i @fadymondy/nasaq
+```
+
+CSS imports (Tailwind v4) — Tailwind does not scan `node_modules`, so point `@source` at the Nasaq components:
+
+```css
+/* app.css */
+@import "tailwindcss";
+@import "@fadymondy/nasaq/tokens.css";
+@import "@fadymondy/nasaq/theme.css";
+@import "@fadymondy/nasaq/web/styles.css";
+@source "../node_modules/@fadymondy/nasaq/dist/web";
 ```
 
 ```tsx
-import "@togo-framework/ui/styles.css";
-import { ThemeProvider, Button, StatCard, DataTable } from "@togo-framework/ui";
+import { NasaqProvider, Toaster, Button } from "@fadymondy/nasaq/web";
 
-// ThemeProvider switches dark/light at runtime (data-theme on <html>, persisted).
-// Pass `overrides` to re-brand per app with zero source edits.
+// NasaqProvider applies the ToGO brand, the persisted light/dark theme and the EN/AR locale (with RTL).
 export default () => (
-  <ThemeProvider theme="dark">
+  <NasaqProvider brand="togo" defaultTheme="dark">
     <Button>Ship it</Button>
-  </ThemeProvider>
+    <Toaster />
+  </NasaqProvider>
 );
 ```
 
-Then copy the package's `public/fonts` into your app's served root, and add the package
-to your Tailwind v4 content so its utility classes are generated:
-
-```css
-/* app.css */ @import "tailwindcss"; @import "@togo-framework/ui/styles.css"; @source "../node_modules/@togo-framework/ui/dist";
-```
-
-**SSR (no flash):** inline `themeInitScript` in `<head>` so the theme is set before paint —
-`import { themeInitScript } from "@togo-framework/ui/theme"`. See the Storybook **Design System →
-Theming** page for `overrides` + adding tenant themes.
+**No flash:** the theme key is `nasaq-theme`; apply it before paint with `nasaqThemeScript("dark")`
+(from `@fadymondy/nasaq/web`) inlined in `<head>`, and set `data-brand="togo"` on `<html>`.
 
 ## Components
 
-| Group | Components |
-|---|---|
-| **Layout** | `AdminShell`, `PageHeader`, `PlatformSwitcher`, `UserMenu`, `LangToggle`, `RealtimeDot`, `Toast` |
-| **Data** | `StatCard`, `DataTable`, `DetailGrid` |
-| **Charts** | `AreaChart`, `BarChart`, `Gauge` (dependency-free SVG) |
-| **Overlays** | `Modal` |
-| **Primitives** | `Button`, `Badge`, `StatusPill`, `Card`, `Input`, `SearchInput`, `Select`, `Switch`, `Checkbox`, `Field` |
+Nasaq ships hundreds of components — primitives (`Button`, `Card`, `Badge`, `Field`, `Input`, `Select`,
+`Dialog`, `Tabs`), data (`DataTable`, `StatCard`, charts), layout (`AppShell`, `PageHeader`, `DocsShell`),
+auth forms, marketing sections, `CodeBlock`, `Markdown`, `CommandPalette`, `Terminal` and more.
+See the Storybook for the full catalogue: https://nasaq.fadymondy.com
 
-All components are presentational: pass data and callbacks. RTL works by setting
-`dir="rtl"` on a parent — the components use logical CSS (`ps/pe/ms/me/start/end`) and
-flip automatically.
+## Migrating from `@togo-framework/ui`
 
-## Develop
-
-```bash
-npm install
-npm run storybook      # interactive component explorer (LTR/RTL toggle in the toolbar)
-npm run build          # emit dist/ (ESM + types + styles.css)
-```
+- Replace `ThemeProvider` / `LanguageProvider` with `NasaqProvider` (`useNasaq()` exposes theme + locale).
+- Import from `@fadymondy/nasaq/web` and swap the CSS imports as shown above.
+- Use `buttonVariants({ variant, size })` for link-styled buttons instead of `asChild`.
 
 MIT.
-
----

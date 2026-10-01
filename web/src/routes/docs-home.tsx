@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Card, CodeBlock } from "@togo-framework/ui";
+import { Card, CodeBlock } from "../components/kit";
 import { Rocket, TerminalSquare, Boxes, Database, Palette, ArrowRight } from "lucide-react";
 import { Page } from "../components/site";
 import { Seo } from "../components/seo";
@@ -11,7 +11,7 @@ const CARDS = [
   { icon: TerminalSquare, slug: "cli", title: "The CLI", body: "Generators, migrations, codegen, plugins, deploy — the artisan-grade togo command." },
   { icon: Boxes, slug: "togo", title: "The microkernel", body: "Config, hooks, the plugin loader, the DB dialect registry, server bootstrap." },
   { icon: Database, slug: "db", title: "Databases", body: "sqlite, postgres, togo-postgres, supabase, mysql, mongodb — wired from day 0." },
-  { icon: Palette, slug: "ui", title: "UI kit", body: "@togo-framework/ui — the token-driven, RTL-ready design system." },
+  { icon: Palette, slug: "ui", title: "UI kit", body: "Nasaq (@fadymondy/nasaq) — the token-driven, RTL-ready design system. @togo-framework/ui is deprecated." },
 ];
 
 export function DocsHome() {

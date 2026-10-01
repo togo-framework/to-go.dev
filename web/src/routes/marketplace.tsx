@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link, useParams } from "@tanstack/react-router";
-import { MarketplaceCard, PillButton } from "@togo-framework/ui";
+import { MarketplaceCard, PillButton } from "../components/kit";
 import {
   Blocks, Bot, TerminalSquare, Plug, Component, Search, Plus,
 } from "lucide-react";
@@ -23,23 +23,24 @@ const CAT_SEO: Record<CatKey, { title: string; desc: string }> = {
   agents: { title: "togo Agents — AI agents for togo development", desc: "Specialist Claude Code agents for the togo stack — backend, frontend, db, security, devops and more. Install with togo install agent:<name>." },
   skills: { title: "togo Skills — /togo:* slash commands", desc: "togo skills: /togo:* slash commands that wrap togo workflows in Claude Code. Install with togo install skill:<name>." },
   mcp: { title: "togo MCP & Tools", desc: "The togo MCP server and tools — connect Claude Code to live togo docs, generators, and the marketplace." },
-  ui: { title: "togo UI components — @togo-framework/ui", desc: "The togo UI kit — buttons, cards, data tables, auth, docs, and marketing components on ui.to-go.dev." },
+  ui: { title: "togo UI — Nasaq (@fadymondy/nasaq)", desc: "The togo UI kit is now Nasaq — buttons, cards, data tables, auth, docs, and marketing components, with the ToGO brand. Storybook on nasaq.fadymondy.com." },
 };
 const isCat = (v?: string): v is CatKey => !!v && CATS.some((c) => c.key === v);
 
-// Curated kit components surfaced as marketplace items → their Storybook story.
+// Curated Nasaq components surfaced as marketplace items → the Nasaq Storybook.
+// (@togo-framework/ui and the ui-* packages are deprecated in favour of @fadymondy/nasaq.)
+const NASAQ_URL = "https://nasaq.fadymondy.com";
 const UI_ITEMS = [
-  { slug: "button", name: "Button", desc: "The core action button — variants, sizes, asChild.", story: "components-button--default" },
-  { slug: "card", name: "Card", desc: "Surface container for grouped content.", story: "components-card--default" },
-  { slug: "datatable", name: "DataTable", desc: "Sortable, paginated table for resource lists.", story: "components-datatable--default" },
-  { slug: "authcard", name: "AuthCard", desc: "Split/centered auth-screen shell — brand panel + form.", story: "pages-auth-flow--default" },
-  { slug: "marketplacecard", name: "MarketplaceCard", desc: "Branded plugin/agent card with providers + brand icons.", story: "marketplace-marketplacecard--default" },
-  { slug: "typingterminal", name: "TypingTerminal", desc: "Live CLI playback for heroes — types + streams + replay.", story: "marketing-typingterminal--default" },
-  { slug: "docslayout", name: "DocsLayout", desc: "Sidebar + scroll-spy TOC + ⌘K docs shell.", story: "docs-docslayout--default" },
-  { slug: "callout", name: "Callout", desc: "Info / warn / tip / danger admonition blocks.", story: "docs-callout--default" },
-  { slug: "commandpalette", name: "CommandPalette", desc: "⌘K palette over docs + items.", story: "docs-commandpalette--default" },
-  { slug: "codeblock", name: "CodeBlock", desc: "Syntax-highlighted code with copy + PNG export.", story: "components-codeblock--default" },
-  { slug: "markdownrenderer", name: "MarkdownRenderer", desc: "Render plugin/agent READMEs to themed prose.", story: "components-markdownrenderer--default" },
+  { slug: "button", name: "Button", desc: "The core action button — variants, sizes, loading state." },
+  { slug: "card", name: "Card", desc: "Surface container for grouped content." },
+  { slug: "data-table", name: "DataTable", desc: "Sortable, paginated table for resource lists." },
+  { slug: "auth", name: "Auth forms", desc: "Login, register, reset and 2FA forms with an auth layout." },
+  { slug: "marketplace", name: "Marketplace", desc: "Listings, detail, publish form and template gallery." },
+  { slug: "terminal", name: "Terminal", desc: "Terminal surface for CLI output and playback." },
+  { slug: "docs-shell", name: "DocsShell", desc: "Sidebar, search and table of contents for docs." },
+  { slug: "command-palette", name: "CommandPalette", desc: "Command palette over docs and items." },
+  { slug: "code-block", name: "CodeBlock", desc: "Syntax-highlighted code with copy." },
+  { slug: "markdown", name: "Markdown", desc: "Render READMEs to themed prose." },
 ];
 
 // Brand icons that float above the hero — like Raycast's store app icons.
@@ -205,8 +206,8 @@ export function Marketplace() {
             return list.length ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {list.map((u) => (
-                  <MarketplaceCard key={u.slug} href={`https://ui.to-go.dev/?path=/docs/${u.story}`} name={u.name}
-                    category="UI" color="#8B5CF6" icon={Component} description={u.desc} author="@togo-framework/ui" />
+                  <MarketplaceCard key={u.slug} href={NASAQ_URL} name={u.name}
+                    category="UI" color="#8B5CF6" icon={Component} description={u.desc} author="@fadymondy/nasaq" />
                 ))}
               </div>
             ) : <Empty />;

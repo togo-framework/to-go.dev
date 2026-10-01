@@ -152,11 +152,11 @@ const llms = [
   `- [Plugins](${SITE}/plugins): the plugin marketplace`,
   `- [AI Stack](${SITE}/ai): agents, skills & tools for AI-driven togo development — \`togo install claude\``,
   `- [Submit a plugin](${SITE}/plugins/submit): propose a plugin (opens a GitHub issue)`,
-  `- [UI Kit](https://ui.to-go.dev): the @togo-framework/ui component library — Storybook docs for every component (cards, tables, charts, plugin cards, dashboards)`,
+  `- [UI Kit (Nasaq)](https://nasaq.fadymondy.com): the @fadymondy/nasaq component library — Storybook docs for every component. @togo-framework/ui and the ui-* packages are deprecated`,
   ``,
   `## Community`,
   `- [Discord](https://discord.gg/Rv9Y7tcBtN): the togo community — questions, help, and announcements`,
-  `- [UI Kit (ui.to-go.dev)](https://ui.to-go.dev): @togo-framework/ui Storybook — browse and copy components`,
+  `- [Nasaq Storybook](https://nasaq.fadymondy.com): @fadymondy/nasaq — browse and copy components`,
   `- [MCP server](https://mcp.to-go.dev): the public togo MCP endpoint for agents`,
   ``,
   `## AI Stack`,
@@ -171,7 +171,7 @@ const llms = [
   `## Source`,
   `- GitHub org: https://github.com/togo-framework`,
   `- npm CLI: https://www.npmjs.com/package/@togo-framework/cli`,
-  `- UI Kit: https://ui.to-go.dev (@togo-framework/ui)`,
+  `- UI Kit: https://nasaq.fadymondy.com (@fadymondy/nasaq; @togo-framework/ui is deprecated)`,
   `- Discord: https://discord.gg/Rv9Y7tcBtN`,
   ``,
 ].join("\n");
@@ -180,7 +180,6 @@ writeFileSync(join(ROOT, "public/llms.txt"), llms);
 // sitemap.xml — home, docs home, plugins marketplace + submit, every plugin + every doc
 const urls = [
   `${SITE}/`,
-  `https://ui.to-go.dev/`,
   `${SITE}/plugins`,
   `${SITE}/plugins/submit`,
   ...AI_ROUTES,

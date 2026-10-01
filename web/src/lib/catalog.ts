@@ -1,4 +1,4 @@
-import type { PluginCatalogEntry, BrandGlyph, ProviderChip } from "@togo-framework/ui";
+import type { PluginCatalogEntry, BrandGlyph, ProviderChip } from "../components/kit";
 import {
   ShieldCheck, Database, Server, Mail, LayoutDashboard, FlaskConical, Boxes,
   TerminalSquare, KeyRound, Zap, Bot, Bell, ListChecks, Radio, Search as SearchIcon,
